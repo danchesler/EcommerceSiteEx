@@ -16,7 +16,7 @@ import org.testng.annotations.BeforeMethod;
 
 import pageobjects.HomePage;
 
-public class BaseTest {
+public class BaseTest extends TestUtilities {
 
 	private WebDriver driver;
 	protected HomePage homepage;
@@ -64,7 +64,7 @@ public class BaseTest {
 	@AfterTest
 	public void tearDown() throws InterruptedException
 	{
-		Thread.sleep(5000);
-		driver.quit();
+		//Thread.sleep(5000);
+		//driver.quit();
 	}
 }
