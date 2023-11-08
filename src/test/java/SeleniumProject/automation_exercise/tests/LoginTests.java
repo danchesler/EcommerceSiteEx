@@ -1,9 +1,11 @@
 package SeleniumProject.automation_exercise.tests;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import pageobjects.SignUpPage;
 import testcomponents.BaseTest;
 
 public class LoginTests extends BaseTest {
@@ -12,8 +14,18 @@ public class LoginTests extends BaseTest {
 	@Test
 	public void RegisterUser()
 	{
-//		WebDriver driver = new ChromeDriver();
-//		driver.get("https://www.automationexercise.com");
+		SignUpPage sp = homepage.goToSignUp();
+		Assert.assertEquals(sp.getSignupHeaderElement().getText(),"New User Signup!");
+		
+		
+	}
+
+	
+	@DataProvider
+	public Object[][] testData()
+	{
+		return null;
+		
 	}
 
 }

@@ -5,8 +5,8 @@
     <classes>
       <class name="SeleniumProject.automation_exercise.tests.LoginTests">
         <methods>
+          <include name="tearDown"/>
           <include name="RegisterUser"/>
-          <include name="driverSetup"/>
           <include name="launchWebSite"/>
         </methods>
       </class> <!-- SeleniumProject.automation_exercise.tests.LoginTests -->
