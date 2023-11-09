@@ -114,6 +114,7 @@ public class LoginTests extends BaseTest {
 		Assert.assertEquals(sp.getEmailExistsText(), "Email Address already exist!");
 	}
 	
+	//Used to setup a registered user
 	@Test (dataProvider="signup_data")
 	public void RegisterUserThenLogout(HashMap<String,String> data)
 	{
