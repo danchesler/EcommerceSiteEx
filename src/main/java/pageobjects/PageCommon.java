@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,6 +32,9 @@ public class PageCommon {
 	@FindBy(linkText="Delete Account")
 	private WebElement deleteAccount;
 	
+	@FindBy(css="a[href*='test_cases']")
+	private WebElement testCases;
+	
 	@FindBy(linkText="Contact us")
 	private WebElement contactUs;
 	
@@ -52,6 +56,14 @@ public class PageCommon {
 		signupLink.click();
 		return new SignUpPage(driver);
 	}
+	
+	public TestCasesPage goToTestCases()
+	{
+		Actions a = new Actions(driver);
+		a.moveToElement(testCases).doubleClick().build().perform();
+		return new TestCasesPage(driver);
+	}
+	
 	
 	public DeleteAccountPage deleteAccount()
 	{

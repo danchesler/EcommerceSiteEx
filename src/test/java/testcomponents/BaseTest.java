@@ -13,6 +13,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import pageobjects.HomePage;
 
@@ -51,8 +52,8 @@ public class BaseTest extends TestUtilities {
 		return driver;
 	}
 	
-	@BeforeMethod (alwaysRun=true)
-	public HomePage launchWebSite() throws IOException
+	@BeforeTest (alwaysRun=true)
+	public HomePage launchWebSite() throws IOException, InterruptedException
 	{
 		driver = driverSetup();
 		homepage = new HomePage(driver);

@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-09T12:21:04 PST" name="Default suite" finished-at="2023-11-09T12:21:13 PST" duration-ms="9320">
+  <suite started-at="2023-11-09T14:12:09 PST" name="Default suite" finished-at="2023-11-09T14:13:12 PST" duration-ms="63060">
     <groups>
     </groups>
-    <test started-at="2023-11-09T12:21:04 PST" name="Default test" finished-at="2023-11-09T12:21:13 PST" duration-ms="9320">
-      <class name="SeleniumProject.automation_exercise.tests.ContactUsTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-09T12:21:04 PST" name="launchWebSite" finished-at="2023-11-09T12:21:09 PST" duration-ms="4877" status="PASS">
+    <test started-at="2023-11-09T14:12:09 PST" name="Default test" finished-at="2023-11-09T14:13:12 PST" duration-ms="63060">
+      <class name="SeleniumProject.automation_exercise.tests.TestCasesTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:12:09 PST" name="launchWebSite" finished-at="2023-11-09T14:12:17 PST" duration-ms="8281" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="FillContactUsForm(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-09T12:21:09 PST" name="FillContactUsForm" data-provider="contactus_data" finished-at="2023-11-09T12:21:13 PST" duration-ms="4201" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=testt98761@gmail.com}]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="NavigateToPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:12:17 PST" name="NavigateToPage" finished-at="2023-11-09T14:12:17 PST" duration-ms="419" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FillContactUsForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-09T12:21:13 PST" name="tearDown" finished-at="2023-11-09T12:21:13 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- NavigateToPage -->
+        <test-method signature="BrowseTestCases()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:12:17 PST" name="BrowseTestCases" finished-at="2023-11-09T14:13:12 PST" depends-on-methods="SeleniumProject.automation_exercise.tests.TestCasesTests.NavigateToPage" duration-ms="54327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowseTestCases -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:13:12 PST" name="tearDown" finished-at="2023-11-09T14:13:12 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.ContactUsTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.TestCasesTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

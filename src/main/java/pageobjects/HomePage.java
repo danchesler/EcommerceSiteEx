@@ -17,9 +17,16 @@ public class HomePage extends PageCommon {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void goToHomepage()
+	public void goToHomepage() throws InterruptedException
 	{
 		driver.get("https://www.automationexercise.com/");
+		
+		//wait for ads to go away
+		Thread.sleep(2000);
+		if (driver.getCurrentUrl().contains("google"))
+		{
+			driver.navigate().back();
+		}
 	}
 	
 	
