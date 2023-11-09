@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\super\AppData\Local\Temp\testng-eclipse-1838051075\testng-customsuite.xml</span>
+                    <span>C:\Users\super\AppData\Local\Temp\testng-eclipse-680911550\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="SeleniumProject.automation_exercise.tests.LoginTests" class="method navigator-link" hash-for-method="Logout({country=United States, firstname=Dan, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990...)">Logout({country=United States, firstname=Dan, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="SeleniumProject.automation_exercise.tests.ContactUsTests" class="method navigator-link" hash-for-method="FillContactUsForm({name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=...)">FillContactUsForm({name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,15 +121,15 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">SeleniumProject.automation_exercise.tests.LoginTests</span>
+              <span class="class-name">SeleniumProject.automation_exercise.tests.ContactUsTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Logout({country=United States, firstname=Dan, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990...)">
-                  </a> <!-- Logout({country=United States, firstname=Dan, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990...) -->
-                  <span class="method-name">Logout</span>
-                  <span class="parameters">({country=United States, firstname=Dan, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990, address2=Unit 100, city=Denver, title=mr., lastname=Ches, zipcode=09812, password=secretpassword, month=May, company=Google, username2=testuser12345, state=Colorado, username1=TestUser, day=9, email=testt98761@gmail.com})</span>
+                  <a name="FillContactUsForm({name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=...)">
+                  </a> <!-- FillContactUsForm({name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=...) -->
+                  <span class="method-name">FillContactUsForm</span>
+                  <span class="parameters">({name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=testt98761@gmail.com})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\super\AppData\Local\Temp\testng-eclipse-1838051075\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\super\AppData\Local\Temp\testng-eclipse-680911550\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,11 +146,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;SeleniumProject.automation_exercise.tests.LoginTests&quot;&gt;
+      &lt;class name=&quot;SeleniumProject.automation_exercise.tests.ContactUsTests&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;Logout&quot;/&gt;
+          &lt;include name=&quot;FillContactUsForm&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- SeleniumProject.automation_exercise.tests.LoginTests --&gt;
+      &lt;/class&gt; &lt;!-- SeleniumProject.automation_exercise.tests.ContactUsTests --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -192,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Logout')
-data.setCell(0, 2, 'SeleniumProject.automation_exercise.tests.LoginTests')
-data.setCell(0, 3, 2674);
+data.setCell(0, 1, 'FillContactUsForm')
+data.setCell(0, 2, 'SeleniumProject.automation_exercise.tests.ContactUsTests')
+data.setCell(0, 3, 1477);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -214,26 +214,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">6 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">SeleniumProject.automation_exercise.tests.LoginTests</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">RegisterUserThenLogout</span>
-                <br/>
-                <span class="ignored-method-name">RegisterExistingUser</span>
-                <br/>
-                <span class="ignored-method-name">LoginInvalidUser</span>
-                <br/>
-                <span class="ignored-method-name">LoginThenDeleteUser</span>
-                <br/>
-                <span class="ignored-method-name">DeleteExistingUser</span>
-                <br/>
-                <span class="ignored-method-name">RegisterThenDeleteUser</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -242,18 +225,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">SeleniumProject.automation_exercise.tests.LoginTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">SeleniumProject.automation_exercise.tests.ContactUsTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">launchWebSite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">Logout({country=United States, firstname=Dan, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990...)</span>
-                <span class="method-start">5247 ms</span>
+                <span class="method-name">FillContactUsForm({name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=...)</span>
+                <span class="method-start">4908 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">7925 ms</span>
+                <span class="method-start">6389 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

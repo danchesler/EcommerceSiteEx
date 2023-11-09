@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-08T17:19:08 PST" name="Default suite" finished-at="2023-11-08T17:19:16 PST" duration-ms="8164">
+  <suite started-at="2023-11-08T19:26:22 PST" name="Default suite" finished-at="2023-11-08T19:26:29 PST" duration-ms="6674">
     <groups>
     </groups>
-    <test started-at="2023-11-08T17:19:08 PST" name="Default test" finished-at="2023-11-08T17:19:16 PST" duration-ms="8164">
-      <class name="SeleniumProject.automation_exercise.tests.LoginTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@2892d68]" started-at="2023-11-08T17:19:08 PST" name="launchWebSite" finished-at="2023-11-08T17:19:13 PST" duration-ms="5246" status="PASS">
+    <test started-at="2023-11-08T19:26:22 PST" name="Default test" finished-at="2023-11-08T19:26:29 PST" duration-ms="6674">
+      <class name="SeleniumProject.automation_exercise.tests.ContactUsTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-08T19:26:22 PST" name="launchWebSite" finished-at="2023-11-08T19:26:27 PST" duration-ms="4907" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="Logout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@2892d68]" started-at="2023-11-08T17:19:13 PST" name="Logout" data-provider="login_data" finished-at="2023-11-08T17:19:16 PST" duration-ms="2674" status="PASS">
+        <test-method signature="FillContactUsForm(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-08T19:26:27 PST" name="FillContactUsForm" data-provider="contactus_data" finished-at="2023-11-08T19:26:29 PST" duration-ms="1477" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{country=United States, firstname=Dan, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990, address2=Unit 100, city=Denver, title=mr., lastname=Ches, zipcode=09812, password=secretpassword, month=May, company=Google, username2=testuser12345, state=Colorado, username1=TestUser, day=9, email=testt98761@gmail.com}]]>
+                <![CDATA[{name=TestUser, message=quick brown fox jumps over the lazy dog 123 !@#, subject=i need help, email=testt98761@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Logout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@2892d68]" started-at="2023-11-08T17:19:16 PST" name="tearDown" finished-at="2023-11-08T17:19:16 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- FillContactUsForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-08T19:26:29 PST" name="tearDown" finished-at="2023-11-08T19:26:29 PST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.LoginTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.ContactUsTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
