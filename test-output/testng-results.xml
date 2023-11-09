@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-08T19:26:22 PST" name="Default suite" finished-at="2023-11-08T19:26:29 PST" duration-ms="6674">
+  <suite started-at="2023-11-09T12:21:04 PST" name="Default suite" finished-at="2023-11-09T12:21:13 PST" duration-ms="9320">
     <groups>
     </groups>
-    <test started-at="2023-11-08T19:26:22 PST" name="Default test" finished-at="2023-11-08T19:26:29 PST" duration-ms="6674">
+    <test started-at="2023-11-09T12:21:04 PST" name="Default test" finished-at="2023-11-09T12:21:13 PST" duration-ms="9320">
       <class name="SeleniumProject.automation_exercise.tests.ContactUsTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-08T19:26:22 PST" name="launchWebSite" finished-at="2023-11-08T19:26:27 PST" duration-ms="4907" status="PASS">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-09T12:21:04 PST" name="launchWebSite" finished-at="2023-11-09T12:21:09 PST" duration-ms="4877" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="FillContactUsForm(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-08T19:26:27 PST" name="FillContactUsForm" data-provider="contactus_data" finished-at="2023-11-08T19:26:29 PST" duration-ms="1477" status="PASS">
+        <test-method signature="FillContactUsForm(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-09T12:21:09 PST" name="FillContactUsForm" data-provider="contactus_data" finished-at="2023-11-09T12:21:13 PST" duration-ms="4201" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FillContactUsForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-08T19:26:29 PST" name="tearDown" finished-at="2023-11-08T19:26:29 PST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@1a6d8329]" started-at="2023-11-09T12:21:13 PST" name="tearDown" finished-at="2023-11-09T12:21:13 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

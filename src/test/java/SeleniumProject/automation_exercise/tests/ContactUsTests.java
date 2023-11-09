@@ -14,7 +14,7 @@ import testcomponents.BaseTest;
 public class ContactUsTests extends BaseTest {
 
 	@Test (dataProvider = "contactus_data")
-	public void FillContactUsForm(HashMap<String,String> data)
+	public void FillContactUsForm(HashMap<String,String> data) throws IOException, InterruptedException
 	{
 		ContactPage con = homepage.goToContactUs();
 		
@@ -25,8 +25,13 @@ public class ContactUsTests extends BaseTest {
 		con.enterSubject(data.get("subject"));
 		con.enterMessage(data.get("message"));
 		con.uploadFile();
+		con.submitForm();
+		con.acceptAlert();
 		
-	}
+		Assert.assertEquals(con.getSuccessMsg(), "Success! Your details have been submitted successfully.");
+	
+		con.goToHomePage();
+	}	
 	
 	@DataProvider (name="contactus_data")
 	public Object[][] signupTestData() throws IOException

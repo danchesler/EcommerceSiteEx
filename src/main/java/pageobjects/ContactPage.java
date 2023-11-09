@@ -1,6 +1,7 @@
 package pageobjects;
 
-import org.openqa.selenium.JavascriptExecutor;
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,6 +36,15 @@ public class ContactPage extends PageCommon {
 	@FindBy(xpath="//input[@name='upload_file']")
 	private WebElement chooseFile;
 	
+	@FindBy(xpath="//input[contains(@class,'submit_form')]")
+	private WebElement submitForm;
+	
+	@FindBy(xpath="(//div[contains(@class,'alert-success')])[1]")
+	private WebElement submitSuccess;
+	
+	@FindBy(xpath="//div[@id='form-section']/a/span")
+	private WebElement homeBtn;
+	
 	public boolean getInTouchIsDisplayed()
 	{
 		return getInTouch.isDisplayed();
@@ -60,20 +70,48 @@ public class ContactPage extends PageCommon {
 		messageBox.sendKeys(msg);
 	}
 	
-	public WebElement getChooseFileEle()
+	public void submitForm()
 	{
-		return chooseFile;
+		submitForm.click();
+	}
+
+	public void acceptAlert() throws InterruptedException
+	{
+		Thread.sleep(1000);
+		driver.switchTo().alert().accept();
 	}
 	
-	public void uploadFile()
+	public void cancelAlert() throws InterruptedException
+	{
+		Thread.sleep(1000);
+		driver.switchTo().alert().dismiss();
+	}
+	
+	
+	public void uploadFile() throws IOException, InterruptedException
 	{
 		Actions a = new Actions(driver);
 		a.moveToElement(chooseFile).click().build().perform();
+		
+		Thread.sleep(1000);
+		String windowScript = "C:\\Users\\super\\eclipse-SeleniumProject\\automation-exercise\\resources\\fileupload.exe";
+		Runtime.getRuntime().exec(windowScript);
 		
 		/*
 		JavascriptExecutor ex = ((JavascriptExecutor)driver);
 		ex.executeScript("window.document.getElementsByName('upload_file')[0].click();");
 		*/
 
+	}
+	
+	public String getSuccessMsg()
+	{
+		return submitSuccess.getText();
+	}
+	
+	public HomePage goToHomePage()
+	{
+		homeBtn.click();
+		return new HomePage(driver);
 	}
 }

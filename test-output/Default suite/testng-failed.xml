@@ -6,7 +6,7 @@
       <class name="SeleniumProject.automation_exercise.tests.ContactUsTests">
         <methods>
           <include name="tearDown"/>
-          <include name="clickchoosefile"/>
+          <include name="FillContactUsForm" invocation-numbers="0"/>
           <include name="launchWebSite"/>
         </methods>
       </class> <!-- SeleniumProject.automation_exercise.tests.ContactUsTests -->
