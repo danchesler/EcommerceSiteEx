@@ -18,7 +18,7 @@ import pageobjects.HomePage;
 
 public class BaseTest extends TestUtilities {
 
-	private WebDriver driver;
+	protected WebDriver driver;
 	protected HomePage homepage;
 	
 	public WebDriver driverSetup() throws IOException
@@ -32,9 +32,8 @@ public class BaseTest extends TestUtilities {
 		if (browserName.equalsIgnoreCase("chrome"))
 		{
 			ChromeOptions op = new ChromeOptions();
-			op.addExtensions(new File("C:\\Users\\super\\eclipse-SeleniumProject\\automation-exercise\\resources\\ublock.crx"));
-			
-			
+			op.addExtensions(new File(System.getProperty("user.dir") + "\\resources\\ublock.crx"));
+		
 			driver = new ChromeDriver(op);
 		}
 		else if (browserName.equalsIgnoreCase("firefox"))

@@ -21,10 +21,26 @@ public class PageCommon {
 	@FindBy(xpath="//i[@class='fa fa-user']/parent::a")
 	private WebElement loggedInAs;
 	
+	@FindBy(linkText="Logout")
+	private WebElement logout;
+	
 	@FindBy(linkText="Delete Account")
 	private WebElement deleteAccount;
 	
+	
+	public String getPageURL()
+	{
+		return driver.getCurrentUrl();
+	}
+	
 	//Header links
+	
+	public SignUpPage Logout()
+	{
+		logout.click();
+		return new SignUpPage(driver);
+	}
+	
 	public SignUpPage goToSignUp()
 	{
 		signupLink.click();

@@ -6,7 +6,7 @@
       <class name="SeleniumProject.automation_exercise.tests.LoginTests">
         <methods>
           <include name="tearDown"/>
-          <include name="RegisterUser"/>
+          <include name="RegisterUserThenLogout" invocation-numbers="0"/>
           <include name="launchWebSite"/>
         </methods>
       </class> <!-- SeleniumProject.automation_exercise.tests.LoginTests -->

@@ -19,14 +19,32 @@ public class SignUpPage extends PageCommon {
 	
 	//Initial Login/Signup locators
 	
+	@FindBy(css=".login-form h2")
+	private WebElement loginHeader;
+	
+	@FindBy(css="input[data-qa='login-email']")
+	private WebElement emailLogin;
+	
+	@FindBy(css="input[data-qa='login-password']")
+	private WebElement passwordLogin;
+	
+	@FindBy(css=".login-form p")
+	private WebElement wrongLogin;
+	
+	@FindBy(css="button[data-qa*='login']")
+	private WebElement loginButton;
+	
 	@FindBy(css=".signup-form h2")
 	private WebElement signupHeader;
-
+	
 	@FindBy(css="input[data-qa*='name']")
 	private WebElement nameEditBox1;
 	
 	@FindBy(css="input[data-qa='signup-email']")
 	private WebElement emailEditBox;
+	
+	@FindBy(css=".signup-form p")
+	private WebElement emailExists;
 	
 	@FindBy(css="button[data-qa*='signup']")
 	private WebElement signupButton;
@@ -35,7 +53,7 @@ public class SignUpPage extends PageCommon {
 	
 	@FindBy(xpath="//div/h2/b")
 	private WebElement enterAccountInfoHeader;
-	
+
 	@FindBy(id="id_gender1")
 	private WebElement mrRadiobtn;
 	
@@ -95,10 +113,33 @@ public class SignUpPage extends PageCommon {
 	
 	@FindBy(css="[data-qa*='create']")
 	private WebElement createAccount;
+
 	
 	//Initial login/signup methods
 	
-	public WebElement getSignupHeaderElement()
+	public WebElement getLoginHeaderEle()
+	{
+		return loginHeader;
+	}
+	
+	public void enterExistingUserInfo(String email, String pw)
+	{
+		emailLogin.sendKeys(email);
+		passwordLogin.sendKeys(pw);
+	}
+	
+	public String getIncorrectLoginText()
+	{
+		return wrongLogin.getText();
+	}
+	
+	public HomePage login()
+	{
+		loginButton.click();
+		return new HomePage(driver);
+	}
+	
+	public WebElement getSignupHeaderEle()
 	{
 		return signupHeader;
 	}
@@ -107,6 +148,11 @@ public class SignUpPage extends PageCommon {
 	{
 		nameEditBox1.sendKeys(name);
 		emailEditBox.sendKeys(email);
+	}
+	
+	public String getEmailExistsText()
+	{
+		return emailExists.getText();
 	}
 	
 	public void submitNewUser()
