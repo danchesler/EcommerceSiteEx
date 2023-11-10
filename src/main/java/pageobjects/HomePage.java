@@ -22,11 +22,12 @@ public class HomePage extends PageCommon {
 		driver.get("https://www.automationexercise.com/");
 		
 		//wait for ads to go away
-		Thread.sleep(2000);
+		/*
+		System.out.println(driver.getCurrentUrl());
 		if (driver.getCurrentUrl().contains("google"))
 		{
 			driver.navigate().back();
-		}
+		}*/
 	}
 	
 	

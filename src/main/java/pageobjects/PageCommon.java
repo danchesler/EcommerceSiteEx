@@ -13,12 +13,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class PageCommon {
 
 	WebDriver driver;
+	Actions a;
 	
 	public PageCommon (WebDriver driver)
 	{
+		a = new Actions(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(css="a[href*='/products']")
+	private WebElement products;
 	
 	@FindBy(css="a[href*='login']")
 	WebElement signupLink;
@@ -43,7 +48,18 @@ public class PageCommon {
 		return driver.getCurrentUrl();
 	}
 	
+	public String getPageTitle()
+	{
+		return driver.getTitle();
+	}
+	
 	//Header links
+	
+	public ProductsPage goToProducts()
+	{
+		a.moveToElement(products).doubleClick().build().perform();
+		return new ProductsPage(driver);
+	}
 	
 	public SignUpPage Logout()
 	{
@@ -59,7 +75,6 @@ public class PageCommon {
 	
 	public TestCasesPage goToTestCases()
 	{
-		Actions a = new Actions(driver);
 		a.moveToElement(testCases).doubleClick().build().perform();
 		return new TestCasesPage(driver);
 	}

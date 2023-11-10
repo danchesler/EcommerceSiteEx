@@ -1,27 +1,19 @@
 package pageobjects;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProductsPage extends PageCommon {
+public class ProductDetailsPage extends ProductsPage {
 
 	WebDriver driver;
 	
-	public ProductsPage(WebDriver driver) {
+	public ProductDetailsPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(css=".title")
-	private WebElement header;
-	
-	@FindBy(linkText="View Product")
-	private List<WebElement> viewProducts;
 	
 	@FindBy(css=".product-information h2")
 	private WebElement productName;
@@ -40,19 +32,31 @@ public class ProductsPage extends PageCommon {
 	
 	@FindBy(xpath="(//div[@class='product-information']/p/b)[3]")
 	private WebElement brand;
-	
-	
-	public String getProductsHeaderText()
-	{
-		return header.getText();
-	}
 
-	public ProductDetailsPage viewProductByIndex(int i)
+	
+	public boolean isCategoryDisplayed()
 	{
-		viewProducts.get(i).click();
-		
-		return new ProductDetailsPage(driver);
+		return category.isDisplayed();
 	}
 	
+	public boolean isPriceDisplayed()
+	{
+		return price.isDisplayed();
+	}
+	
+	public boolean isAvailabilityDisplayed()
+	{
+		return availability.isDisplayed();
+	}
+	
+	public boolean isConditionDisplayed()
+	{
+		return condition.isDisplayed();
+	}
+	
+	public boolean isBrandDisplayed()
+	{
+		return brand.isDisplayed();
+	}
 	
 }

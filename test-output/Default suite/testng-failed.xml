@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumProject.automation_exercise.tests.TestCasesTests">
+      <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
         <methods>
-          <include name="NavigateToPage"/>
-          <include name="BrowseTestCases"/>
+          <include name="ViewFirstProduct"/>
+          <include name="ViewProductsPage"/>
           <include name="tearDown"/>
           <include name="launchWebSite"/>
         </methods>
-      </class> <!-- SeleniumProject.automation_exercise.tests.TestCasesTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.ProductsTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

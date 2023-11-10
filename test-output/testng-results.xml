@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-09T14:12:09 PST" name="Default suite" finished-at="2023-11-09T14:13:12 PST" duration-ms="63060">
+  <suite started-at="2023-11-09T15:41:39 PST" name="Default suite" finished-at="2023-11-09T15:41:46 PST" duration-ms="6129">
     <groups>
     </groups>
-    <test started-at="2023-11-09T14:12:09 PST" name="Default test" finished-at="2023-11-09T14:13:12 PST" duration-ms="63060">
-      <class name="SeleniumProject.automation_exercise.tests.TestCasesTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:12:09 PST" name="launchWebSite" finished-at="2023-11-09T14:12:17 PST" duration-ms="8281" status="PASS">
+    <test started-at="2023-11-09T15:41:39 PST" name="Default test" finished-at="2023-11-09T15:41:46 PST" duration-ms="6129">
+      <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:39 PST" name="launchWebSite" finished-at="2023-11-09T15:41:43 PST" duration-ms="3913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="NavigateToPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:12:17 PST" name="NavigateToPage" finished-at="2023-11-09T14:12:17 PST" duration-ms="419" status="PASS">
+        <test-method signature="ViewProductsPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:43 PST" name="ViewProductsPage" finished-at="2023-11-09T15:41:44 PST" duration-ms="1055" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigateToPage -->
-        <test-method signature="BrowseTestCases()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:12:17 PST" name="BrowseTestCases" finished-at="2023-11-09T14:13:12 PST" depends-on-methods="SeleniumProject.automation_exercise.tests.TestCasesTests.NavigateToPage" duration-ms="54327" status="PASS">
+        </test-method> <!-- ViewProductsPage -->
+        <test-method signature="ViewFirstProduct()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:44 PST" name="ViewFirstProduct" finished-at="2023-11-09T15:41:46 PST" depends-on-methods="SeleniumProject.automation_exercise.tests.ProductsTests.ViewProductsPage" duration-ms="1125" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- BrowseTestCases -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@7b36aa0c]" started-at="2023-11-09T14:13:12 PST" name="tearDown" finished-at="2023-11-09T14:13:12 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- ViewFirstProduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:46 PST" name="tearDown" finished-at="2023-11-09T15:41:46 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.TestCasesTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.ProductsTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

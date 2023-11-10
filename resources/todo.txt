@@ -1,0 +1,4 @@
+bypass google ad more reliably
+	-homepage
+replace thread.sleep browsing testcases page
+	-testcasespage
