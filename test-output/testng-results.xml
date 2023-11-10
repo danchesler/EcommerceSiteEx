@@ -2,24 +2,31 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-09T15:41:39 PST" name="Default suite" finished-at="2023-11-09T15:41:46 PST" duration-ms="6129">
+  <suite started-at="2023-11-09T17:53:07 PST" name="Default suite" finished-at="2023-11-09T17:53:16 PST" duration-ms="8800">
     <groups>
     </groups>
-    <test started-at="2023-11-09T15:41:39 PST" name="Default test" finished-at="2023-11-09T15:41:46 PST" duration-ms="6129">
+    <test started-at="2023-11-09T17:53:07 PST" name="Default test" finished-at="2023-11-09T17:53:16 PST" duration-ms="8800">
       <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:39 PST" name="launchWebSite" finished-at="2023-11-09T15:41:43 PST" duration-ms="3913" status="PASS">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:07 PST" name="launchWebSite" finished-at="2023-11-09T17:53:14 PST" duration-ms="6987" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="ViewProductsPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:43 PST" name="ViewProductsPage" finished-at="2023-11-09T15:41:44 PST" duration-ms="1055" status="PASS">
+        <test-method signature="ViewProductsPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:14 PST" name="ViewProductsPage" finished-at="2023-11-09T17:53:15 PST" duration-ms="609" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ViewProductsPage -->
-        <test-method signature="ViewFirstProduct()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:44 PST" name="ViewFirstProduct" finished-at="2023-11-09T15:41:46 PST" depends-on-methods="SeleniumProject.automation_exercise.tests.ProductsTests.ViewProductsPage" duration-ms="1125" status="PASS">
+        <test-method signature="SearchForProducts(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:15 PST" name="SearchForProducts" data-provider="product_data" finished-at="2023-11-09T17:53:16 PST" depends-on-methods="SeleniumProject.automation_exercise.tests.ProductsTests.ViewProductsPage" duration-ms="954" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{product=dress}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ViewFirstProduct -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@7b36aa0c]" started-at="2023-11-09T15:41:46 PST" name="tearDown" finished-at="2023-11-09T15:41:46 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- SearchForProducts -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:16 PST" name="tearDown" finished-at="2023-11-09T17:53:16 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

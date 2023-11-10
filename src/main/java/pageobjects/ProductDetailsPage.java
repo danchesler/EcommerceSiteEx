@@ -39,6 +39,11 @@ public class ProductDetailsPage extends ProductsPage {
 		return category.isDisplayed();
 	}
 	
+	public String getCategory()
+	{
+		return category.getText();
+	}
+	
 	public boolean isPriceDisplayed()
 	{
 		return price.isDisplayed();

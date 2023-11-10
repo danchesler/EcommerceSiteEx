@@ -5,8 +5,8 @@
     <classes>
       <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
         <methods>
-          <include name="ViewFirstProduct"/>
           <include name="ViewProductsPage"/>
+          <include name="SearchForProducts" invocation-numbers="0"/>
           <include name="tearDown"/>
           <include name="launchWebSite"/>
         </methods>

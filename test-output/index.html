@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\super\AppData\Local\Temp\testng-eclipse-937802728\testng-customsuite.xml</span>
+                    <span>C:\Users\super\AppData\Local\Temp\testng-eclipse--2139954871\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="SeleniumProject.automation_exercise.tests.ProductsTests" class="method navigator-link" hash-for-method="ViewFirstProduct">ViewFirstProduct</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="SeleniumProject.automation_exercise.tests.ProductsTests" class="method navigator-link" hash-for-method="SearchForProducts({product=dress})">SearchForProducts({product=dress})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -131,9 +131,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ViewFirstProduct">
-                  </a> <!-- ViewFirstProduct -->
-                  <span class="method-name">ViewFirstProduct</span>
+                  <a name="SearchForProducts({product=dress})">
+                  </a> <!-- SearchForProducts({product=dress}) -->
+                  <span class="method-name">SearchForProducts</span>
+                  <span class="parameters">({product=dress})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -148,7 +149,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\super\AppData\Local\Temp\testng-eclipse-937802728\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\super\AppData\Local\Temp\testng-eclipse--2139954871\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -160,7 +161,7 @@
       &lt;class name=&quot;SeleniumProject.automation_exercise.tests.ProductsTests&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;ViewProductsPage&quot;/&gt;
-          &lt;include name=&quot;ViewFirstProduct&quot;/&gt;
+          &lt;include name=&quot;SearchForProducts&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- SeleniumProject.automation_exercise.tests.ProductsTests --&gt;
     &lt;/classes&gt;
@@ -204,18 +205,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ViewFirstProduct')
+data.setCell(0, 1, 'SearchForProducts')
 data.setCell(0, 2, 'SeleniumProject.automation_exercise.tests.ProductsTests')
-data.setCell(0, 3, 1125);
+data.setCell(0, 3, 954);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'ViewProductsPage')
 data.setCell(1, 2, 'SeleniumProject.automation_exercise.tests.ProductsTests')
-data.setCell(1, 3, 1055);
+data.setCell(1, 3, 609);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -230,9 +231,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">SeleniumProject.automation_exercise.tests.ProductsTests</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">ViewFirstProduct</span>
+                <br/>
+                <span class="ignored-method-name">test</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -248,15 +258,15 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="test-method">
                 <span class="method-name">ViewProductsPage</span>
-                <span class="method-start">3932 ms</span>
+                <span class="method-start">7007 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">ViewFirstProduct</span>
-                <span class="method-start">4993 ms</span>
+                <span class="method-name">SearchForProducts({product=dress})</span>
+                <span class="method-start">7830 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">6119 ms</span>
+                <span class="method-start">8786 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

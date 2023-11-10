@@ -53,6 +53,11 @@ public class PageCommon {
 		return driver.getTitle();
 	}
 	
+	public void goPrevPage()
+	{
+		driver.navigate().back();
+	}
+	
 	//Header links
 	
 	public ProductsPage goToProducts()

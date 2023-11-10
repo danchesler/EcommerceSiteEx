@@ -1,11 +1,13 @@
 package pageobjects;
 
+
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 
 public class ProductsPage extends PageCommon {
 
@@ -23,23 +25,16 @@ public class ProductsPage extends PageCommon {
 	@FindBy(linkText="View Product")
 	private List<WebElement> viewProducts;
 	
-	@FindBy(css=".product-information h2")
-	private WebElement productName;
+	@FindBy(id="search_product")
+	private WebElement searchBar;
 	
-	@FindBy(xpath="(//div[@class='product-information']/p)[1]")
-	private WebElement category;
-		
-	@FindBy(xpath="//div[@class='product-information']/span/span")
-	private WebElement price;
+	@FindBy(id="submit_search")
+	private WebElement searchBtn;
 	
-	@FindBy(xpath="(//div[@class='product-information']/p/b)[1]")
-	private WebElement availability;
+	@FindBy(css=".productinfo p")
+	private List<WebElement> productNames;
 	
-	@FindBy(xpath="(//div[@class='product-information']/p/b)[2]")
-	private WebElement condition;
-	
-	@FindBy(xpath="(//div[@class='product-information']/p/b)[3]")
-	private WebElement brand;
+	//product details locators
 	
 	
 	public String getProductsHeaderText()
@@ -47,6 +42,16 @@ public class ProductsPage extends PageCommon {
 		return header.getText();
 	}
 
+	public List<WebElement> getProductList()
+	{
+		return viewProducts;
+	}
+	
+	public List<WebElement> getProductNames()
+	{
+		return productNames;
+	}
+	
 	public ProductDetailsPage viewProductByIndex(int i)
 	{
 		viewProducts.get(i).click();
@@ -54,5 +59,11 @@ public class ProductsPage extends PageCommon {
 		return new ProductDetailsPage(driver);
 	}
 	
+	public void searchProduct(String product)
+	{
+		searchBar.sendKeys(product);
+		searchBtn.click();
+	}
 	
+
 }
