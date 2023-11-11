@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\super\AppData\Local\Temp\testng-eclipse--2139954871\testng-customsuite.xml</span>
+                    <span>C:\Users\super\AppData\Local\Temp\testng-eclipse-1432824250\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="SeleniumProject.automation_exercise.tests.ProductsTests" class="method navigator-link" hash-for-method="SearchForProducts({product=dress})">SearchForProducts({product=dress})</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="SeleniumProject.automation_exercise.tests.ProductsTests" class="method navigator-link" hash-for-method="ViewProductsPage">ViewProductsPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="SeleniumProject.automation_exercise.tests.OrderPurchaseVerification" class="method navigator-link" hash-for-method="RegisterAtCheckout({country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=...)">RegisterAtCheckout({country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -126,22 +121,15 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">SeleniumProject.automation_exercise.tests.ProductsTests</span>
+              <span class="class-name">SeleniumProject.automation_exercise.tests.OrderPurchaseVerification</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="SearchForProducts({product=dress})">
-                  </a> <!-- SearchForProducts({product=dress}) -->
-                  <span class="method-name">SearchForProducts</span>
-                  <span class="parameters">({product=dress})</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="ViewProductsPage">
-                  </a> <!-- ViewProductsPage -->
-                  <span class="method-name">ViewProductsPage</span>
+                  <a name="RegisterAtCheckout({country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=...)">
+                  </a> <!-- RegisterAtCheckout({country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=...) -->
+                  <span class="method-name">RegisterAtCheckout</span>
+                  <span class="parameters">({country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=(123) 456-7890, year=1990, address2=Suite 5, city=San Diego, expyear=2025, title=Mr., lastname=Fisher, zipcode=92131, cvc=123, password=testpw123, month=May, expmonth=03, company=Microsoft, username2=testuser12345, state=California, cardnumber=1111 2222 3333 4444, username1=testuser123, day=9, email=testt98760@gmail.com})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\super\AppData\Local\Temp\testng-eclipse--2139954871\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\super\AppData\Local\Temp\testng-eclipse-1432824250\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -158,12 +146,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;SeleniumProject.automation_exercise.tests.ProductsTests&quot;&gt;
+      &lt;class name=&quot;SeleniumProject.automation_exercise.tests.OrderPurchaseVerification&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;ViewProductsPage&quot;/&gt;
-          &lt;include name=&quot;SearchForProducts&quot;/&gt;
+          &lt;include name=&quot;RegisterAtCheckout&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- SeleniumProject.automation_exercise.tests.ProductsTests --&gt;
+      &lt;/class&gt; &lt;!-- SeleniumProject.automation_exercise.tests.OrderPurchaseVerification --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -203,20 +190,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SearchForProducts')
-data.setCell(0, 2, 'SeleniumProject.automation_exercise.tests.ProductsTests')
-data.setCell(0, 3, 954);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'ViewProductsPage')
-data.setCell(1, 2, 'SeleniumProject.automation_exercise.tests.ProductsTests')
-data.setCell(1, 3, 609);
+data.setCell(0, 1, 'RegisterAtCheckout')
+data.setCell(0, 2, 'SeleniumProject.automation_exercise.tests.OrderPurchaseVerification')
+data.setCell(0, 3, 8116);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -235,11 +218,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">SeleniumProject.automation_exercise.tests.ProductsTests</span>
+              <span class="ignored-class-name">SeleniumProject.automation_exercise.tests.OrderPurchaseVerification</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">ViewFirstProduct</span>
+                <span class="ignored-method-name">CartItemQuantityValidation</span>
                 <br/>
-                <span class="ignored-method-name">test</span>
+                <span class="ignored-method-name">AddProductsToCart</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -251,22 +234,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">SeleniumProject.automation_exercise.tests.ProductsTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">SeleniumProject.automation_exercise.tests.OrderPurchaseVerification</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">launchWebSite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">ViewProductsPage</span>
-                <span class="method-start">7007 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">SearchForProducts({product=dress})</span>
-                <span class="method-start">7830 ms</span>
+                <span class="method-name">RegisterAtCheckout({country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=...)</span>
+                <span class="method-start">8422 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">8786 ms</span>
+                <span class="method-start">16542 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -2,3 +2,5 @@ bypass google ad more reliably
 	-homepage
 replace thread.sleep browsing testcases page
 	-testcasespage
+check where i have explicit waits
+why js executor doesn't scroll

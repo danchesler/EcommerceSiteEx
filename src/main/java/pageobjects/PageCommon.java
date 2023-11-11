@@ -1,29 +1,34 @@
 package pageobjects;
 
-import java.time.Duration;
-
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PageCommon {
+public class PageCommon extends PageUtilities {
 
-	WebDriver driver;
-	Actions a;
+	private WebDriver driver;
+	protected Actions a;
+	private JavascriptExecutor js;
 	
 	public PageCommon (WebDriver driver)
 	{
-		a = new Actions(driver);
+		super(driver);
+		this.a = new Actions(driver);
+		this.js = (JavascriptExecutor) driver;
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	
+	//Header locators
+	
 	@FindBy(css="a[href*='/products']")
 	private WebElement products;
+	
+	@FindBy(linkText="Cart")
+	private WebElement cart;
 	
 	@FindBy(css="a[href*='login']")
 	WebElement signupLink;
@@ -43,27 +48,42 @@ public class PageCommon {
 	@FindBy(linkText="Contact us")
 	private WebElement contactUs;
 	
-	public String getPageURL()
-	{
-		return driver.getCurrentUrl();
-	}
+	//Footer locators
 	
-	public String getPageTitle()
-	{
-		return driver.getTitle();
-	}
+	@FindBy(css=".footer-bottom")
+	private WebElement footer;
 	
-	public void goPrevPage()
-	{
-		driver.navigate().back();
-	}
+	@FindBy(css="#footer div h2")
+	private WebElement subscriptionText;
 	
-	//Header links
+	@FindBy(id="susbscribe_email")
+	private WebElement emailEditBox;
+	
+	@FindBy(id="subscribe")
+	private WebElement subscribeBtn;
+	
+	@FindBy(css=".alert-success.alert")
+	private WebElement subSuccessAlert;
+	
+	//Added to cart popup
+	@FindBy(css="a[href*='view'] u")
+	protected WebElement viewCartPopup;
+	
+	@FindBy(css="button[data-dismiss='modal']")
+	protected WebElement continueShopping;
+	
+	//Header methods
 	
 	public ProductsPage goToProducts()
 	{
 		a.moveToElement(products).doubleClick().build().perform();
 		return new ProductsPage(driver);
+	}
+	
+	public CartPage goToCart()
+	{
+		a.moveToElement(cart).doubleClick().build().perform();
+		return new CartPage(driver);
 	}
 	
 	public SignUpPage Logout()
@@ -102,10 +122,49 @@ public class PageCommon {
 		return new ContactPage(driver);
 	}
 	
-	public void waitForWebElementToAppear(WebElement ele)
+	//Footer Methods
+	
+	public String getSubscriptionText()
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOf(ele));
+		return subscriptionText.getText();
 	}
+	
+	public void enterSubscribeEmail(String email)
+	{
+		emailEditBox.sendKeys(email);
+	}
+	
+	public void submitSubscription()
+	{
+		subscribeBtn.click();
+	}
+	
+	public WebElement getSubcribeButtonEle()
+	{
+		return subscribeBtn;
+	}
+	
+	public String getSuccessAlert()
+	{
+		return subSuccessAlert.getText();
+	}
+	
+	public void scrollToFooter()
+	{
+		js.executeScript("arguments[0].scrollIntoView()", footer);
+	}
+	
+	//Add to cart popup
+	public void continueShopping()
+	{
+		continueShopping.click();
+	}
+	
+	public CartPage viewCartAfterAdding()
+	{
+		viewCartPopup.click();
+		return new CartPage(driver);
+	}
+	
 	
 }

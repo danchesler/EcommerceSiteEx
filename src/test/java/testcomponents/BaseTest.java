@@ -4,13 +4,18 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -35,6 +40,16 @@ public class BaseTest extends TestUtilities {
 			ChromeOptions op = new ChromeOptions();
 			op.addExtensions(new File(System.getProperty("user.dir") + "\\resources\\ublock.crx"));
 		
+			op.addArguments("--disable-save-password-bubble");
+			Map<String, Object> prefs = new HashMap<String, Object>();
+		    prefs.put("credentials_enable_service", false);
+		    prefs.put("profile.password_manager_enabled", false);
+		    
+		    prefs.put("autofill.profile_enabled", false);
+		    
+		    op.setExperimentalOption("prefs", prefs);
+			//DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			
 			driver = new ChromeDriver(op);
 		}
 		else if (browserName.equalsIgnoreCase("firefox"))
@@ -59,6 +74,18 @@ public class BaseTest extends TestUtilities {
 		homepage = new HomePage(driver);
 		homepage.goToHomepage();
 		return homepage;
+	}
+	
+	public void waitForWebElementToAppear(WebElement ele)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOf(ele));
+	}
+	
+	public void waitForElementToBeClickable(WebElement ele)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
 	
 	@AfterTest

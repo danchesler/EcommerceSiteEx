@@ -5,13 +5,14 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
 public class ProductsPage extends PageCommon {
 
-	WebDriver driver;
+	private WebDriver driver;
 	
 	public ProductsPage(WebDriver driver) {
 		super(driver);
@@ -31,11 +32,17 @@ public class ProductsPage extends PageCommon {
 	@FindBy(id="submit_search")
 	private WebElement searchBtn;
 	
+	@FindBy(css=".productinfo h2")
+	private List<WebElement> productPrices;
+	
 	@FindBy(css=".productinfo p")
 	private List<WebElement> productNames;
 	
-	//product details locators
+	@FindBy(css=".overlay-content .add-to-cart")
+	private List<WebElement> overlayAddToCart;
 	
+	@FindBy(css=".productinfo")
+	private List<WebElement> productInfoBox;
 	
 	public String getProductsHeaderText()
 	{
@@ -65,5 +72,18 @@ public class ProductsPage extends PageCommon {
 		searchBtn.click();
 	}
 	
-
+	public void addToCartByIndex(int index) throws InterruptedException
+	{
+		a = new Actions(driver);
+		a.moveToElement(productInfoBox.get(index)).build().perform();
+		Thread.sleep(250);
+		
+		overlayAddToCart.get(index).click();
+	}
+	
+	public int getProductPriceByIndex(int index)
+	{
+		return removeDollarFromPriceStr(productPrices.get(index));
+	}
+	
 }

@@ -18,6 +18,12 @@ public class ProductDetailsPage extends ProductsPage {
 	@FindBy(css=".product-information h2")
 	private WebElement productName;
 	
+	@FindBy(id="quantity")
+	private WebElement quantity;
+	
+	@FindBy(css="button.cart")
+	private WebElement addToCart;
+	
 	@FindBy(xpath="(//div[@class='product-information']/p)[1]")
 	private WebElement category;
 		
@@ -47,6 +53,17 @@ public class ProductDetailsPage extends ProductsPage {
 	public boolean isPriceDisplayed()
 	{
 		return price.isDisplayed();
+	}
+	
+	public void changeQuantity(int q)
+	{
+		quantity.clear();
+		quantity.sendKeys(Integer.toString(q));
+	}
+	
+	public void addToCart()
+	{
+		addToCart.click();
 	}
 	
 	public boolean isAvailabilityDisplayed()

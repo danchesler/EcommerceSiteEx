@@ -27,6 +27,11 @@ public class DeleteAccountPage extends PageCommon {
 		return accountDeletedText;
 	}
 	
+	public String getAccountDeletedText()
+	{
+		return accountDeletedText.getText();
+	}
+	
 	public void clickContinue()
 	{
 		continueBtn.click();

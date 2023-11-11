@@ -1,36 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-09T17:53:07 PST" name="Default suite" finished-at="2023-11-09T17:53:16 PST" duration-ms="8800">
+  <suite started-at="2023-11-10T17:44:47 PST" name="Default suite" finished-at="2023-11-10T17:45:04 PST" duration-ms="16550">
     <groups>
     </groups>
-    <test started-at="2023-11-09T17:53:07 PST" name="Default test" finished-at="2023-11-09T17:53:16 PST" duration-ms="8800">
-      <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:07 PST" name="launchWebSite" finished-at="2023-11-09T17:53:14 PST" duration-ms="6987" status="PASS">
+    <test started-at="2023-11-10T17:44:47 PST" name="Default test" finished-at="2023-11-10T17:45:04 PST" duration-ms="16550">
+      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseVerification">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseVerification@f78a47e]" started-at="2023-11-10T17:44:47 PST" name="launchWebSite" finished-at="2023-11-10T17:44:55 PST" duration-ms="8208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="ViewProductsPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:14 PST" name="ViewProductsPage" finished-at="2023-11-09T17:53:15 PST" duration-ms="609" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ViewProductsPage -->
-        <test-method signature="SearchForProducts(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:15 PST" name="SearchForProducts" data-provider="product_data" finished-at="2023-11-09T17:53:16 PST" depends-on-methods="SeleniumProject.automation_exercise.tests.ProductsTests.ViewProductsPage" duration-ms="954" status="PASS">
+        <test-method signature="RegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseVerification@f78a47e]" started-at="2023-11-10T17:44:55 PST" name="RegisterAtCheckout" data-provider="signup_data" finished-at="2023-11-10T17:45:04 PST" duration-ms="8116" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{product=dress}]]>
+                <![CDATA[{country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=(123) 456-7890, year=1990, address2=Suite 5, city=San Diego, expyear=2025, title=Mr., lastname=Fisher, zipcode=92131, cvc=123, password=testpw123, month=May, expmonth=03, company=Microsoft, username2=testuser12345, state=California, cardnumber=1111 2222 3333 4444, username1=testuser123, day=9, email=testt98760@gmail.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchForProducts -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@46cdf8bd]" started-at="2023-11-09T17:53:16 PST" name="tearDown" finished-at="2023-11-09T17:53:16 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- RegisterAtCheckout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseVerification@f78a47e]" started-at="2023-11-10T17:45:04 PST" name="tearDown" finished-at="2023-11-10T17:45:04 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.ProductsTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseVerification -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

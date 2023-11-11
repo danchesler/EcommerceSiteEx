@@ -9,10 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import pageobjects.DeleteAccountPage;
 import pageobjects.ProductDetailsPage;
 import pageobjects.ProductsPage;
-import pageobjects.SignUpPage;
 import testcomponents.BaseTest;
 
 public class ProductsTests extends BaseTest {
@@ -63,7 +61,6 @@ public class ProductsTests extends BaseTest {
 		}
 		
 		Assert.assertTrue(isValidSearch);
-		
 	}
 	
 	@Test

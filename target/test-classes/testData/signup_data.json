@@ -3,7 +3,7 @@
 	"username1" : "testuser123",
 	"email" : "testt98760@gmail.com",
 	
-	"title" : "mr.",
+	"title" : "Mr.",
 	"username2" : "testuser12345",
 	"password" : "testpw123",
 	"day" : "9",
@@ -19,7 +19,13 @@
 	"state" : "California",
 	"city" : "San Diego",
 	"zipcode" : "92131",
-	"mobilenumber" : "(123) 456-7890"
+	"mobilenumber" : "(123) 456-7890",
+
+	"nameoncard" : "Bob Fisher",
+	"cardnumber" : "1111 2222 3333 4444",
+	"cvc" : "123",
+	"expmonth" : "03",
+	"expyear" : "2025"
 
 }
 
