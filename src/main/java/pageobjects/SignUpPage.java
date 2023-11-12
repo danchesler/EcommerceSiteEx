@@ -124,7 +124,7 @@ public class SignUpPage extends PageCommon {
 		return loginHeader;
 	}
 	
-	public void enterExistingUserInfo(String email, String pw)
+	public void enterLoginDetails(String email, String pw)
 	{
 		emailLogin.sendKeys(email);
 		passwordLogin.sendKeys(pw);
@@ -135,7 +135,7 @@ public class SignUpPage extends PageCommon {
 		return wrongLogin.getText();
 	}
 	
-	public HomePage login()
+	public HomePage submitLogin()
 	{
 		loginButton.click();
 		return new HomePage(driver);

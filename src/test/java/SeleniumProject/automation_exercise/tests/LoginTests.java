@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import pageobjects.AccountCreatedPage;
 import pageobjects.DeleteAccountPage;
-import pageobjects.HomePage;
 import pageobjects.SignUpPage;
 import testcomponents.BaseTest;
 
@@ -32,10 +31,10 @@ public class LoginTests extends BaseTest {
 		AccountCreatedPage acp = sp.createAccount();
 		Assert.assertTrue(acp.isAccountCreatedDisplayed());
 		
-		HomePage hp = acp.clickContinue();
-		Assert.assertEquals(hp.getLoggedInAsText(), "Logged in as " + data.get("username2"));
+		homepage = acp.clickContinue();
+		Assert.assertEquals(homepage.getLoggedInAsText(), "Logged in as " + data.get("username2"));
 		
-		DeleteAccountPage dap =  hp.deleteAccount();
+		DeleteAccountPage dap =  homepage.deleteAccount();
 		Assert.assertTrue(dap.getAccountDeletedEle().isDisplayed());
 		dap.clickContinue();
 		
@@ -48,8 +47,8 @@ public class LoginTests extends BaseTest {
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getLoginHeaderEle().getText(),"Login to your account");
 		
-		sp.enterExistingUserInfo(data.get("email"), data.get("password"));
-		sp.login();
+		sp.enterLoginDetails(data.get("email"), data.get("password"));
+		sp.submitLogin();
 		
 		DeleteAccountPage dap = sp.deleteAccount();
 		Assert.assertTrue(dap.getAccountDeletedEle().isDisplayed());
@@ -61,8 +60,8 @@ public class LoginTests extends BaseTest {
 	public void LoginInvalidUser(HashMap<String,String> data)
 	{
 		SignUpPage sp = homepage.goToSignUp();
-		sp.enterExistingUserInfo(data.get("email"), data.get("password"));
-		sp.login();
+		sp.enterLoginDetails(data.get("email"), data.get("password"));
+		sp.submitLogin();
 		
 		Assert.assertEquals(sp.getIncorrectLoginText(), "Your email or password is incorrect!");
 	}
@@ -73,12 +72,12 @@ public class LoginTests extends BaseTest {
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getLoginHeaderEle().getText(),"Login to your account");
 		
-		sp.enterExistingUserInfo(data.get("email"), data.get("password"));
-		HomePage hp = sp.login();
+		sp.enterLoginDetails(data.get("email"), data.get("password"));
+		homepage = sp.submitLogin();
 		
-		Assert.assertEquals(hp.getLoggedInAsText(), "Logged in as " + data.get("username2"));
+		Assert.assertEquals(homepage.getLoggedInAsText(), "Logged in as " + data.get("username2"));
 		
-		sp = hp.Logout();
+		sp = homepage.Logout();
 		
 		Assert.assertEquals(sp.getPageURL(), "https://www.automationexercise.com/login");
 		
@@ -97,7 +96,7 @@ public class LoginTests extends BaseTest {
 	}
 	
 	//Used to setup a registered user
-	@Test (dataProvider="signup_data")
+	@Test (dataProvider="login_data")
 	public void RegisterUserThenLogout(HashMap<String,String> data)
 	{
 		SignUpPage sp = homepage.goToSignUp();
@@ -111,8 +110,8 @@ public class LoginTests extends BaseTest {
 		AccountCreatedPage acp = sp.createAccount();
 		Assert.assertTrue(acp.isAccountCreatedDisplayed());
 		
-		HomePage hp = acp.clickContinue();
-		hp.Logout();
+		homepage = acp.clickContinue();
+		homepage.Logout();
 		
 		driver.close();
 		
@@ -122,9 +121,9 @@ public class LoginTests extends BaseTest {
 	public void DeleteExistingUser(HashMap<String,String> data)
 	{
 		SignUpPage sp = homepage.goToSignUp();
-		sp.enterExistingUserInfo(data.get("email"), data.get("password"));
-		sp.login();
-		DeleteAccountPage dap = sp.deleteAccount();
+		sp.enterLoginDetails(data.get("email"), data.get("password"));
+		homepage = sp.submitLogin();
+		DeleteAccountPage dap = homepage.deleteAccount();
 		dap.clickContinue();
 	}
 	

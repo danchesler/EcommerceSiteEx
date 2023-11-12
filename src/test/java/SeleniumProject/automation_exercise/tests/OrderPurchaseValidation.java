@@ -20,9 +20,9 @@ import pageobjects.ProductsPage;
 import pageobjects.SignUpPage;
 import testcomponents.BaseTest;
 
-public class OrderPurchaseVerification extends BaseTest {
+public class OrderPurchaseValidation extends BaseTest {
 	
-	OrderPurchaseVerification opv;
+	OrderPurchaseValidation opv;
 	ProductsPage pp;
 
 	@Test
@@ -236,6 +236,62 @@ public class OrderPurchaseVerification extends BaseTest {
 		dap.clickContinue();
 	}
 		
+	
+	@Test (dataProvider = "login_data")
+	public void LoginBeforeCheckout(HashMap<String, String> data) throws InterruptedException
+	{
+		SignUpPage sp = homepage.goToSignUp();
+		sp.enterLoginDetails(data.get("email"), data.get("password"));
+		homepage = sp.submitLogin();
+		Assert.assertEquals(homepage.getLoggedInAsText(), "Logged in as " + data.get("username2"));
+		
+		homepage.scrollDownABit();
+		for (int i = 0; i < 3; i++)
+		{
+			homepage.addToCartByIndex(i);
+			homepage.continueShopping();
+		}
+		
+		CartPage cart = homepage.goToCart();
+		Assert.assertEquals(cart.getTrailHeaderText(), "Shopping Cart");
+		CheckoutPage ck = cart.proceedToCheckout();
+		
+		//Verify delivery address info is correct
+		Assert.assertEquals(data.get("title"), ck.getDeliveryUserTitle());
+		Assert.assertEquals(data.get("firstname"), ck.getDeliveryFirstName());
+		Assert.assertEquals(data.get("lastname"), ck.getDeliveryLastName());
+		Assert.assertEquals(data.get("company"), ck.getDeliveryCompany());
+		Assert.assertEquals(data.get("address"), ck.getDeliveryAddress1());
+		Assert.assertEquals(data.get("address2"), ck.getDeliveryAddress2());
+		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("city")));
+		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("state")));
+		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("zipcode")));
+		
+		//Verify billing address info is correct
+		Assert.assertEquals(data.get("title"), ck.getBillingUserTitle());
+		Assert.assertEquals(data.get("firstname"), ck.getBillingFirstName());
+		Assert.assertEquals(data.get("lastname"), ck.getBillingLastName());
+		Assert.assertEquals(data.get("company"), ck.getBillingCompany());
+		Assert.assertEquals(data.get("address"), ck.getBillingAddress1());
+		Assert.assertEquals(data.get("address2"), ck.getBillingAddress2());
+		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("city")));
+		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("state")));
+		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("zipcode")));
+		
+		ck.addComment("this is a product review");
+		PaymentPage pay = ck.placeOrder();
+		
+		pay.enterPaymentDetails(pay, data);
+		PaymentDonePage pdp = pay.payAndConfirmOrder();
+		
+		Assert.assertEquals(pdp.getOrderPlacedText(), "ORDER PLACED!");
+		
+		DeleteAccountPage dap = pdp.deleteAccount();
+		Assert.assertEquals(dap.getAccountDeletedText(), "ACCOUNT DELETED!");
+		dap.clickContinue();
+		
+	}
+	
 	@DataProvider (name="signup_data")
 	public Object[][] signupTestData() throws IOException
 	{
