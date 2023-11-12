@@ -1,32 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-12T12:43:11 PST" name="Default suite" finished-at="2023-11-12T12:43:25 PST" duration-ms="13911">
+  <suite started-at="2023-11-12T14:23:19 PST" name="Default suite" finished-at="2023-11-12T14:23:29 PST" duration-ms="9724">
     <groups>
     </groups>
-    <test started-at="2023-11-12T12:43:11 PST" name="Default test" finished-at="2023-11-12T12:43:25 PST" duration-ms="13911">
-      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@1ed4ae0f]" started-at="2023-11-12T12:43:11 PST" name="launchWebSite" finished-at="2023-11-12T12:43:19 PST" duration-ms="8046" status="PASS">
+    <test started-at="2023-11-12T14:23:19 PST" name="Default test" finished-at="2023-11-12T14:23:29 PST" duration-ms="9724">
+      <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@6d4d66d2]" started-at="2023-11-12T14:23:19 PST" name="launchWebSite" finished-at="2023-11-12T14:23:27 PST" duration-ms="7381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@1ed4ae0f]" started-at="2023-11-12T12:43:19 PST" name="LoginBeforeCheckout" data-provider="login_data" finished-at="2023-11-12T12:43:25 PST" duration-ms="5638" status="PASS">
+        <test-method signature="CategorizeProductsVerification(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@6d4d66d2]" started-at="2023-11-12T14:23:27 PST" name="CategorizeProductsVerification" data-provider="category_data" finished-at="2023-11-12T14:23:28 PST" duration-ms="700" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{country=United States, firstname=Dan, nameoncard=Dan Ches, address=890 Test Blvd, mobilenumber=(890) 567-1234, year=1990, address2=Unit 100, city=Denver, expyear=2024, title=Mr., lastname=Ches, zipcode=09812, cvc=321, password=secretpassword, month=May, expmonth=10, company=Google, username2=testuser12345, state=Colorado, cardnumber=4444 3333 2222 1111, username1=TestUser, day=9, email=testt98761@gmail.com}]]>
+                <![CDATA[{category=WOMEN, subcategory=TOPS}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginBeforeCheckout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@1ed4ae0f]" started-at="2023-11-12T12:43:25 PST" name="tearDown" finished-at="2023-11-12T12:43:25 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- CategorizeProductsVerification -->
+        <test-method signature="CategorizeProductsVerification(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@6d4d66d2]" started-at="2023-11-12T14:23:28 PST" name="CategorizeProductsVerification" data-provider="category_data" finished-at="2023-11-12T14:23:28 PST" duration-ms="671" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{category=MEN, subcategory=JEANS}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CategorizeProductsVerification -->
+        <test-method signature="CategorizeProductsVerification(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@6d4d66d2]" started-at="2023-11-12T14:23:28 PST" name="CategorizeProductsVerification" data-provider="category_data" finished-at="2023-11-12T14:23:29 PST" duration-ms="730" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{category=KIDS, subcategory=TOPS & SHIRTS}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CategorizeProductsVerification -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ProductsTests@6d4d66d2]" started-at="2023-11-12T14:23:29 PST" name="tearDown" finished-at="2023-11-12T14:23:29 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseValidation -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.ProductsTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

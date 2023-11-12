@@ -36,6 +36,9 @@ public class CartPage extends PageCommon {
 	@FindBy(css="tbody tr[id*='product'] .cart_total_price")
 	private List<WebElement> cartTotals;
 	
+	@FindBy(css=".fa-times")
+	private List<WebElement> cartRemoveItem;
+	
 	//Checkout popup
 	
 	@FindBy(css=".modal-content u")
@@ -91,5 +94,11 @@ public class CartPage extends PageCommon {
 	{
 		return removeDollarFromPriceStr(cartTotals.get(index));
 	}
+	
+	public void removeFirstCartitem()
+	{
+		cartRemoveItem.get(0).click();
+	}
+	
 	
 }

@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import pageobjects.CartPage;
 import pageobjects.ProductDetailsPage;
 import pageobjects.ProductsPage;
 import testcomponents.BaseTest;
@@ -22,7 +23,7 @@ public class ProductsTests extends BaseTest {
 	{
 		pp = homepage.goToProducts();
 		Assert.assertEquals(pp.getPageTitle(), "Automation Exercise - All Products");
-		Assert.assertEquals(pp.getProductsHeaderText(), "ALL PRODUCTS");
+		Assert.assertEquals(pp.getProductsPageTitle(), "ALL PRODUCTS");
 	}
 	
 	@Test (dependsOnMethods = {"ViewProductsPage"})
@@ -64,11 +65,54 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@Test
-	public void test()
+	public void RemoveProductsFromCart() throws InterruptedException
 	{
-		String g = "Test";
-		System.out.println(g.contains("test"));
+		homepage.scrollDownABit();
+		for (int i = 0; i < 3; i++)
+		{
+			homepage.addToCartByIndex(i);
+			homepage.continueShopping();
+		}
+		
+		CartPage cart = homepage.goToCart();
+		Assert.assertEquals(cart.getTrailHeaderText(), "Shopping Cart");
+		
+		int initialCartSize = cart.amountOfItemsInCart();
+		
+		cart.removeFirstCartitem();
+		Thread.sleep(500);
+		
+		Assert.assertTrue(cart.amountOfItemsInCart() < initialCartSize);
 	}
+	
+	@Test (dataProvider = "category_data")
+	public void CategorizeProductsVerification(HashMap<String, String> data)
+	{
+		Assert.assertTrue(homepage.areCategoriesDisplayed());
+		
+		homepage.selectCategory(data.get("category"));
+		
+		switch (data.get("category"))
+		{
+			case "WOMEN": 
+				pp = homepage.selectWomenSubCategory(data.get("subcategory"));
+				break;
+			case "MEN": 
+				pp = homepage.selectMenSubCategory(data.get("subcategory"));
+				break;
+			case "KIDS": 
+				pp = homepage.selectKidsSubCategory(data.get("subcategory"));
+				break;
+				
+		}
+		Assert.assertTrue(pp.getPageURL().contains("category_products"));
+		
+		String expectedTitle = data.get("category") + " - " + data.get("subcategory") + " PRODUCTS";
+		Assert.assertEquals(pp.getProductsPageTitle(), expectedTitle);
+		
+	}
+	
+	
 	
 	@DataProvider (name="product_data")
 	public Object[][] signupTestData() throws IOException
@@ -78,7 +122,16 @@ public class ProductsTests extends BaseTest {
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		
 		return new Object[][] { {data.get(0)} };
+	}
+	
+	@DataProvider (name="category_data")
+	public Object[][] categoryTestData() throws IOException
+	{
+		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\category_data.json";
+				
+		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		
+		return new Object[][] { {data.get(0)}, {data.get(1)}, {data.get(2)} };
 	}
 	
 }
