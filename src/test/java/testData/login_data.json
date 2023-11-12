@@ -19,6 +19,12 @@
 	"state" : "Colorado",
 	"city" : "Denver",
 	"zipcode" : "09812",
-	"mobilenumber" : "(890) 567-1234"
+	"mobilenumber" : "(890) 567-1234",
+	
+	"nameoncard" : "Dan Ches",
+	"cardnumber" : "4444 3333 2222 1111",
+	"cvc" : "321",
+	"expmonth" : "10",
+	"expyear" : "2024"
 }
 ]

@@ -1,5 +1,7 @@
 package pageobjects;
 
+import java.util.HashMap;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -258,6 +260,26 @@ public class SignUpPage extends PageCommon {
 	public void enterMobileNumber(String num)
 	{
 		mobileNumber.sendKeys(num);
+	}
+	
+	public void enterSignUpDetails(SignUpPage sp, HashMap<String, String> data)
+	{
+		sp.selectTitle(data.get("title"));
+		sp.enterName(data.get("username2"));
+		sp.enterPassword(data.get("password"));
+		sp.enterDateOfBirth(Integer.parseInt(data.get("day")), data.get("month"), data.get("year"));
+		sp.joinNewsletter();
+		sp.receiveSpecialOffers();
+		sp.enterFirstName(data.get("firstname"));
+		sp.enterLastName(data.get("lastname"));
+		sp.enterCompany(data.get("company"));
+		sp.enterAddress1(data.get("address"));
+		sp.enterAddress2(data.get("address2"));
+		sp.enterCountry(data.get("country"));
+		sp.enterState(data.get("state"));
+		sp.enterCity(data.get("city"));
+		sp.enterZipcode(data.get("zipcode"));
+		sp.enterMobileNumber(data.get("mobilenumber"));
 	}
 	
 	public AccountCreatedPage createAccount()

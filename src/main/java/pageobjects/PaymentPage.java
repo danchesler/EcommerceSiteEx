@@ -1,5 +1,7 @@
 package pageobjects;
 
+import java.util.HashMap;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,6 +68,15 @@ public class PaymentPage extends PageCommon {
 		confirmOrder.click();
 		
 		return new PaymentDonePage(driver);
+	}
+	
+	public void enterPaymentDetails(PaymentPage pay, HashMap<String,String> data)
+	{
+		pay.enterNameOnCard(data.get("nameoncard"));
+		pay.enterCardNumber(data.get("cardnumber"));
+		pay.enterCVC(data.get("cvc"));
+		pay.enterExpMonth(data.get("expmonth"));
+		pay.enterExpYear(data.get("expyear"));
 	}
 	
 	public WebElement getSuccessElement()

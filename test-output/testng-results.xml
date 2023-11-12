@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-10T17:44:47 PST" name="Default suite" finished-at="2023-11-10T17:45:04 PST" duration-ms="16550">
+  <suite started-at="2023-11-12T12:05:05 PST" name="Default suite" finished-at="2023-11-12T12:05:15 PST" duration-ms="10188">
     <groups>
     </groups>
-    <test started-at="2023-11-10T17:44:47 PST" name="Default test" finished-at="2023-11-10T17:45:04 PST" duration-ms="16550">
-      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseVerification">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseVerification@f78a47e]" started-at="2023-11-10T17:44:47 PST" name="launchWebSite" finished-at="2023-11-10T17:44:55 PST" duration-ms="8208" status="PASS">
+    <test started-at="2023-11-12T12:05:05 PST" name="Default test" finished-at="2023-11-12T12:05:15 PST" duration-ms="10188">
+      <class name="SeleniumProject.automation_exercise.tests.CommonPageTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@26d9b808]" started-at="2023-11-12T12:05:05 PST" name="launchWebSite" finished-at="2023-11-12T12:05:15 PST" duration-ms="9713" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="RegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseVerification@f78a47e]" started-at="2023-11-10T17:44:55 PST" name="RegisterAtCheckout" data-provider="signup_data" finished-at="2023-11-10T17:45:04 PST" duration-ms="8116" status="PASS">
+        <test-method signature="SubscribeOnHomePage(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@26d9b808]" started-at="2023-11-12T12:05:15 PST" name="SubscribeOnHomePage" data-provider="user_data" finished-at="2023-11-12T12:05:15 PST" duration-ms="220" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,12 +21,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- RegisterAtCheckout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseVerification@f78a47e]" started-at="2023-11-10T17:45:04 PST" name="tearDown" finished-at="2023-11-10T17:45:04 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- SubscribeOnHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@26d9b808]" started-at="2023-11-12T12:05:15 PST" name="tearDown" finished-at="2023-11-12T12:05:15 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseVerification -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.CommonPageTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

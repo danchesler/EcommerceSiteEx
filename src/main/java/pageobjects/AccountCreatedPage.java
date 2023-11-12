@@ -22,9 +22,9 @@ public class AccountCreatedPage extends PageCommon {
 	@FindBy(css="[data-qa*='continue']")
 	private WebElement continueBtn;
 	
-	public WebElement getAccountCreatedEle()
+	public boolean isAccountCreatedDisplayed()
 	{
-		return accountCreatedText;
+		return accountCreatedText.isDisplayed();
 	}
 	
 	public HomePage clickContinue()

@@ -37,8 +37,6 @@ public class ContactUsTests extends BaseTest {
 	public Object[][] signupTestData() throws IOException
 	{
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\contactus_data.json";
-				
-		
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		
 		return new Object[][] { {data.get(0)} };

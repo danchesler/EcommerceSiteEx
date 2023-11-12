@@ -1,6 +1,5 @@
-bypass google ad more reliably
-	-homepage
 replace thread.sleep browsing testcases page
 	-testcasespage
 check where i have explicit waits
-why js executor doesn't scroll
+payment success message locator
+convert 1000 step actions into single methods (e.g. sign up account, enter payment details)
