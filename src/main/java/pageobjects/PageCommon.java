@@ -65,13 +65,6 @@ public class PageCommon extends PageUtilities {
 	@FindBy(css=".alert-success.alert")
 	private WebElement subSuccessAlert;
 	
-	//Added to cart popup
-	@FindBy(css="a[href*='view'] u")
-	protected WebElement viewCartPopup;
-	
-	@FindBy(css="button[data-dismiss='modal']")
-	protected WebElement continueShopping;
-	
 	//Header methods
 	
 	public ProductsPage goToProducts()
@@ -154,17 +147,6 @@ public class PageCommon extends PageUtilities {
 		js.executeScript("arguments[0].scrollIntoView()", footer);
 	}
 	
-	//Add to cart popup
-	public void continueShopping()
-	{
-		continueShopping.click();
-	}
-	
-	public CartPage viewCartAfterAdding()
-	{
-		viewCartPopup.click();
-		return new CartPage(driver);
-	}
 	
 	
 }

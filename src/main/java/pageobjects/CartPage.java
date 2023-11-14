@@ -2,7 +2,6 @@ package pageobjects;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +25,9 @@ public class CartPage extends PageCommon {
 	
 	@FindBy (css="tbody tr[id*='product']")
 	private List<WebElement> cartList;
+	
+	@FindBy (css="h4 a")
+	private List<WebElement> cartProductNames;
 	
 	@FindBy(css=".cart_price p")
 	private List<WebElement> cartPrices;
@@ -70,8 +72,7 @@ public class CartPage extends PageCommon {
 	
 	public String getItemNameByIndex(int index)
 	{
-		WebElement cartItem = cartList.get(index);
-		String itemName = cartItem.findElement(By.cssSelector("td h4")).getText();
+		String itemName = cartProductNames.get(index).getText();
 	
 		return itemName;
 	}

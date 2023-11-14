@@ -81,6 +81,13 @@ public class ProductsPage extends PageCommon {
 	@FindBy(css=".productinfo")
 	private List<WebElement> productInfoBox;
 	
+	//Added to cart popup
+	@FindBy(css="a[href*='view'] u")
+	protected WebElement viewCartPopup;
+	
+	@FindBy(css="button[data-dismiss='modal']")
+	protected WebElement continueShopping;
+	
 	public boolean areCategoriesDisplayed()
 	{
 		return categoryBox.isDisplayed();
@@ -173,9 +180,19 @@ public class ProductsPage extends PageCommon {
 		return viewProducts;
 	}
 	
-	public List<WebElement> getProductNames()
+	public List<WebElement> getProductNamesEle()
 	{
 		return productNames;
+	}
+	
+	public int amountofProducts()
+	{
+		return productNames.size();
+	}
+	
+	public String getProductNameByIndex(int i)
+	{
+		return productNames.get(i).getText();
 	}
 	
 	public ProductDetailsPage viewProductByIndex(int i)
@@ -200,9 +217,31 @@ public class ProductsPage extends PageCommon {
 		overlayAddToCart.get(index).click();
 	}
 	
+	public void addAllProductsToCart() throws InterruptedException
+	{
+		int totalItems = overlayAddToCart.size();
+		for (int i = 0; i < totalItems; i++)
+		{
+			addToCartByIndex(i);
+			continueShopping();
+		}
+	}
+	
 	public int getProductPriceByIndex(int index)
 	{
 		return removeDollarFromPriceStr(productPrices.get(index));
+	}
+	
+	//Add to cart popup
+	public void continueShopping()
+	{
+		continueShopping.click();
+	}
+	
+	public CartPage viewCartAfterAdding()
+	{
+		viewCartPopup.click();
+		return new CartPage(driver);
 	}
 	
 }

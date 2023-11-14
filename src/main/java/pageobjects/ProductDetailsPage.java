@@ -39,6 +39,23 @@ public class ProductDetailsPage extends ProductsPage {
 	@FindBy(xpath="(//div[@class='product-information']/p/b)[3]")
 	private WebElement brand;
 
+	@FindBy(css="[href*='reviews']")
+	private WebElement writeYourReview;
+	
+	@FindBy(id="name")
+	private WebElement reviewName;
+	
+	@FindBy(id="email")
+	private WebElement reviewEmail;
+	
+	@FindBy(id="review")
+	private WebElement review;
+	
+	@FindBy(id="button-review")
+	private WebElement submitReview;
+	
+	@FindBy(css=".alert-success span")
+	private WebElement reviewSuccess;
 	
 	public boolean isCategoryDisplayed()
 	{
@@ -79,6 +96,36 @@ public class ProductDetailsPage extends ProductsPage {
 	public boolean isBrandDisplayed()
 	{
 		return brand.isDisplayed();
+	}
+	
+	public String getWriteYourReviewText()
+	{
+		return writeYourReview.getText();
+	}
+	
+	public void enterReviewName(String name)
+	{
+		reviewName.sendKeys(name);
+	}
+	
+	public void enterReviewEmail(String email)
+	{
+		reviewEmail.sendKeys(email);
+	}
+	
+	public void enterReview(String r)
+	{
+		review.sendKeys(r);
+	}
+	
+	public void submitReview()
+	{
+		submitReview.click();
+	}
+	
+	public String getReviewSuccessText()
+	{
+		return reviewSuccess.getText();
 	}
 	
 }

@@ -2,6 +2,7 @@ package pageobjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -64,6 +65,19 @@ public class HomePage extends PageCommon {
 	
 	@FindBy(css=".features_items .productinfo p")
 	private List<WebElement> featuredItemNames;
+	
+	@FindBy(css=".recommended_items")
+	private WebElement recommendedItems;
+	
+	//Added to cart popup
+	
+	@FindBy(css="a[href*='view'] u")
+	protected WebElement viewCartPopup;
+	
+	@FindBy(css="button[data-dismiss='modal']")
+	protected WebElement continueShopping;
+	
+
 	
 	public boolean areCategoriesDisplayed()
 	{
@@ -159,6 +173,35 @@ public class HomePage extends PageCommon {
 	public String getFeaturedItemNameByIndex(int index)
 	{
 		return featuredItemNames.get(index).getText();
+	}
+	
+	//Add to cart popup
+	public void continueShopping()
+	{
+		continueShopping.click();
+	}
+	
+	public CartPage viewCartAfterAdding()
+	{
+		viewCartPopup.click();
+		return new CartPage(driver);
+	}
+	
+	public String getRecommendedItemsTitle()
+	{
+		return recommendedItems.findElement(By.cssSelector(".title")).getText();
+	}
+	
+	public void addRecommendedItemToCartByIndex(int index)
+	{
+		List<WebElement> products = recommendedItems.findElements(By.cssSelector(".add-to-cart"));
+		products.get(index).click();
+	}
+	
+	public String getRecommendedItemNameByIndex(int index)
+	{
+		List<WebElement> names = recommendedItems.findElements(By.cssSelector("p"));
+		return names.get(index).getText();
 	}
 	
 	public void goToHomepage() throws InterruptedException

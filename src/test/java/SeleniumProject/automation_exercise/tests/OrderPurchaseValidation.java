@@ -109,27 +109,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		homepage.goToCart();
 		CheckoutPage ck = cart.proceedToCheckout();
 		
-		//Verify delivery address info is correct
-		Assert.assertEquals(data.get("title"), ck.getDeliveryUserTitle());
-		Assert.assertEquals(data.get("firstname"), ck.getDeliveryFirstName());
-		Assert.assertEquals(data.get("lastname"), ck.getDeliveryLastName());
-		Assert.assertEquals(data.get("company"), ck.getDeliveryCompany());
-		Assert.assertEquals(data.get("address"), ck.getDeliveryAddress1());
-		Assert.assertEquals(data.get("address2"), ck.getDeliveryAddress2());
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("city")));
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("state")));
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("zipcode")));
-		
-		//Verify billing address info is correct
-		Assert.assertEquals(data.get("title"), ck.getBillingUserTitle());
-		Assert.assertEquals(data.get("firstname"), ck.getBillingFirstName());
-		Assert.assertEquals(data.get("lastname"), ck.getBillingLastName());
-		Assert.assertEquals(data.get("company"), ck.getBillingCompany());
-		Assert.assertEquals(data.get("address"), ck.getBillingAddress1());
-		Assert.assertEquals(data.get("address2"), ck.getBillingAddress2());
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("city")));
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("state")));
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("zipcode")));
+		VerifyAddressAtCheckout(data,ck);
 		
 		//Verify Checkout items
 		for(int i = 0; i < ck.amountOfItemsInCart(); i++)
@@ -188,27 +168,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		Assert.assertEquals(cart.getTrailHeaderText(), "Shopping Cart");
 		CheckoutPage ck = cart.proceedToCheckout();
 		
-		//Verify delivery address info is correct
-		Assert.assertEquals(data.get("title"), ck.getDeliveryUserTitle());
-		Assert.assertEquals(data.get("firstname"), ck.getDeliveryFirstName());
-		Assert.assertEquals(data.get("lastname"), ck.getDeliveryLastName());
-		Assert.assertEquals(data.get("company"), ck.getDeliveryCompany());
-		Assert.assertEquals(data.get("address"), ck.getDeliveryAddress1());
-		Assert.assertEquals(data.get("address2"), ck.getDeliveryAddress2());
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("city")));
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("state")));
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("zipcode")));
-		
-		//Verify billing address info is correct
-		Assert.assertEquals(data.get("title"), ck.getBillingUserTitle());
-		Assert.assertEquals(data.get("firstname"), ck.getBillingFirstName());
-		Assert.assertEquals(data.get("lastname"), ck.getBillingLastName());
-		Assert.assertEquals(data.get("company"), ck.getBillingCompany());
-		Assert.assertEquals(data.get("address"), ck.getBillingAddress1());
-		Assert.assertEquals(data.get("address2"), ck.getBillingAddress2());
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("city")));
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("state")));
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("zipcode")));
+		VerifyAddressAtCheckout(data,ck);
 		
 		//Verify Checkout items
 		for(int i = 0; i < ck.amountOfItemsInCart(); i++)
@@ -256,27 +216,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		Assert.assertEquals(cart.getTrailHeaderText(), "Shopping Cart");
 		CheckoutPage ck = cart.proceedToCheckout();
 		
-		//Verify delivery address info is correct
-		Assert.assertEquals(data.get("title"), ck.getDeliveryUserTitle());
-		Assert.assertEquals(data.get("firstname"), ck.getDeliveryFirstName());
-		Assert.assertEquals(data.get("lastname"), ck.getDeliveryLastName());
-		Assert.assertEquals(data.get("company"), ck.getDeliveryCompany());
-		Assert.assertEquals(data.get("address"), ck.getDeliveryAddress1());
-		Assert.assertEquals(data.get("address2"), ck.getDeliveryAddress2());
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("city")));
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("state")));
-		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("zipcode")));
-		
-		//Verify billing address info is correct
-		Assert.assertEquals(data.get("title"), ck.getBillingUserTitle());
-		Assert.assertEquals(data.get("firstname"), ck.getBillingFirstName());
-		Assert.assertEquals(data.get("lastname"), ck.getBillingLastName());
-		Assert.assertEquals(data.get("company"), ck.getBillingCompany());
-		Assert.assertEquals(data.get("address"), ck.getBillingAddress1());
-		Assert.assertEquals(data.get("address2"), ck.getBillingAddress2());
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("city")));
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("state")));
-		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("zipcode")));
+		VerifyAddressAtCheckout(data, ck);
 		
 		ck.addComment("this is a product review");
 		PaymentPage pay = ck.placeOrder();
@@ -290,6 +230,35 @@ public class OrderPurchaseValidation extends BaseTest {
 		Assert.assertEquals(dap.getAccountDeletedText(), "ACCOUNT DELETED!");
 		dap.clickContinue();
 		
+	}
+	
+	@Test (dataProvider = "signup_data")
+	public void CheckoutAddressVerification(HashMap<String, String> data) throws InterruptedException
+	{
+		SignUpPage sp = homepage.goToSignUp();
+		sp.enterNewUserInfo(data.get("username1"), data.get("email"));
+		sp.submitNewUser();
+		sp.enterSignUpDetails(sp, data);
+		AccountCreatedPage acp = sp.createAccount();
+		Assert.assertTrue(acp.isAccountCreatedDisplayed());
+		homepage = acp.clickContinue();
+		Assert.assertEquals(homepage.getLoggedInAsText(), "Logged in as " + data.get("username2"));
+		
+		for (int i = 0 ; i < 3; i++)
+		{
+			homepage.addToCartByIndex(i);
+			homepage.continueShopping();
+		}
+		
+		CartPage cart = homepage.goToCart();
+		Assert.assertEquals(cart.getTrailHeaderText(), "Shopping Cart");
+		CheckoutPage ck = cart.proceedToCheckout();	
+		
+		VerifyAddressAtCheckout(data, ck);
+		
+		DeleteAccountPage dap = ck.deleteAccount();
+		Assert.assertEquals(dap.getAccountDeletedText(), "ACCOUNT DELETED!");
+		dap.clickContinue();
 	}
 	
 	@DataProvider (name="signup_data")
@@ -314,4 +283,29 @@ public class OrderPurchaseValidation extends BaseTest {
 		return new Object[][] { {data.get(1)} };
 	}	
 
+	public void VerifyAddressAtCheckout(HashMap<String, String> data, CheckoutPage ck)
+	{
+		//Verify delivery address info is correct
+		Assert.assertEquals(data.get("title"), ck.getDeliveryUserTitle());
+		Assert.assertEquals(data.get("firstname"), ck.getDeliveryFirstName());
+		Assert.assertEquals(data.get("lastname"), ck.getDeliveryLastName());
+		Assert.assertEquals(data.get("company"), ck.getDeliveryCompany());
+		Assert.assertEquals(data.get("address"), ck.getDeliveryAddress1());
+		Assert.assertEquals(data.get("address2"), ck.getDeliveryAddress2());
+		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("city")));
+		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("state")));
+		Assert.assertTrue(ck.getDeliveryCityStateZip().contains(data.get("zipcode")));
+		
+		//Verify billing address info is correct
+		Assert.assertEquals(data.get("title"), ck.getBillingUserTitle());
+		Assert.assertEquals(data.get("firstname"), ck.getBillingFirstName());
+		Assert.assertEquals(data.get("lastname"), ck.getBillingLastName());
+		Assert.assertEquals(data.get("company"), ck.getBillingCompany());
+		Assert.assertEquals(data.get("address"), ck.getBillingAddress1());
+		Assert.assertEquals(data.get("address2"), ck.getBillingAddress2());
+		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("city")));
+		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("state")));
+		Assert.assertTrue(ck.getBillingCityStateZip().contains(data.get("zipcode")));
+	}
+	
 }

@@ -1,6 +1,7 @@
 package SeleniumProject.automation_exercise.tests;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.testng.annotations.Test;
 import pageobjects.CartPage;
 import pageobjects.ProductDetailsPage;
 import pageobjects.ProductsPage;
+import pageobjects.SignUpPage;
 import testcomponents.BaseTest;
 
 public class ProductsTests extends BaseTest {
@@ -45,11 +47,11 @@ public class ProductsTests extends BaseTest {
 		
 		boolean isValidSearch = true;
 		
-		for (WebElement e : pp.getProductNames())
+		for (WebElement e : pp.getProductNamesEle())
 		{
 			if (!e.getText().toLowerCase().contains(data.get("product")))
 			{
-				int index = pp.getProductNames().indexOf(e);
+				int index = pp.getProductNamesEle().indexOf(e);
 				ProductDetailsPage pd = pp.viewProductByIndex(index);
 				
 				if (!pd.getCategory().toLowerCase().contains(data.get("product")))
@@ -112,10 +114,65 @@ public class ProductsTests extends BaseTest {
 		
 	}
 	
+	@Test (dataProvider = "login_data", dependsOnMethods= {"SearchForProducts"})
+	public void SearchProductsThenVerifyCartAfterLogin(HashMap<String, String> data) throws InterruptedException
+	{
+		ArrayList<String> productNames = new ArrayList<String>();
+		for (int i = 0; i < pp.amountofProducts(); i++)
+		{
+			productNames.add(pp.getProductNameByIndex(i));
+		}
+		pp.addAllProductsToCart();
+		
+		CartPage cart = pp.goToCart();
+		
+		for (int i = 0; i < productNames.size(); i++)
+		{
+			Assert.assertEquals(productNames.get(i), cart.getItemNameByIndex(i));
+		}
+		
+		SignUpPage sp = pp.goToSignUp();
+		sp.enterLoginDetails(data.get("username2"), data.get("password"));
+		
+		cart = sp.goToCart();
+		
+	}
 	
+	@Test (dataProvider = "login_data", dependsOnMethods = {"ViewProductsPage"})
+	public void writeProductReview(HashMap<String, String> data) throws InterruptedException
+	{
+		ProductDetailsPage pdp = pp.viewProductByIndex(0);
+		Assert.assertEquals(pdp.getWriteYourReviewText(), "WRITE YOUR REVIEW");
+		
+		pdp.enterReviewName(data.get("firstname"));
+		pdp.enterReviewEmail(data.get("email"));
+		pdp.enterReview(data.get("review"));
+		pdp.submitReview();
+		Assert.assertEquals(pdp.getReviewSuccessText(), "Thank you for your review.");
+
+		
+	}
+	
+	@Test
+	public void AddRecommendedItem()
+	{
+		String productName;
+		
+		homepage.scrollToFooter();
+		Assert.assertEquals(homepage.getRecommendedItemsTitle(), "RECOMMENDED ITEMS");
+
+		productName = homepage.getRecommendedItemNameByIndex(3);
+		homepage.addRecommendedItemToCartByIndex(3);
+		CartPage cart = homepage.viewCartAfterAdding();
+		
+		Assert.assertEquals(cart.getItemNameByIndex(0), productName);
+		
+		
+		
+	}
 	
 	@DataProvider (name="product_data")
-	public Object[][] signupTestData() throws IOException
+	public Object[][] searchTestData() throws IOException
 	{
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\searchEntry.json";
 				
@@ -132,6 +189,15 @@ public class ProductsTests extends BaseTest {
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		
 		return new Object[][] { {data.get(0)}, {data.get(1)}, {data.get(2)} };
+	}
+	
+	@DataProvider (name="login_data")
+	public Object[][] loginTestData() throws IOException
+	{
+		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
+		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
+		
+		return new Object[][] { {data.get(1)} };
 	}
 	
 }
