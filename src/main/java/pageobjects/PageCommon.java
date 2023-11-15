@@ -23,6 +23,8 @@ public class PageCommon extends PageUtilities {
 	}
 	
 	//Header locators
+	@FindBy(css="img[alt*='Website']")
+	private WebElement automationExercise;
 	
 	@FindBy(css="a[href*='/products']")
 	private WebElement products;
@@ -64,6 +66,9 @@ public class PageCommon extends PageUtilities {
 	
 	@FindBy(css=".alert-success.alert")
 	private WebElement subSuccessAlert;
+	
+	@FindBy(id="scrollUp")
+	private WebElement scrollUpArrow;
 	
 	//Header methods
 	
@@ -142,11 +147,19 @@ public class PageCommon extends PageUtilities {
 		return subSuccessAlert.getText();
 	}
 	
+	public void scrollToTop()
+	{
+		js.executeScript("arguments[0].scrollIntoView()", automationExercise);
+	}
+	
 	public void scrollToFooter()
 	{
 		js.executeScript("arguments[0].scrollIntoView()", footer);
 	}
 	
-	
+	public void selectScrollUpArrow()
+	{
+		scrollUpArrow.click();
+	}
 	
 }

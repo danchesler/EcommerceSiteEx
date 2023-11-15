@@ -24,8 +24,21 @@ public class PaymentDonePage extends PageCommon {
 	@FindBy(css="h2 b")
 	private WebElement orderPlaced;
 	
+	
 	public String getOrderPlacedText()
 	{
 		return orderPlaced.getText();
 	}
+	
+	public HomePage continueShopping()
+	{
+		continueBtn.click();
+		return new HomePage(driver);
+	}
+	
+	public void downloadInvoice()
+	{
+		downloadInvoice.click();
+	}
+	
 }

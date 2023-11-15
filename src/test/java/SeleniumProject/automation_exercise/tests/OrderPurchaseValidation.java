@@ -1,5 +1,6 @@
 package SeleniumProject.automation_exercise.tests;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -93,7 +94,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		CartPage cart = homepage.goToCart();
 		Assert.assertEquals(cart.getTrailHeaderText(), "Shopping Cart");
 		cart.proceedToCheckout();
-		SignUpPage sp = cart.RegisterLoginCart();
+		SignUpPage sp = cart.registerLoginCart();
 		
 		//Register user
 		sp.enterNewUserInfo(data.get("username1"), data.get("email"));
@@ -257,6 +258,61 @@ public class OrderPurchaseValidation extends BaseTest {
 		VerifyAddressAtCheckout(data, ck);
 		
 		DeleteAccountPage dap = ck.deleteAccount();
+		Assert.assertEquals(dap.getAccountDeletedText(), "ACCOUNT DELETED!");
+		dap.clickContinue();
+	}
+	
+	@Test (dataProvider = "signup_data")
+	public void DownloadInvoiceAfterPurchase(HashMap<String, String> data) throws InterruptedException
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			homepage.addToCartByIndex(i);
+			homepage.continueShopping();
+		}
+		
+		CartPage cart = homepage.goToCart();
+		Assert.assertEquals(cart.getTrailHeaderText(), "Shopping Cart");
+		cart.proceedToCheckout();	
+		
+		SignUpPage sp = cart.registerLoginCart();
+		sp.enterNewUserInfo(data.get("username1"), data.get("email"));
+		sp.submitNewUser();
+		sp.enterSignUpDetails(sp, data);
+		AccountCreatedPage acp = sp.createAccount();
+		Assert.assertTrue(acp.isAccountCreatedDisplayed());
+		homepage = acp.clickContinue();
+		Assert.assertEquals(homepage.getLoggedInAsText(), "Logged in as " + data.get("username2"));
+		
+		cart = homepage.goToCart();
+		CheckoutPage ck = cart.proceedToCheckout();
+		
+		VerifyAddressAtCheckout(data, ck);
+		
+		ck.addComment("i'm going to buy this");
+		PaymentPage pay = ck.placeOrder();
+
+		pay.enterPaymentDetails(pay, data);
+		PaymentDonePage pdp = pay.payAndConfirmOrder();
+		
+		Assert.assertEquals(pdp.getOrderPlacedText(), "ORDER PLACED!");
+	
+		pdp.downloadInvoice();
+		Thread.sleep(2000); 
+		
+		//verify file is downloaded
+		File f = new File(System.getProperty("user.dir") + "\\invoice.txt");
+		if (f.exists())
+		{
+			Assert.assertTrue(true);
+			f.delete();
+		}
+		else
+			Assert.assertTrue(f.exists());
+
+		homepage = pdp.continueShopping();
+		
+		DeleteAccountPage dap = homepage.deleteAccount();
 		Assert.assertEquals(dap.getAccountDeletedText(), "ACCOUNT DELETED!");
 		dap.clickContinue();
 	}

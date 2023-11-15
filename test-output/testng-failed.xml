@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
+      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation">
         <methods>
+          <include name="DownloadInvoiceAfterPurchase" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="AddRecommendedItem"/>
           <include name="launchWebSite"/>
         </methods>
-      </class> <!-- SeleniumProject.automation_exercise.tests.ProductsTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseValidation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -58,7 +58,7 @@ public class CartPage extends PageCommon {
 		return new CheckoutPage(driver);
 	}
 	
-	public SignUpPage RegisterLoginCart()
+	public SignUpPage registerLoginCart()
 	{
 		registerLogin.click();
 		

@@ -2,31 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-14T15:00:28 PST" name="Default suite" finished-at="2023-11-14T15:00:41 PST" duration-ms="13906">
+  <suite started-at="2023-11-15T12:12:15 PST" name="Default suite" finished-at="2023-11-15T12:12:22 PST" duration-ms="7455">
     <groups>
     </groups>
-    <test started-at="2023-11-14T15:00:28 PST" name="Default test" finished-at="2023-11-14T15:00:41 PST" duration-ms="13906">
-      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@2a265ea9]" started-at="2023-11-14T15:00:28 PST" name="launchWebSite" finished-at="2023-11-14T15:00:36 PST" duration-ms="8095" status="PASS">
+    <test started-at="2023-11-15T12:12:15 PST" name="Default test" finished-at="2023-11-15T12:12:22 PST" duration-ms="7455">
+      <class name="SeleniumProject.automation_exercise.tests.HomePageTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@1ffaf86]" started-at="2023-11-15T12:12:15 PST" name="launchWebSite" finished-at="2023-11-15T12:12:22 PST" duration-ms="7277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="CheckoutAddressVerification(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@2a265ea9]" started-at="2023-11-14T15:00:36 PST" name="CheckoutAddressVerification" data-provider="signup_data" finished-at="2023-11-14T15:00:41 PST" duration-ms="5556" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=(123) 456-7890, year=1990, address2=Suite 5, city=San Diego, expyear=2025, title=Mr., lastname=Fisher, zipcode=92131, cvc=123, password=testpw123, month=May, expmonth=03, company=Microsoft, username2=testuser12345, state=California, cardnumber=1111 2222 3333 4444, username1=testuser123, day=9, email=testt98760@gmail.com}]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="ScrollUpFromFooter()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@1ffaf86]" started-at="2023-11-15T12:12:22 PST" name="ScrollUpFromFooter" finished-at="2023-11-15T12:12:22 PST" duration-ms="149" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckoutAddressVerification -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@2a265ea9]" started-at="2023-11-14T15:00:41 PST" name="tearDown" finished-at="2023-11-14T15:00:41 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- ScrollUpFromFooter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@1ffaf86]" started-at="2023-11-15T12:12:22 PST" name="tearDown" finished-at="2023-11-15T12:12:22 PST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseValidation -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.HomePageTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -40,15 +40,10 @@ public class BaseTest extends TestUtilities {
 			ChromeOptions op = new ChromeOptions();
 			op.addExtensions(new File(System.getProperty("user.dir") + "\\resources\\ublock.crx"));
 		
-			op.addArguments("--disable-save-password-bubble");
-			Map<String, Object> prefs = new HashMap<String, Object>();
-		    prefs.put("credentials_enable_service", false);
-		    prefs.put("profile.password_manager_enabled", false);
-		    
-		    prefs.put("autofill.profile_enabled", false);
-		    
+			HashMap<String, Object> prefs = new HashMap<String, Object>();
+			prefs.put("profile.default_content_settings.popups", 0);
+			prefs.put("download.default_directory", System.getProperty("user.dir"));
 		    op.setExperimentalOption("prefs", prefs);
-			//DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			
 			driver = new ChromeDriver(op);
 		}

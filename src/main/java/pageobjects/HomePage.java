@@ -20,6 +20,10 @@ public class HomePage extends PageCommon {
 		PageFactory.initElements(driver, this);
 	}
 	
+	//Slider
+	@FindBy (css="#slider h2")
+	private List<WebElement> sliderHeaderText;
+	
 	// Category sidebar locators
 	
 	@FindBy(className="category-products")
@@ -78,6 +82,11 @@ public class HomePage extends PageCommon {
 	protected WebElement continueShopping;
 	
 
+	public boolean isSliderHeaderDisplayed()
+	{
+		waitForElementToBeVisible(sliderHeaderText.get(0));
+		return sliderHeaderText.get(0).isDisplayed();
+	}
 	
 	public boolean areCategoriesDisplayed()
 	{
@@ -207,16 +216,8 @@ public class HomePage extends PageCommon {
 	public void goToHomepage() throws InterruptedException
 	{
 		driver.get("https://www.automationexercise.com/");
-		
 		//wait for ads to go away
 		Thread.sleep(3000);
-		
-		/*
-		System.out.println(driver.getCurrentUrl());
-		if (driver.getCurrentUrl().contains("google"))
-		{
-			driver.navigate().back();
-		}*/
 	}
 	
 	
