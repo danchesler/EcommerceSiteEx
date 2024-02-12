@@ -2,24 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-15T12:12:15 PST" name="Default suite" finished-at="2023-11-15T12:12:22 PST" duration-ms="7455">
+  <suite started-at="2024-02-12T11:27:23 PST" name="Default suite" finished-at="2024-02-12T11:27:31 PST" duration-ms="8770">
     <groups>
     </groups>
-    <test started-at="2023-11-15T12:12:15 PST" name="Default test" finished-at="2023-11-15T12:12:22 PST" duration-ms="7455">
-      <class name="SeleniumProject.automation_exercise.tests.HomePageTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@1ffaf86]" started-at="2023-11-15T12:12:15 PST" name="launchWebSite" finished-at="2023-11-15T12:12:22 PST" duration-ms="7277" status="PASS">
+    <test started-at="2024-02-12T11:27:23 PST" name="Default test" finished-at="2024-02-12T11:27:31 PST" duration-ms="8770">
+      <class name="SeleniumProject.automation_exercise.tests.LoginTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@11392934]" started-at="2024-02-12T11:27:23 PST" name="launchWebSite" finished-at="2024-02-12T11:27:30 PST" duration-ms="7409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="ScrollUpFromFooter()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@1ffaf86]" started-at="2023-11-15T12:12:22 PST" name="ScrollUpFromFooter" finished-at="2023-11-15T12:12:22 PST" duration-ms="149" status="PASS">
+        <test-method signature="Logout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@11392934]" started-at="2024-02-12T11:27:30 PST" name="Logout" data-provider="login_data" finished-at="2024-02-12T11:27:31 PST" duration-ms="1163" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=United States, firstname=Dan, mobilenumber=(890) 567-1234, year=1990, city=Denver, title=Mr., cvc=321, password=secretpassword, expmonth=10, review=this is a cool product, company=Google, username2=testuser12345, state=Colorado, username1=TestUser, day=9, email=testt98761@gmail.com, nameoncard=Dan Ches, address=890 Test Blvd, address2=Unit 100, expyear=2024, lastname=Ches, zipcode=09812, month=May, cardnumber=4444 3333 2222 1111}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ScrollUpFromFooter -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@1ffaf86]" started-at="2023-11-15T12:12:22 PST" name="tearDown" finished-at="2023-11-15T12:12:22 PST" duration-ms="1" status="PASS">
+        </test-method> <!-- Logout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@11392934]" started-at="2024-02-12T11:27:31 PST" name="tearDown" finished-at="2024-02-12T11:27:31 PST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.HomePageTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.LoginTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

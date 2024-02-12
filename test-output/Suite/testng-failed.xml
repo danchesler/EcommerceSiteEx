@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="SeleniumProject.automation_exercise.tests.LoginTests">
+        <methods>
+          <include name="LoginThenDeleteUser"/>
+          <include name="tearDown"/>
+          <include name="Logout" invocation-numbers="0"/>
+          <include name="LoginInvalidUser" invocation-numbers="0"/>
+          <include name="RegisterUserThenLogout" invocation-numbers="0"/>
+          <include name="DeleteExistingUser" invocation-numbers="0"/>
+          <include name="RegisterExistingUser" invocation-numbers="0"/>
+          <include name="RegisterThenDeleteUser" invocation-numbers="0"/>
+          <include name="launchWebSite"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.LoginTests -->
+      <class name="SeleniumProject.automation_exercise.tests.ProductsTests">
+        <methods>
+          <include name="ViewFirstProduct"/>
+          <include name="ViewProductsPage"/>
+          <include name="SearchProductsThenVerifyCartAfterLogin"/>
+          <include name="SearchForProducts" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="writeProductReview" invocation-numbers="0"/>
+          <include name="AddRecommendedItem"/>
+          <include name="launchWebSite"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.ProductsTests -->
+      <class name="SeleniumProject.automation_exercise.tests.TestCasesTests">
+        <methods>
+          <include name="NavigateToPage"/>
+          <include name="BrowseTestCases"/>
+          <include name="tearDown"/>
+          <include name="launchWebSite"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.TestCasesTests -->
+      <class name="SeleniumProject.automation_exercise.tests.ContactUsTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="FillContactUsForm" invocation-numbers="0"/>
+          <include name="launchWebSite"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.ContactUsTests -->
+      <class name="SeleniumProject.automation_exercise.tests.CommonPageTests">
+        <methods>
+          <include name="SubscribeOnHomePage" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="SubscribeOnCartPage" invocation-numbers="0"/>
+          <include name="launchWebSite"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.CommonPageTests -->
+      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation">
+        <methods>
+          <include name="DownloadInvoiceAfterPurchase" invocation-numbers="0"/>
+          <include name="AddProductsToCart"/>
+          <include name="PlaceOrderRegisterAtCheckout" invocation-numbers="0"/>
+          <include name="PlaceOrderRegisterBeforeCheckout" invocation-numbers="0"/>
+          <include name="CheckoutAddressVerification" invocation-numbers="0"/>
+          <include name="CartItemQuantityValidation"/>
+          <include name="tearDown"/>
+          <include name="LoginBeforeCheckout" invocation-numbers="0"/>
+          <include name="launchWebSite"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseValidation -->
+      <class name="SeleniumProject.automation_exercise.tests.HomePageTests">
+        <methods>
+          <include name="ScrollUpArrowFromFooter"/>
+          <include name="tearDown"/>
+          <include name="launchWebSite"/>
+          <include name="ScrollUpFromFooter"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.HomePageTests -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

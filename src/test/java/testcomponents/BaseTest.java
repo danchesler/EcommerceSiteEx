@@ -5,26 +5,21 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import pageobjects.HomePage;
 
 public class BaseTest extends TestUtilities {
 
-	protected WebDriver driver;
+	private WebDriver driver;
 	protected HomePage homepage;
 	
 	public WebDriver driverSetup() throws IOException
@@ -46,6 +41,7 @@ public class BaseTest extends TestUtilities {
 		    op.setExperimentalOption("prefs", prefs);
 			
 			driver = new ChromeDriver(op);
+			
 		}
 		else if (browserName.equalsIgnoreCase("firefox"))
 		{
@@ -71,22 +67,11 @@ public class BaseTest extends TestUtilities {
 		return homepage;
 	}
 	
-	public void waitForWebElementToAppear(WebElement ele)
-	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOf(ele));
-	}
-	
-	public void waitForElementToBeClickable(WebElement ele)
-	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.elementToBeClickable(ele));
-	}
 	
 	@AfterTest
 	public void tearDown() throws InterruptedException
 	{
-		//Thread.sleep(5000);
-		//driver.quit();
+		Thread.sleep(3000);
+		driver.quit();
 	}
 }

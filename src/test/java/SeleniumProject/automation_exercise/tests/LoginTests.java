@@ -96,7 +96,7 @@ public class LoginTests extends BaseTest {
 	}
 	
 	//Used to setup a registered user
-	@Test (dataProvider="login_data")
+	@Test (dataProvider="signup_data")
 	public void RegisterUserThenLogout(HashMap<String,String> data)
 	{
 		SignUpPage sp = homepage.goToSignUp();
@@ -113,7 +113,7 @@ public class LoginTests extends BaseTest {
 		homepage = acp.clickContinue();
 		homepage.Logout();
 		
-		driver.close();
+		//driver.close();
 		
 	}
 	
@@ -128,6 +128,8 @@ public class LoginTests extends BaseTest {
 	}
 	
 	
+	
+	//DataProviders
 	@DataProvider (name="signup_data")
 	public Object[][] signupTestData() throws IOException
 	{

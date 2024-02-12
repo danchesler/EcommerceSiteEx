@@ -82,7 +82,6 @@ public class ProductsTests extends BaseTest {
 		int initialCartSize = cart.amountOfItemsInCart();
 		
 		cart.removeFirstCartitem();
-		Thread.sleep(500);
 		
 		Assert.assertTrue(cart.amountOfItemsInCart() < initialCartSize);
 	}
@@ -166,9 +165,6 @@ public class ProductsTests extends BaseTest {
 		CartPage cart = homepage.viewCartAfterAdding();
 		
 		Assert.assertEquals(cart.getItemNameByIndex(0), productName);
-		
-		
-		
 	}
 	
 	@DataProvider (name="product_data")

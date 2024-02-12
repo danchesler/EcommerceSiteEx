@@ -96,9 +96,10 @@ public class CartPage extends PageCommon {
 		return removeDollarFromPriceStr(cartTotals.get(index));
 	}
 	
-	public void removeFirstCartitem()
+	public void removeFirstCartitem() throws InterruptedException
 	{
 		cartRemoveItem.get(0).click();
+		Thread.sleep(500);
 	}
 	
 	

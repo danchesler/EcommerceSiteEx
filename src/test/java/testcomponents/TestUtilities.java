@@ -29,4 +29,16 @@ public class TestUtilities {
 		return data;
 	}
 	
+	public void waitForWebElementToAppear(WebElement ele, WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOf(ele));
+	}
+	
+	public void waitForElementToBeClickable(WebElement ele, WebDriver driver)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.elementToBeClickable(ele));
+	}
+	
 }
