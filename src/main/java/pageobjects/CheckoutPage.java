@@ -66,18 +66,15 @@ public class CheckoutPage extends CartPage {
 	@FindBy(css="#address_invoice [class*='phone']")
 	private WebElement billPhone;
 	
-	public int getOrderTotal()
-	{
+	public int getOrderTotal() {
 		return removeDollarFromPriceStr(orderTotal);
 	}
 	
-	public void addComment(String comment)
-	{
+	public void addComment(String comment) {
 		commentBox.sendKeys(comment);
 	}
 	
-	public PaymentPage placeOrder()
-	{
+	public PaymentPage placeOrder() {
 		placeOrder.click();
 		
 		return new PaymentPage(driver);
@@ -85,60 +82,52 @@ public class CheckoutPage extends CartPage {
 	
 	//Delivery getters
 	
-	public String getDeliveryUserTitle()
-	{
+	public String getDeliveryUserTitle() {
 		String titleAndName = deliveryTitleAndName.getText();
 		String title = titleAndName.split(" ")[0];
 		
 		return title;
 	}
 	
-	public String getDeliveryFirstName()
-	{
+	public String getDeliveryFirstName() {
 		String titleAndName = deliveryTitleAndName.getText();
 		String firstName = titleAndName.split(" ")[1];
 		
 		return firstName;
 	}
 	
-	public String getDeliveryLastName()
-	{
+	public String getDeliveryLastName() {
 		String titleAndName = deliveryTitleAndName.getText();
 		String lastName = titleAndName.split(" ")[2];
 		
 		return lastName;
 	}
 	
-	public String getDeliveryCompany()
-	{
+	public String getDeliveryCompany() {
 		String company = deliveryAddress.get(0).getText();
 		
 		return company;
 	}
 	
-	public String getDeliveryAddress1()
-	{
+	public String getDeliveryAddress1() {
 		String address1 = deliveryAddress.get(1).getText();
 		
 		return address1;
 	}
 	
-	public String getDeliveryAddress2()
-	{
+	public String getDeliveryAddress2() {
 		String address2 = deliveryAddress.get(2).getText();
 		
 		return address2;
 	}
 	
-	public String getDeliveryCityStateZip()
-	{
+	public String getDeliveryCityStateZip() {
 		String cityStateZip = deliveryCityStateZip.getText();
 		
 		return cityStateZip;
 	}
 	
-	public String getDeliveryPhoneNumber()
-	{
+	public String getDeliveryPhoneNumber() {
 		String phoneNumber = deliveryPhone.getText();
 		
 		return phoneNumber;
@@ -146,60 +135,52 @@ public class CheckoutPage extends CartPage {
 	
 	//Billing getters
 	
-	public String getBillingUserTitle()
-	{
+	public String getBillingUserTitle() {
 		String titleAndName = billTitleAndName.getText();
 		String title = titleAndName.split(" ")[0];
 		
 		return title;
 	}
 	
-	public String getBillingFirstName()
-	{
+	public String getBillingFirstName() {
 		String titleAndName = billTitleAndName.getText();
 		String firstName = titleAndName.split(" ")[1];
 		
 		return firstName;
 	}
 	
-	public String getBillingLastName()
-	{
+	public String getBillingLastName() {
 		String titleAndName = billTitleAndName.getText();
 		String lastName = titleAndName.split(" ")[2];
 		
 		return lastName;
 	}
 	
-	public String getBillingCompany()
-	{
+	public String getBillingCompany() {
 		String company = billAddress.get(0).getText();
 		
 		return company;
 	}
 	
-	public String getBillingAddress1()
-	{
+	public String getBillingAddress1() {
 		String address1 = billAddress.get(1).getText();
 		
 		return address1;
 	}
 	
-	public String getBillingAddress2()
-	{
+	public String getBillingAddress2() {
 		String address2 = billAddress.get(2).getText();
 		
 		return address2;
 	}
 	
-	public String getBillingCityStateZip()
-	{
+	public String getBillingCityStateZip() {
 		String cityStateZip = billCityStateZip.getText();
 		
 		return cityStateZip;
 	}
 	
-	public String getBillingPhoneNumber()
-	{
+	public String getBillingPhoneNumber() {
 		String phoneNumber = billPhone.getText();
 		
 		return phoneNumber;

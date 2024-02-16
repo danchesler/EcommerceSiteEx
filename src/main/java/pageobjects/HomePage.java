@@ -13,8 +13,7 @@ public class HomePage extends PageCommon {
 
 	private WebDriver driver;
 	
-	public HomePage (WebDriver driver)
-	{
+	public HomePage (WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -82,21 +81,17 @@ public class HomePage extends PageCommon {
 	protected WebElement continueShopping;
 	
 
-	public boolean isSliderHeaderDisplayed()
-	{
+	public boolean isSliderHeaderDisplayed() {
 		waitForElementToBeVisible(sliderHeaderText.get(0));
 		return sliderHeaderText.get(0).isDisplayed();
 	}
 	
-	public boolean areCategoriesDisplayed()
-	{
+	public boolean areCategoriesDisplayed() {
 		return categoryBox.isDisplayed();
 	}
 	
-	public void selectCategory(String category)
-	{
-		switch (category) 
-		{
+	public void selectCategory(String category) {
+		switch (category) {
 		 case "WOMEN":
 			 waitForElementToBeClickable(womenCategory);
 			 womenCategory.click();
@@ -112,11 +107,9 @@ public class HomePage extends PageCommon {
 		}
 	}
 	
-	public ProductsPage selectWomenSubCategory(String subCategory)
-	{
+	public ProductsPage selectWomenSubCategory(String subCategory) {
 		a = new Actions(driver);
-		switch (subCategory)
-		{
+		switch (subCategory) {
 			case "DRESS":
 				waitForElementToBeClickable(womenDress);
 				a.moveToElement(womenDress).doubleClick().build().perform();
@@ -130,15 +123,12 @@ public class HomePage extends PageCommon {
 				a.moveToElement(womenSaree).doubleClick().build().perform();
 				break;
 		}
-		
 		return new ProductsPage(driver);
 	}
 	
-	public ProductsPage selectMenSubCategory(String subCategory)
-	{
+	public ProductsPage selectMenSubCategory(String subCategory) {
 		a = new Actions(driver);
-		switch (subCategory)
-		{
+		switch (subCategory) {
 			case "TSHIRTS":
 				waitForElementToBeClickable(menTshirts);
 				a.moveToElement(menTshirts).doubleClick().build().perform();
@@ -148,15 +138,12 @@ public class HomePage extends PageCommon {
 				a.moveToElement(menJeans).doubleClick().build().perform();
 				break;
 		}
-		
 		return new ProductsPage(driver);
 	}
 	
-	public ProductsPage selectKidsSubCategory(String subCategory)
-	{
+	public ProductsPage selectKidsSubCategory(String subCategory) {
 		a = new Actions(driver);
-		switch (subCategory)
-		{
+		switch (subCategory) {
 			case "DRESS":
 				waitForElementToBeClickable(kidsDress);
 				a.moveToElement(kidsDress).doubleClick().build().perform();
@@ -166,12 +153,10 @@ public class HomePage extends PageCommon {
 				a.moveToElement(kidsTopsShirts).doubleClick().build().perform();
 				break;
 		}
-		
 		return new ProductsPage(driver);
 	}
 	
-	public void addToCartByIndex(int index) throws InterruptedException
-	{
+	public void addToCartByIndex(int index) throws InterruptedException {
 		a = new Actions(driver);
 		a.moveToElement(productInfoBox.get(index)).build().perform();
 		Thread.sleep(250);
@@ -179,42 +164,35 @@ public class HomePage extends PageCommon {
 		overlayAddToCart.get(index).click();
 	}
 	
-	public String getFeaturedItemNameByIndex(int index)
-	{
+	public String getFeaturedItemNameByIndex(int index) {
 		return featuredItemNames.get(index).getText();
 	}
 	
 	//Add to cart popup
-	public void continueShopping()
-	{
+	public void continueShopping() {
 		continueShopping.click();
 	}
 	
-	public CartPage viewCartAfterAdding()
-	{
+	public CartPage viewCartAfterAdding() {
 		viewCartPopup.click();
 		return new CartPage(driver);
 	}
 	
-	public String getRecommendedItemsTitle()
-	{
+	public String getRecommendedItemsTitle() {
 		return recommendedItems.findElement(By.cssSelector(".title")).getText();
 	}
 	
-	public void addRecommendedItemToCartByIndex(int index)
-	{
+	public void addRecommendedItemToCartByIndex(int index) {
 		List<WebElement> products = recommendedItems.findElements(By.cssSelector(".add-to-cart"));
 		products.get(index).click();
 	}
 	
-	public String getRecommendedItemNameByIndex(int index)
-	{
+	public String getRecommendedItemNameByIndex(int index) {
 		List<WebElement> names = recommendedItems.findElements(By.cssSelector("p"));
 		return names.get(index).getText();
 	}
 	
-	public void goToHomepage() throws InterruptedException
-	{
+	public void goToHomepage() throws InterruptedException {
 		driver.get("https://www.automationexercise.com/");
 		//wait for ads to go away
 		Thread.sleep(3000);

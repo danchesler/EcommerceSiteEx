@@ -57,75 +57,60 @@ public class ProductDetailsPage extends ProductsPage {
 	@FindBy(css=".alert-success span")
 	private WebElement reviewSuccess;
 	
-	public boolean isCategoryDisplayed()
-	{
+	public boolean isCategoryDisplayed() {
 		return category.isDisplayed();
 	}
 	
-	public String getCategory()
-	{
+	public String getCategory() {
 		return category.getText();
 	}
 	
-	public boolean isPriceDisplayed()
-	{
+	public boolean isPriceDisplayed() {
 		return price.isDisplayed();
 	}
 	
-	public void changeQuantity(int q)
-	{
+	public void changeQuantity(int q) {
 		quantity.clear();
 		quantity.sendKeys(Integer.toString(q));
 	}
 	
-	public void addToCart()
-	{
+	public void addToCart() {
 		addToCart.click();
 	}
 	
-	public boolean isAvailabilityDisplayed()
-	{
+	public boolean isAvailabilityDisplayed() {
 		return availability.isDisplayed();
 	}
 	
-	public boolean isConditionDisplayed()
-	{
+	public boolean isConditionDisplayed() {
 		return condition.isDisplayed();
 	}
 	
-	public boolean isBrandDisplayed()
-	{
+	public boolean isBrandDisplayed() {
 		return brand.isDisplayed();
 	}
 	
-	public String getWriteYourReviewText()
-	{
+	public String getWriteYourReviewText() {
 		return writeYourReview.getText();
 	}
 	
-	public void enterReviewName(String name)
-	{
+	public void enterReviewName(String name) {
 		reviewName.sendKeys(name);
 	}
 	
-	public void enterReviewEmail(String email)
-	{
+	public void enterReviewEmail(String email) {
 		reviewEmail.sendKeys(email);
 	}
 	
-	public void enterReview(String r)
-	{
+	public void enterReview(String r) {
 		review.sendKeys(r);
 	}
 	
-	public void submitReview()
-	{
+	public void submitReview() {
 		submitReview.click();
 	}
 	
-	public String getReviewSuccessText()
-	{
+	public String getReviewSuccessText() {
 		return reviewSuccess.getText();
 	}
-	
 }

@@ -111,13 +111,10 @@ public class LoginTests extends BaseTest {
 		Assert.assertTrue(acp.isAccountCreatedDisplayed());
 		
 		homepage = acp.clickContinue();
-		homepage.Logout();
-		
-		//driver.close();
-		
+		homepage.Logout();		
 	}
 	
-	@Test (dataProvider = "login_data", alwaysRun=false)
+	@Test (dataProvider = "signup_data")
 	public void DeleteExistingUser(HashMap<String,String> data)
 	{
 		SignUpPage sp = homepage.goToSignUp();

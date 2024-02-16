@@ -19,7 +19,7 @@ import pageobjects.HomePage;
 
 public class BaseTest extends TestUtilities {
 
-	private WebDriver driver;
+	public WebDriver driver;
 	protected HomePage homepage;
 	
 	public WebDriver driverSetup() throws IOException
@@ -36,7 +36,7 @@ public class BaseTest extends TestUtilities {
 			op.addExtensions(new File(System.getProperty("user.dir") + "\\resources\\ublock.crx"));
 		
 			HashMap<String, Object> prefs = new HashMap<String, Object>();
-			prefs.put("profile.default_content_settings.popups", 0);
+			//prefs.put("profile.default_content_settings.popups", 0);
 			prefs.put("download.default_directory", System.getProperty("user.dir"));
 		    op.setExperimentalOption("prefs", prefs);
 			
@@ -68,7 +68,7 @@ public class BaseTest extends TestUtilities {
 	}
 	
 	
-	@AfterTest
+	@AfterTest (alwaysRun=true)
 	public void tearDown() throws InterruptedException
 	{
 		Thread.sleep(3000);

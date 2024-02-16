@@ -38,40 +38,33 @@ public class PaymentPage extends PageCommon {
 	@FindBy(css="#success_message")
 	private WebElement orderSuccess;
 	
-	public void enterNameOnCard(String name)
-	{
+	public void enterNameOnCard(String name) {
 		nameField.sendKeys(name);
 	}
 	
-	public void enterCardNumber(String number)
-	{
+	public void enterCardNumber(String number) {
 		cardNumberField.sendKeys(number);
 	}
 	
-	public void enterCVC(String cvc)
-	{
+	public void enterCVC(String cvc) {
 		cvcField.sendKeys(cvc);
 	}
 	
-	public void enterExpMonth(String month)
-	{
+	public void enterExpMonth(String month) {
 		expMonthField.sendKeys(month);
 	}
 	
-	public void enterExpYear(String year)
-	{
+	public void enterExpYear(String year) {
 		expYearField.sendKeys(year);
 	}
 	
-	public PaymentDonePage payAndConfirmOrder()
-	{
+	public PaymentDonePage payAndConfirmOrder() {
 		confirmOrder.click();
 		
 		return new PaymentDonePage(driver);
 	}
 	
-	public void enterPaymentDetails(PaymentPage pay, HashMap<String,String> data)
-	{
+	public void enterPaymentDetails(PaymentPage pay, HashMap<String,String> data) {
 		pay.enterNameOnCard(data.get("nameoncard"));
 		pay.enterCardNumber(data.get("cardnumber"));
 		pay.enterCVC(data.get("cvc"));
@@ -79,13 +72,11 @@ public class PaymentPage extends PageCommon {
 		pay.enterExpYear(data.get("expyear"));
 	}
 	
-	public WebElement getSuccessElement()
-	{
+	public WebElement getSuccessElement() {
 		return orderSuccess;
 	}
 	
-	public String getSuccessMessage()
-	{
+	public String getSuccessMessage() {
 		return orderSuccess.getText();
 	}
 }

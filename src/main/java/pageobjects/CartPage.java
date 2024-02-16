@@ -46,58 +46,49 @@ public class CartPage extends PageCommon {
 	@FindBy(css=".modal-content u")
 	private WebElement registerLogin;
 	
-	public String getTrailHeaderText()
-	{
+	public String getTrailHeaderText() {
 		return trailHeader.getText();
 	}
 	
-	public CheckoutPage proceedToCheckout()
-	{
+	public CheckoutPage proceedToCheckout() {
 		checkout.click();
 		
 		return new CheckoutPage(driver);
 	}
 	
-	public SignUpPage registerLoginCart()
-	{
+	public SignUpPage registerLoginCart() {
 		registerLogin.click();
 		
 		return new SignUpPage(driver);
 	}
 	
-	public int amountOfItemsInCart()
-	{
+	public int amountOfItemsInCart() {
 		return cartList.size();
 	}
 	
-	public String getItemNameByIndex(int index)
-	{
+	public String getItemNameByIndex(int index) {
 		String itemName = cartProductNames.get(index).getText();
-	
+		
 		return itemName;
 	}
 	
-	public int getItemPriceByIndex(int index)
-	{
+	public int getItemPriceByIndex(int index) {
 		return removeDollarFromPriceStr(cartPrices.get(index));
 	}
 	
-	public int getItemQuantityByIndex(int index)
-	{
+	public int getItemQuantityByIndex(int index) {
 		WebElement quantityEle = cartQuantities.get(index);
 		String quantityStr = quantityEle.getText();
 		int quantity = Integer.parseInt(quantityStr); 
-		
+
 		return quantity;
 	}
 	
-	public int getItemTotalPerIndex(int index)
-	{
+	public int getItemTotalPerIndex(int index) {
 		return removeDollarFromPriceStr(cartTotals.get(index));
 	}
 	
-	public void removeFirstCartitem() throws InterruptedException
-	{
+	public void removeFirstCartitem() throws InterruptedException {
 		cartRemoveItem.get(0).click();
 		Thread.sleep(500);
 	}

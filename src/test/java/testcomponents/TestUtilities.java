@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,8 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class TestUtilities {
 
 	
-	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException
-	{
+	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
 		String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
 		ObjectMapper mapper = new ObjectMapper();
 		List<HashMap<String, String>> data = mapper.readValue(jsonContent, 
@@ -29,14 +30,24 @@ public class TestUtilities {
 		return data;
 	}
 	
-	public void waitForWebElementToAppear(WebElement ele, WebDriver driver)
-	{
+	public String getScreenshot(String testCaseName, WebDriver driver ) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		
+		String screenshotPath = System.getProperty("user.dir") + "\\reports\\" + testCaseName + ".png";
+		
+		File destination = new File(screenshotPath);
+		FileUtils.copyFile(source, destination);
+		
+		return screenshotPath;
+	}
+	
+	public void waitForWebElementToAppear(WebElement ele, WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 	
-	public void waitForElementToBeClickable(WebElement ele, WebDriver driver)
-	{
+	public void waitForElementToBeClickable(WebElement ele, WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}

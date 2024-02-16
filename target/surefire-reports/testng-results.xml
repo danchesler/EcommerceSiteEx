@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-15T16:37:54 PST" name="Suite" finished-at="2024-02-15T16:38:26 PST" duration-ms="32313">
+    <groups>
+      <group name="e2e_purchase">
+        <method signature="OrderPurchaseValidation.LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" name="LoginBeforeCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
+        <method signature="OrderPurchaseValidation.PlaceOrderRegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" name="PlaceOrderRegisterAtCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
+        <method signature="OrderPurchaseValidation.PlaceOrderRegisterBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" name="PlaceOrderRegisterBeforeCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
+      </group> <!-- e2e_purchase -->
+    </groups>
+    <test started-at="2024-02-15T16:37:54 PST" name="Purchase Test" finished-at="2024-02-15T16:38:26 PST" duration-ms="32313">
+      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-15T16:37:54 PST" name="launchWebSite" finished-at="2024-02-15T16:38:02 PST" duration-ms="8783" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchWebSite -->
+        <test-method signature="LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-15T16:38:03 PST" name="LoginBeforeCheckout" data-provider="login_data" finished-at="2024-02-15T16:38:09 PST" duration-ms="6026" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=United States, firstname=Dan, mobilenumber=(890) 567-1234, year=1990, city=Denver, title=Mr., cvc=321, password=secretpassword, expmonth=10, review=this is a cool product, company=Google, username2=testuser12345, state=Colorado, username1=TestUser, day=9, email=testt98761@gmail.com, nameoncard=Dan Ches, address=890 Test Blvd, address2=Unit 100, expyear=2024, lastname=Ches, zipcode=09812, month=May, cardnumber=4444 3333 2222 1111}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginBeforeCheckout -->
+        <test-method signature="PlaceOrderRegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-15T16:38:09 PST" name="PlaceOrderRegisterAtCheckout" data-provider="signup_data" finished-at="2024-02-15T16:38:16 PST" duration-ms="7475" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=(123) 456-7890, year=1990, address2=Suite 5, city=San Diego, expyear=2025, title=Mr., lastname=Fisher, zipcode=92131, cvc=123, password=testpw123, month=May, expmonth=03, company=Microsoft, username2=testuser12345, state=California, cardnumber=1111 2222 3333 4444, username1=testuser123, day=9, email=testt98760@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlaceOrderRegisterAtCheckout -->
+        <test-method signature="PlaceOrderRegisterBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-15T16:38:16 PST" name="PlaceOrderRegisterBeforeCheckout" data-provider="signup_data" finished-at="2024-02-15T16:38:23 PST" duration-ms="6629" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=(123) 456-7890, year=1990, address2=Suite 5, city=San Diego, expyear=2025, title=Mr., lastname=Fisher, zipcode=92131, cvc=123, password=testpw123, month=May, expmonth=03, company=Microsoft, username2=testuser12345, state=California, cardnumber=1111 2222 3333 4444, username1=testuser123, day=9, email=testt98760@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlaceOrderRegisterBeforeCheckout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-15T16:38:23 PST" name="tearDown" finished-at="2024-02-15T16:38:26 PST" duration-ms="3221" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseValidation -->
+    </test> <!-- Purchase Test -->
+  </suite> <!-- Suite -->
+</testng-results>

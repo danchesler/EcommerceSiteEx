@@ -22,13 +22,11 @@ public class AccountCreatedPage extends PageCommon {
 	@FindBy(css="[data-qa*='continue']")
 	private WebElement continueBtn;
 	
-	public boolean isAccountCreatedDisplayed()
-	{
+	public boolean isAccountCreatedDisplayed() {
 		return accountCreatedText.isDisplayed();
 	}
 	
-	public HomePage clickContinue()
-	{
+	public HomePage clickContinue() {
 		continueBtn.click();
 		return new HomePage(driver);
 	}

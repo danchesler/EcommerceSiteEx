@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -26,6 +27,11 @@ public class OrderPurchaseValidation extends BaseTest {
 	OrderPurchaseValidation opv;
 	ProductsPage pp;
 
+	@BeforeMethod
+	public void goToHomePage() throws InterruptedException {
+		homepage.goToHomepage();
+	}
+	
 	@Test
 	public void AddProductsToCart() throws InterruptedException 
 	{
@@ -79,9 +85,11 @@ public class OrderPurchaseValidation extends BaseTest {
 		Assert.assertEquals(cart.getItemTotalPerIndex(0), cart.getItemPriceByIndex(0)*quantity);
 	}
 	
-	@Test (dataProvider = "signup_data")
+	@Test (dataProvider = "signup_data", groups = "e2e_purchase")
 	public void PlaceOrderRegisterAtCheckout(HashMap<String, String> data) throws InterruptedException
 	{
+		homepage.goToHomePageFromLogo();
+		
 		// Add items to cart then go to cart
 		ArrayList<String> itemsOrdered = new ArrayList<String>();
 		homepage.scrollDownABit();
@@ -139,10 +147,9 @@ public class OrderPurchaseValidation extends BaseTest {
 		DeleteAccountPage dap = pdp.deleteAccount();
 		Assert.assertEquals(dap.getAccountDeletedText(), "ACCOUNT DELETED!");
 		dap.clickContinue();
-		
 	}	
 		
-	@Test (dataProvider = "signup_data")
+	@Test (dataProvider = "signup_data", groups = "e2e_purchase")
 	public void PlaceOrderRegisterBeforeCheckout(HashMap<String, String> data) throws InterruptedException
 	{
 		//Register user
@@ -198,7 +205,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 		
 	
-	@Test (dataProvider = "login_data")
+	@Test (dataProvider = "login_data", groups = "e2e_purchase")
 	public void LoginBeforeCheckout(HashMap<String, String> data) throws InterruptedException
 	{
 		SignUpPage sp = homepage.goToSignUp();
@@ -227,10 +234,10 @@ public class OrderPurchaseValidation extends BaseTest {
 		
 		Assert.assertEquals(pdp.getOrderPlacedText(), "ORDER PLACED!");
 		
-		DeleteAccountPage dap = pdp.deleteAccount();
-		Assert.assertEquals(dap.getAccountDeletedText(), "ACCOUNT DELETED!");
-		dap.clickContinue();
+		homepage = pdp.continueShopping();
 		
+		sp = homepage.Logout();
+		sp.goToHomePageFromLogo();
 	}
 	
 	@Test (dataProvider = "signup_data")

@@ -88,15 +88,12 @@ public class ProductsPage extends PageCommon {
 	@FindBy(css="button[data-dismiss='modal']")
 	protected WebElement continueShopping;
 	
-	public boolean areCategoriesDisplayed()
-	{
+	public boolean areCategoriesDisplayed() {
 		return categoryBox.isDisplayed();
 	}
 	
-	public void selectCategory(String category)
-	{
-		switch (category) 
-		{
+	public void selectCategory(String category) {
+		switch (category) {
 		 case "WOMEN":
 			 waitForElementToBeClickable(womenCategory);
 			 womenCategory.click();
@@ -112,11 +109,9 @@ public class ProductsPage extends PageCommon {
 		}
 	}
 	
-	public ProductsPage selectWomenSubCategory(String subCategory)
-	{
+	public ProductsPage selectWomenSubCategory(String subCategory) {
 		a = new Actions(driver);
-		switch (subCategory)
-		{
+		switch (subCategory) {
 			case "DRESS":
 				waitForElementToBeClickable(womenDress);
 				a.moveToElement(womenDress).doubleClick().build().perform();
@@ -130,15 +125,12 @@ public class ProductsPage extends PageCommon {
 				a.moveToElement(womenSaree).doubleClick().build().perform();
 				break;
 		}
-		
 		return new ProductsPage(driver);
 	}
 	
-	public ProductsPage selectMenSubCategory(String subCategory)
-	{
+	public ProductsPage selectMenSubCategory(String subCategory) {
 		a = new Actions(driver);
-		switch (subCategory)
-		{
+		switch (subCategory) {
 			case "TSHIRTS":
 				waitForElementToBeClickable(menTshirts);
 				a.moveToElement(menTshirts).doubleClick().build().perform();
@@ -148,15 +140,12 @@ public class ProductsPage extends PageCommon {
 				a.moveToElement(menJeans).doubleClick().build().perform();
 				break;
 		}
-		
 		return new ProductsPage(driver);
 	}
 	
-	public ProductsPage selectKidsSubCategory(String subCategory)
-	{
+	public ProductsPage selectKidsSubCategory(String subCategory) {
 		a = new Actions(driver);
-		switch (subCategory)
-		{
+		switch (subCategory) {
 			case "DRESS":
 				waitForElementToBeClickable(kidsDress);
 				a.moveToElement(kidsDress).doubleClick().build().perform();
@@ -166,81 +155,67 @@ public class ProductsPage extends PageCommon {
 				a.moveToElement(kidsTopsShirts).doubleClick().build().perform();
 				break;
 		}
-		
 		return new ProductsPage(driver);
 	}
 	
-	public String getProductsPageTitle()
-	{
+	public String getProductsPageTitle() {
 		return header.getText();
 	}
 
-	public List<WebElement> getProductList()
-	{
+	public List<WebElement> getProductList() {
 		return viewProducts;
 	}
 	
-	public List<WebElement> getProductNamesEle()
-	{
+	public List<WebElement> getProductNamesEle() {
 		return productNames;
 	}
 	
-	public int amountofProducts()
-	{
+	public int amountofProducts() {
 		return productNames.size();
 	}
 	
-	public String getProductNameByIndex(int i)
-	{
+	public String getProductNameByIndex(int i) {
 		return productNames.get(i).getText();
 	}
 	
-	public ProductDetailsPage viewProductByIndex(int i)
-	{
+	public ProductDetailsPage viewProductByIndex(int i) {
 		viewProducts.get(i).click();
 		
 		return new ProductDetailsPage(driver);
 	}
 	
-	public void searchProduct(String product)
-	{
+	public void searchProduct(String product) {
 		searchBar.sendKeys(product);
 		searchBtn.click();
 	}
 	
-	public void addToCartByIndex(int index) throws InterruptedException
-	{
+	public void addToCartByIndex(int index) throws InterruptedException {
 		a = new Actions(driver);
 		a.moveToElement(productInfoBox.get(index)).build().perform();
 		Thread.sleep(250);
-		
 		overlayAddToCart.get(index).click();
 	}
 	
-	public void addAllProductsToCart() throws InterruptedException
-	{
+	public void addAllProductsToCart() throws InterruptedException {
 		int totalItems = overlayAddToCart.size();
-		for (int i = 0; i < totalItems; i++)
-		{
+		for (int i = 0; i < totalItems; i++) {
 			addToCartByIndex(i);
 			continueShopping();
 		}
 	}
 	
-	public int getProductPriceByIndex(int index)
-	{
+	public int getProductPriceByIndex(int index) {
 		return removeDollarFromPriceStr(productPrices.get(index));
 	}
 	
 	//Add to cart popup
-	public void continueShopping()
-	{
+	public void continueShopping() {
 		continueShopping.click();
 	}
 	
-	public CartPage viewCartAfterAdding()
-	{
+	public CartPage viewCartAfterAdding() {
 		viewCartPopup.click();
+		
 		return new CartPage(driver);
 	}
 	

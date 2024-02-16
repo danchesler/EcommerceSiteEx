@@ -29,18 +29,15 @@ public class TestCasesPage extends PageCommon {
 	@FindBy(xpath="//h4/a/u/parent::a/parent::h4/parent::div/following-sibling::div[@class='panel-collapse collapse']")
 	private List<WebElement> collapseClosed;
 	
-	public String getTestCasesPgHeader()
-	{
+	public String getTestCasesPgHeader() {
 		return testCasesHeader.getText();
 	}
 	
-	public int getNumerOfTestCases()
-	{
+	public int getNumerOfTestCases() {
 		return testCasesList.size();
 	}
 	
-	public void openTestCase(int index) throws InterruptedException
-	{
+	public void openTestCase(int index) throws InterruptedException {
 		//WebElement collapse = driver.findElement(By.cssSelector("#collapse" + Integer.toString(index+1)));
 		//String collapseClass = collapse.getAttribute("class");
 		//System.out.println(collapseClass);
@@ -50,8 +47,7 @@ public class TestCasesPage extends PageCommon {
 		testCasesList.get(index).click();
 	}
 	
-	public void closeTestCase(int index) throws InterruptedException
-	{
+	public void closeTestCase(int index) throws InterruptedException {
 		//WebElement collapse = driver.findElement(By.cssSelector("#collapse" + Integer.toString(index+1)));
 		//String collapseClass = collapse.getAttribute("class");
 		//System.out.println(collapseClass);

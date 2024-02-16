@@ -13,8 +13,7 @@ public class PageCommon extends PageUtilities {
 	protected Actions a;
 	private JavascriptExecutor js;
 	
-	public PageCommon (WebDriver driver)
-	{
+	public PageCommon (WebDriver driver) {
 		super(driver);
 		this.a = new Actions(driver);
 		this.js = (JavascriptExecutor) driver;
@@ -72,93 +71,82 @@ public class PageCommon extends PageUtilities {
 	
 	//Header methods
 	
-	public ProductsPage goToProducts()
-	{
+	public HomePage goToHomePageFromLogo() {
+		automationExercise.click();
+		return new HomePage(driver);
+	}
+	
+	public ProductsPage goToProducts() {
 		a.moveToElement(products).doubleClick().build().perform();
 		return new ProductsPage(driver);
 	}
 	
-	public CartPage goToCart()
-	{
+	public CartPage goToCart() {
 		a.moveToElement(cart).doubleClick().build().perform();
 		return new CartPage(driver);
 	}
 	
-	public SignUpPage Logout()
-	{
+	public SignUpPage Logout() {
 		logout.click();
 		return new SignUpPage(driver);
 	}
 	
-	public SignUpPage goToSignUp()
-	{
+	public SignUpPage goToSignUp() {
 		signupLink.click();
 		return new SignUpPage(driver);
 	}
 	
-	public TestCasesPage goToTestCases()
-	{
+	public TestCasesPage goToTestCases() {
 		a.moveToElement(testCases).doubleClick().build().perform();
 		return new TestCasesPage(driver);
 	}
 	
 	
-	public DeleteAccountPage deleteAccount()
-	{
+	public DeleteAccountPage deleteAccount() {
 		deleteAccount.click();
 		return new DeleteAccountPage(driver);
 	}
 	
-	public String getLoggedInAsText()
-	{
+	public String getLoggedInAsText() {
 		return loggedInAs.getText();
 	}
 	
-	public ContactPage goToContactUs()
-	{
+	public ContactPage goToContactUs() {
 		contactUs.click();
 		return new ContactPage(driver);
 	}
 	
 	//Footer Methods
 	
-	public String getSubscriptionText()
-	{
+	public String getSubscriptionText() {
 		return subscriptionText.getText();
 	}
 	
-	public void enterSubscribeEmail(String email)
-	{
+	public void enterSubscribeEmail(String email) {
 		emailEditBox.sendKeys(email);
 	}
 	
-	public void submitSubscription()
-	{
+	public void submitSubscription() {
 		subscribeBtn.click();
 	}
 	
-	public WebElement getSubcribeButtonEle()
-	{
+	public WebElement getSubcribeButtonEle() {
 		return subscribeBtn;
 	}
 	
-	public String getSuccessAlert()
-	{
+	public String getSuccessAlert() {
 		return subSuccessAlert.getText();
 	}
 	
-	public void scrollToTop()
-	{
+	public void scrollToTop() {
 		js.executeScript("arguments[0].scrollIntoView()", automationExercise);
 	}
 	
-	public void scrollToFooter()
-	{
+	public void scrollToFooter() {
 		js.executeScript("arguments[0].scrollIntoView()", footer);
 	}
 	
-	public void selectScrollUpArrow()
-	{
+	public void selectScrollUpArrow() {
 		scrollUpArrow.click();
 	}
 	

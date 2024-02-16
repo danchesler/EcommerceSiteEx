@@ -119,78 +119,65 @@ public class SignUpPage extends PageCommon {
 	
 	//Initial login/signup methods
 	
-	public WebElement getLoginHeaderEle()
-	{
+	public WebElement getLoginHeaderEle() {
 		return loginHeader;
 	}
 	
-	public void enterLoginDetails(String email, String pw)
-	{
+	public void enterLoginDetails(String email, String pw) {
 		emailLogin.sendKeys(email);
 		passwordLogin.sendKeys(pw);
 	}
 	
-	public String getIncorrectLoginText()
-	{
+	public String getIncorrectLoginText() {
 		return wrongLogin.getText();
 	}
 	
-	public HomePage submitLogin()
-	{
+	public HomePage submitLogin() {
 		loginButton.click();
 		return new HomePage(driver);
 	}
 	
-	public WebElement getSignupHeaderEle()
-	{
+	public WebElement getSignupHeaderEle() {
 		return signupHeader;
 	}
 	
-	public void enterNewUserInfo(String name, String email)
-	{
+	public void enterNewUserInfo(String name, String email) {
 		nameEditBox1.sendKeys(name);
 		emailEditBox.sendKeys(email);
 	}
 	
-	public String getEmailExistsText()
-	{
+	public String getEmailExistsText() {
 		return emailExists.getText();
 	}
 	
-	public void submitNewUser()
-	{
+	public void submitNewUser() {
 		signupButton.click();
 	}
 	
 	
 	//Sign up page methods
 	
-	public WebElement getEnterAccountInfoHeader()
-	{
+	public WebElement getEnterAccountInfoHeader() {
 		return enterAccountInfoHeader;
 	}
 
-	public void selectTitle (String title)
-	{
+	public void selectTitle (String title) {
 		if (title.equalsIgnoreCase("mr."))
 			mrRadiobtn.click();
 		else if (title.equalsIgnoreCase("mrs."))
 			mrsRadiobtn.click();
 	}
 	
-	public void enterName(String name)
-	{
+	public void enterName(String name) {
 		nameEditBox2.clear();
 		nameEditBox2.sendKeys(name);
 	}
 	
-	public void enterPassword(String pw)
-	{
+	public void enterPassword(String pw) {
 		passwordEditBox.sendKeys(pw);
 	}
 	
-	public void enterDateOfBirth(int day, String month, String year)
-	{
+	public void enterDateOfBirth(int day, String month, String year) {
 		Select dayDropdown = new Select(dobDay);
 		dayDropdown.selectByIndex(day);
 		
@@ -202,68 +189,55 @@ public class SignUpPage extends PageCommon {
 		
 	}
 	
-	public void joinNewsletter()
-	{
+	public void joinNewsletter() {
 		newsletter.click();
 	}
 	
-	public void receiveSpecialOffers()
-	{
+	public void receiveSpecialOffers() {
 		specialOffers.click();
 	}
 	
-	public void enterFirstName(String fn)
-	{
+	public void enterFirstName(String fn) {
 		firstName.sendKeys(fn);
 	}
 	
-	public void enterLastName(String ln)
-	{
+	public void enterLastName(String ln) {
 		lastName.sendKeys(ln);
 	}
 	
-	public void enterCompany(String c)
-	{
+	public void enterCompany(String c) {
 		company.sendKeys(c);
 	}
 	
-	public void enterAddress1(String addr1)
-	{
+	public void enterAddress1(String addr1) {
 		address1.sendKeys(addr1);
 	}
 	
-	public void enterAddress2(String addr2)
-	{
+	public void enterAddress2(String addr2) {
 		address2.sendKeys(addr2);
 	}
 	
-	public void enterCountry(String c)
-	{
+	public void enterCountry(String c) {
 		country.sendKeys(c);
 	}
 	
-	public void enterState(String s)
-	{
+	public void enterState(String s) {
 		state.sendKeys(s);
 	}
 	
-	public void enterCity(String c)
-	{
+	public void enterCity(String c) {
 		city.sendKeys(c);
 	}
 	
-	public void enterZipcode(String zip)
-	{
+	public void enterZipcode(String zip) {
 		zipcode.sendKeys(zip);
 	}
 	
-	public void enterMobileNumber(String num)
-	{
+	public void enterMobileNumber(String num) {
 		mobileNumber.sendKeys(num);
 	}
 	
-	public void enterSignUpDetails(SignUpPage sp, HashMap<String, String> data)
-	{
+	public void enterSignUpDetails(SignUpPage sp, HashMap<String, String> data) {
 		sp.selectTitle(data.get("title"));
 		sp.enterName(data.get("username2"));
 		sp.enterPassword(data.get("password"));
@@ -282,8 +256,7 @@ public class SignUpPage extends PageCommon {
 		sp.enterMobileNumber(data.get("mobilenumber"));
 	}
 	
-	public AccountCreatedPage createAccount()
-	{
+	public AccountCreatedPage createAccount() {
 		createAccount.click();
 		
 		return new AccountCreatedPage(driver);

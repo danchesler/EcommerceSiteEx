@@ -13,7 +13,6 @@ public class DeleteAccountPage extends PageCommon {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		
 	}
 	
 	@FindBy(css="b")
@@ -22,18 +21,15 @@ public class DeleteAccountPage extends PageCommon {
 	@FindBy(css="[data-qa*='continue']")
 	public WebElement continueBtn;
 	
-	public WebElement getAccountDeletedEle()
-	{
+	public WebElement getAccountDeletedEle() {
 		return accountDeletedText;
 	}
 	
-	public String getAccountDeletedText()
-	{
+	public String getAccountDeletedText() {
 		return accountDeletedText.getText();
 	}
 	
-	public void clickContinue()
-	{
+	public void clickContinue() {
 		continueBtn.click();
 	}
 }

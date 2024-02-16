@@ -1,0 +1,5 @@
+organize tests into multiple testng.xml
+	-smoke - e2e
+setup parallel testing
+
+api page

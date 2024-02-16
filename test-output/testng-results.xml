@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-12T11:27:23 PST" name="Default suite" finished-at="2024-02-12T11:27:31 PST" duration-ms="8770">
+  <suite started-at="2024-02-15T16:20:53 PST" name="Suite" finished-at="2024-02-15T16:21:26 PST" duration-ms="33006">
     <groups>
+      <group name="e2e_purchase">
+        <method signature="OrderPurchaseValidation.LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" name="LoginBeforeCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
+        <method signature="OrderPurchaseValidation.PlaceOrderRegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" name="PlaceOrderRegisterAtCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
+        <method signature="OrderPurchaseValidation.PlaceOrderRegisterBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" name="PlaceOrderRegisterBeforeCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
+      </group> <!-- e2e_purchase -->
     </groups>
-    <test started-at="2024-02-12T11:27:23 PST" name="Default test" finished-at="2024-02-12T11:27:31 PST" duration-ms="8770">
-      <class name="SeleniumProject.automation_exercise.tests.LoginTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@11392934]" started-at="2024-02-12T11:27:23 PST" name="launchWebSite" finished-at="2024-02-12T11:27:30 PST" duration-ms="7409" status="PASS">
+    <test started-at="2024-02-15T16:20:53 PST" name="Purchase Test" finished-at="2024-02-15T16:21:26 PST" duration-ms="33006">
+      <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" started-at="2024-02-15T16:20:53 PST" name="launchWebSite" finished-at="2024-02-15T16:21:02 PST" duration-ms="9020" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="Logout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@11392934]" started-at="2024-02-12T11:27:30 PST" name="Logout" data-provider="login_data" finished-at="2024-02-12T11:27:31 PST" duration-ms="1163" status="PASS">
+        <test-method signature="LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" started-at="2024-02-15T16:21:02 PST" name="LoginBeforeCheckout" data-provider="login_data" finished-at="2024-02-15T16:21:08 PST" duration-ms="5958" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,12 +26,34 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Logout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.LoginTests@11392934]" started-at="2024-02-12T11:27:31 PST" name="tearDown" finished-at="2024-02-12T11:27:31 PST" duration-ms="0" status="PASS">
+        </test-method> <!-- LoginBeforeCheckout -->
+        <test-method signature="PlaceOrderRegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" started-at="2024-02-15T16:21:08 PST" name="PlaceOrderRegisterAtCheckout" data-provider="signup_data" finished-at="2024-02-15T16:21:16 PST" duration-ms="7963" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=(123) 456-7890, year=1990, address2=Suite 5, city=San Diego, expyear=2025, title=Mr., lastname=Fisher, zipcode=92131, cvc=123, password=testpw123, month=May, expmonth=03, company=Microsoft, username2=testuser12345, state=California, cardnumber=1111 2222 3333 4444, username1=testuser123, day=9, email=testt98760@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlaceOrderRegisterAtCheckout -->
+        <test-method signature="PlaceOrderRegisterBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" started-at="2024-02-15T16:21:16 PST" name="PlaceOrderRegisterBeforeCheckout" data-provider="signup_data" finished-at="2024-02-15T16:21:23 PST" duration-ms="6625" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{country=United States, firstname=Bob, nameoncard=Bob Fisher, address=456 Test Avenue, mobilenumber=(123) 456-7890, year=1990, address2=Suite 5, city=San Diego, expyear=2025, title=Mr., lastname=Fisher, zipcode=92131, cvc=123, password=testpw123, month=May, expmonth=03, company=Microsoft, username2=testuser12345, state=California, cardnumber=1111 2222 3333 4444, username1=testuser123, day=9, email=testt98760@gmail.com}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlaceOrderRegisterBeforeCheckout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@b7c4869]" started-at="2024-02-15T16:21:23 PST" name="tearDown" finished-at="2024-02-15T16:21:26 PST" duration-ms="3232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.LoginTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseValidation -->
+    </test> <!-- Purchase Test -->
+  </suite> <!-- Suite -->
 </testng-results>

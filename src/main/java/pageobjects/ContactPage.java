@@ -45,51 +45,42 @@ public class ContactPage extends PageCommon {
 	@FindBy(xpath="//div[@id='form-section']/a/span")
 	private WebElement homeBtn;
 	
-	public boolean getInTouchIsDisplayed()
-	{
+	public boolean getInTouchIsDisplayed() {
 		return getInTouch.isDisplayed();
 	}
 	
-	public void enterName(String name)
-	{
+	public void enterName(String name) {
 		nameBox.sendKeys(name);
 	}
 	
-	public void enterEmail(String email)
-	{
+	public void enterEmail(String email) {
 		emailBox.sendKeys(email);
 	}
 	
-	public void enterSubject(String subject)
-	{
+	public void enterSubject(String subject) {
 		subjectBox.sendKeys(subject);
 	}
 	
-	public void enterMessage(String msg)
-	{
+	public void enterMessage(String msg) {
 		messageBox.sendKeys(msg);
 	}
 	
-	public void submitForm()
-	{
+	public void submitForm() {
 		submitForm.click();
 	}
 
-	public void acceptAlert() throws InterruptedException
-	{
+	public void acceptAlert() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.switchTo().alert().accept();
 	}
 	
-	public void cancelAlert() throws InterruptedException
-	{
+	public void cancelAlert() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.switchTo().alert().dismiss();
 	}
 	
 	
-	public void uploadFile() throws IOException, InterruptedException
-	{
+	public void uploadFile() throws IOException, InterruptedException {
 		Actions a = new Actions(driver);
 		a.moveToElement(chooseFile).click().build().perform();
 		
@@ -101,17 +92,15 @@ public class ContactPage extends PageCommon {
 		JavascriptExecutor ex = ((JavascriptExecutor)driver);
 		ex.executeScript("window.document.getElementsByName('upload_file')[0].click();");
 		*/
-
 	}
 	
-	public String getSuccessMsg()
-	{
+	public String getSuccessMsg() {
 		return submitSuccess.getText();
 	}
 	
-	public HomePage goToHomePage()
-	{
+	public HomePage goToHomePage() {
 		homeBtn.click();
+		
 		return new HomePage(driver);
 	}
 }
