@@ -14,8 +14,7 @@ import testcomponents.BaseTest;
 public class ContactUsTests extends BaseTest {
 
 	@Test (dataProvider = "contactus_data")
-	public void FillContactUsForm(HashMap<String,String> data) throws IOException, InterruptedException
-	{
+	public void FillContactUsForm(HashMap<String,String> data) throws IOException, InterruptedException {
 		ContactPage con = homepage.goToContactUs();
 		
 		Assert.assertTrue(con.getInTouchIsDisplayed());
@@ -34,8 +33,7 @@ public class ContactUsTests extends BaseTest {
 	}	
 	
 	@DataProvider (name="contactus_data")
-	public Object[][] signupTestData() throws IOException
-	{
+	public Object[][] signupTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\contactus_data.json";
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		

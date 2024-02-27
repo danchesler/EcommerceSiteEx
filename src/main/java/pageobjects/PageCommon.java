@@ -43,6 +43,9 @@ public class PageCommon extends PageUtilities {
 	@FindBy(linkText="Delete Account")
 	private WebElement deleteAccount;
 	
+	@FindBy(xpath="//ul/li/a[contains(@href,'api')]") //ul li a[href*='api'] //ul/li/a[contains(@href,'api')]
+	private WebElement apiLink;
+	
 	@FindBy(css="a[href*='test_cases']")
 	private WebElement testCases;
 	
@@ -94,6 +97,12 @@ public class PageCommon extends PageUtilities {
 	public SignUpPage goToSignUp() {
 		signupLink.click();
 		return new SignUpPage(driver);
+	}
+	
+	public APIPage goToAPITesting() {
+		apiLink.click();
+		apiLink.click();
+		return new APIPage(driver);
 	}
 	
 	public TestCasesPage goToTestCases() {

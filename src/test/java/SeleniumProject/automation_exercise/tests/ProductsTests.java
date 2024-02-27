@@ -21,16 +21,14 @@ public class ProductsTests extends BaseTest {
 	ProductsPage pp;
 	
 	@Test
-	public void ViewProductsPage()
-	{
+	public void ViewProductsPage() {
 		pp = homepage.goToProducts();
 		Assert.assertEquals(pp.getPageTitle(), "Automation Exercise - All Products");
 		Assert.assertEquals(pp.getProductsPageTitle(), "ALL PRODUCTS");
 	}
 	
 	@Test (dependsOnMethods = {"ViewProductsPage"})
-	public void ViewFirstProduct()
-	{
+	public void ViewFirstProduct() {
 		ProductDetailsPage pd = pp.viewProductByIndex(0);
 		
 		Assert.assertTrue(pd.isCategoryDisplayed());
@@ -41,37 +39,30 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@Test (dataProvider="product_data", dependsOnMethods = {"ViewProductsPage"})
-	public void SearchForProducts(HashMap<String,String> data)
-	{
+	public void SearchForProducts(HashMap<String,String> data) {
 		pp.searchProduct(data.get("product"));
 		
 		boolean isValidSearch = true;
 		
-		for (WebElement e : pp.getProductNamesEle())
-		{
-			if (!e.getText().toLowerCase().contains(data.get("product")))
-			{
+		for (WebElement e : pp.getProductNamesEle()) {
+			if (!e.getText().toLowerCase().contains(data.get("product"))) {
 				int index = pp.getProductNamesEle().indexOf(e);
 				ProductDetailsPage pd = pp.viewProductByIndex(index);
 				
-				if (!pd.getCategory().toLowerCase().contains(data.get("product")))
-				{
+				if (!pd.getCategory().toLowerCase().contains(data.get("product"))) {
 					isValidSearch = false;
 					break;
 				}
 				pd.goPrevPage();
 			}
 		}
-		
 		Assert.assertTrue(isValidSearch);
 	}
 	
 	@Test
-	public void RemoveProductsFromCart() throws InterruptedException
-	{
+	public void RemoveProductsFromCart() throws InterruptedException {
 		homepage.scrollDownABit();
-		for (int i = 0; i < 3; i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			homepage.addToCartByIndex(i);
 			homepage.continueShopping();
 		}
@@ -87,14 +78,12 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "category_data")
-	public void CategorizeProductsVerification(HashMap<String, String> data)
-	{
+	public void CategorizeProductsVerification(HashMap<String, String> data) {
 		Assert.assertTrue(homepage.areCategoriesDisplayed());
 		
 		homepage.selectCategory(data.get("category"));
 		
-		switch (data.get("category"))
-		{
+		switch (data.get("category")) {
 			case "WOMEN": 
 				pp = homepage.selectWomenSubCategory(data.get("subcategory"));
 				break;
@@ -103,8 +92,7 @@ public class ProductsTests extends BaseTest {
 				break;
 			case "KIDS": 
 				pp = homepage.selectKidsSubCategory(data.get("subcategory"));
-				break;
-				
+				break;	
 		}
 		Assert.assertTrue(pp.getPageURL().contains("category_products"));
 		
@@ -114,19 +102,16 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "login_data", dependsOnMethods= {"SearchForProducts"})
-	public void SearchProductsThenVerifyCartAfterLogin(HashMap<String, String> data) throws InterruptedException
-	{
+	public void SearchProductsThenVerifyCartAfterLogin(HashMap<String, String> data) throws InterruptedException {
 		ArrayList<String> productNames = new ArrayList<String>();
-		for (int i = 0; i < pp.amountofProducts(); i++)
-		{
+		for (int i = 0; i < pp.amountofProducts(); i++) {
 			productNames.add(pp.getProductNameByIndex(i));
 		}
 		pp.addAllProductsToCart();
 		
 		CartPage cart = pp.goToCart();
 		
-		for (int i = 0; i < productNames.size(); i++)
-		{
+		for (int i = 0; i < productNames.size(); i++) {
 			Assert.assertEquals(productNames.get(i), cart.getItemNameByIndex(i));
 		}
 		
@@ -138,8 +123,7 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "login_data", dependsOnMethods = {"ViewProductsPage"})
-	public void writeProductReview(HashMap<String, String> data) throws InterruptedException
-	{
+	public void writeProductReview(HashMap<String, String> data) throws InterruptedException {
 		ProductDetailsPage pdp = pp.viewProductByIndex(0);
 		Assert.assertEquals(pdp.getWriteYourReviewText(), "WRITE YOUR REVIEW");
 		
@@ -148,13 +132,10 @@ public class ProductsTests extends BaseTest {
 		pdp.enterReview(data.get("review"));
 		pdp.submitReview();
 		Assert.assertEquals(pdp.getReviewSuccessText(), "Thank you for your review.");
-
-		
 	}
 	
 	@Test
-	public void AddRecommendedItem()
-	{
+	public void AddRecommendedItem() {
 		String productName;
 		
 		homepage.scrollToFooter();
@@ -168,8 +149,7 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@DataProvider (name="product_data")
-	public Object[][] searchTestData() throws IOException
-	{
+	public Object[][] searchTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\searchEntry.json";
 				
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
@@ -178,8 +158,7 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@DataProvider (name="category_data")
-	public Object[][] categoryTestData() throws IOException
-	{
+	public Object[][] categoryTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\category_data.json";
 				
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
@@ -188,8 +167,7 @@ public class ProductsTests extends BaseTest {
 	}
 	
 	@DataProvider (name="login_data")
-	public Object[][] loginTestData() throws IOException
-	{
+	public Object[][] loginTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		

@@ -14,8 +14,7 @@ import testcomponents.BaseTest;
 public class CommonPageTests extends BaseTest {
 
 	@Test (dataProvider = "user_data")
-	public void SubscribeOnHomePage(HashMap<String, String> data)
-	{
+	public void SubscribeOnHomePage(HashMap<String, String> data) {
 		homepage.scrollToFooter();
 		Assert.assertEquals(homepage.getSubscriptionText(), "SUBSCRIPTION");
 		
@@ -25,8 +24,7 @@ public class CommonPageTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "user_data")
-	public void SubscribeOnCartPage(HashMap<String, String> data)
-	{
+	public void SubscribeOnCartPage(HashMap<String, String> data) {
 		CartPage c = homepage.goToCart();
 		c.scrollToFooter();
 		c.enterSubscribeEmail(data.get("email"));
@@ -36,8 +34,7 @@ public class CommonPageTests extends BaseTest {
 	}
 	
 	@DataProvider (name="user_data")
-	public Object[][] testData() throws IOException
-	{
+	public Object[][] testData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
 				
 		

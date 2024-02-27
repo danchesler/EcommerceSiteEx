@@ -18,8 +18,7 @@ public class LoginTests extends BaseTest {
 	
 	
 	@Test (dataProvider = "signup_data")
-	public void RegisterThenDeleteUser(HashMap<String,String> data) throws InterruptedException
-	{	
+	public void RegisterThenDeleteUser(HashMap<String,String> data) throws InterruptedException {	
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getSignupHeaderEle().getText(),"New User Signup!");
 		
@@ -37,13 +36,10 @@ public class LoginTests extends BaseTest {
 		DeleteAccountPage dap =  homepage.deleteAccount();
 		Assert.assertTrue(dap.getAccountDeletedEle().isDisplayed());
 		dap.clickContinue();
-		
-		
 	}
 
 	@Test (dataProvider = "signup_data", dependsOnMethods = {"RegisterUserThenLogout"})
-	public void LoginThenDeleteUser(HashMap<String,String> data)
-	{
+	public void LoginThenDeleteUser(HashMap<String,String> data) {
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getLoginHeaderEle().getText(),"Login to your account");
 		
@@ -57,8 +53,7 @@ public class LoginTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "signup_data")
-	public void LoginInvalidUser(HashMap<String,String> data)
-	{
+	public void LoginInvalidUser(HashMap<String,String> data) {
 		SignUpPage sp = homepage.goToSignUp();
 		sp.enterLoginDetails(data.get("email"), data.get("password"));
 		sp.submitLogin();
@@ -67,8 +62,7 @@ public class LoginTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "login_data")
-	public void Logout (HashMap<String,String> data)
-	{
+	public void Logout (HashMap<String,String> data) {
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getLoginHeaderEle().getText(),"Login to your account");
 		
@@ -80,12 +74,10 @@ public class LoginTests extends BaseTest {
 		sp = homepage.Logout();
 		
 		Assert.assertEquals(sp.getPageURL(), "https://www.automationexercise.com/login");
-		
 	}
 	
 	@Test (dataProvider = "login_data")
-	public void RegisterExistingUser(HashMap<String,String> data)
-	{
+	public void RegisterExistingUser(HashMap<String,String> data) {
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getSignupHeaderEle().getText(),"New User Signup!");
 		
@@ -97,8 +89,7 @@ public class LoginTests extends BaseTest {
 	
 	//Used to setup a registered user
 	@Test (dataProvider="signup_data")
-	public void RegisterUserThenLogout(HashMap<String,String> data)
-	{
+	public void RegisterUserThenLogout(HashMap<String,String> data) {
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getSignupHeaderEle().getText(),"New User Signup!");
 		
@@ -115,8 +106,7 @@ public class LoginTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "signup_data")
-	public void DeleteExistingUser(HashMap<String,String> data)
-	{
+	public void DeleteExistingUser(HashMap<String,String> data) {
 		SignUpPage sp = homepage.goToSignUp();
 		sp.enterLoginDetails(data.get("email"), data.get("password"));
 		homepage = sp.submitLogin();
@@ -124,12 +114,9 @@ public class LoginTests extends BaseTest {
 		dap.clickContinue();
 	}
 	
-	
-	
 	//DataProviders
 	@DataProvider (name="signup_data")
-	public Object[][] signupTestData() throws IOException
-	{
+	public Object[][] signupTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		
@@ -138,8 +125,7 @@ public class LoginTests extends BaseTest {
 	}
 	
 	@DataProvider (name="login_data")
-	public Object[][] loginTestData() throws IOException
-	{
+	public Object[][] loginTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		

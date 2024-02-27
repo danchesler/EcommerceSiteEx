@@ -11,8 +11,7 @@ public class TestCasesTests extends BaseTest {
 	TestCasesPage tcp;
 	
 	@Test
-	public void NavigateToPage() throws InterruptedException
-	{
+	public void NavigateToPage() throws InterruptedException {
 		tcp = homepage.goToTestCases();
 		Assert.assertEquals(tcp.getPageURL(), "https://www.automationexercise.com/test_cases");
 		Assert.assertEquals(tcp.getTestCasesPgHeader(), "TEST CASES");
@@ -20,10 +19,8 @@ public class TestCasesTests extends BaseTest {
 	
 	
 	@Test (dependsOnMethods = {"NavigateToPage"})
-	public void BrowseTestCases() throws InterruptedException
-	{
-		for (int i = 0; i < tcp.getNumerOfTestCases(); i++)
-		{
+	public void BrowseTestCases() throws InterruptedException {
+		for (int i = 0; i < tcp.getNumerOfTestCases(); i++) {
 			tcp.openTestCase(i);
 			tcp.closeTestCase(i);
 		}
@@ -32,9 +29,6 @@ public class TestCasesTests extends BaseTest {
 		//iterate thru the test cases
 		//for each tc
 			//open if not collapsed
-			//close if collapsed
-			
-			
-				
+			//close if collapsed			
 	}
 }

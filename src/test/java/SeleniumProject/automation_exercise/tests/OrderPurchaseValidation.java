@@ -33,8 +33,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 	
 	@Test
-	public void AddProductsToCart() throws InterruptedException 
-	{
+	public void AddProductsToCart() throws InterruptedException {
 		int productCount = 0;
 		ArrayList<Integer> productPagePrices = new ArrayList<Integer>();
 		HashMap<Integer, Integer> quantityMap = new HashMap<Integer, Integer>();
@@ -55,8 +54,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		Assert.assertEquals(cart.amountOfItemsInCart(), productCount);
 		
 		//Verify Prices in cart vs product page, Quantity, and total price per item
-		for (int i = 0; i < cart.amountOfItemsInCart(); i++)
-		{
+		for (int i = 0; i < cart.amountOfItemsInCart(); i++) {
 			Assert.assertEquals(productPagePrices.get(i), cart.getItemPriceByIndex(i));
 			Assert.assertEquals(quantityMap.get(i), cart.getItemQuantityByIndex(i));
 			
@@ -66,8 +64,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 	
 	@Test
-	public void CartItemQuantityValidation() throws InterruptedException
-	{
+	public void CartItemQuantityValidation() throws InterruptedException {
 		int index = 4;
 		int quantity = 4;
 		
@@ -86,15 +83,13 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 	
 	@Test (dataProvider = "signup_data", groups = "e2e_purchase")
-	public void PlaceOrderRegisterAtCheckout(HashMap<String, String> data) throws InterruptedException
-	{
+	public void PlaceOrderRegisterAtCheckout(HashMap<String, String> data) throws InterruptedException {
 		homepage.goToHomePageFromLogo();
 		
 		// Add items to cart then go to cart
 		ArrayList<String> itemsOrdered = new ArrayList<String>();
 		homepage.scrollDownABit();
-		for (int i = 0; i < 3; i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			itemsOrdered.add(homepage.getFeaturedItemNameByIndex(i));
 			homepage.addToCartByIndex(i);
 			homepage.continueShopping();
@@ -121,15 +116,13 @@ public class OrderPurchaseValidation extends BaseTest {
 		VerifyAddressAtCheckout(data,ck);
 		
 		//Verify Checkout items
-		for(int i = 0; i < ck.amountOfItemsInCart(); i++)
-		{
+		for(int i = 0; i < ck.amountOfItemsInCart(); i++) {
 			Assert.assertEquals(itemsOrdered.get(i), ck.getItemNameByIndex(i));
 		}
 		
 		//Verify price
 		double price = 0;
-		for (int i = 0; i < ck.amountOfItemsInCart(); i++)
-		{
+		for (int i = 0; i < ck.amountOfItemsInCart(); i++) {
 			price += ck.getItemTotalPerIndex(i);
 		}
 		
@@ -150,8 +143,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}	
 		
 	@Test (dataProvider = "signup_data", groups = "e2e_purchase")
-	public void PlaceOrderRegisterBeforeCheckout(HashMap<String, String> data) throws InterruptedException
-	{
+	public void PlaceOrderRegisterBeforeCheckout(HashMap<String, String> data) throws InterruptedException {
 		//Register user
 		SignUpPage sp = homepage.goToSignUp();
 		sp.enterNewUserInfo(data.get("username1"), data.get("email"));
@@ -166,8 +158,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		ArrayList<String> itemsOrdered = new ArrayList<String>();
 		
 		homepage.scrollDownABit();
-		for (int i = 0; i < 3; i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			itemsOrdered.add(homepage.getFeaturedItemNameByIndex(i));
 			homepage.addToCartByIndex(i);
 			homepage.continueShopping();
@@ -179,15 +170,13 @@ public class OrderPurchaseValidation extends BaseTest {
 		VerifyAddressAtCheckout(data,ck);
 		
 		//Verify Checkout items
-		for(int i = 0; i < ck.amountOfItemsInCart(); i++)
-		{
+		for(int i = 0; i < ck.amountOfItemsInCart(); i++) {
 			Assert.assertEquals(itemsOrdered.get(i), ck.getItemNameByIndex(i));
 		}
 		
 		//Verify price
 		double price = 0;
-		for (int i = 0; i < ck.amountOfItemsInCart(); i++)
-		{
+		for (int i = 0; i < ck.amountOfItemsInCart(); i++) {
 			price += ck.getItemTotalPerIndex(i);
 		}
 		Assert.assertEquals(price, ck.getOrderTotal());
@@ -206,16 +195,14 @@ public class OrderPurchaseValidation extends BaseTest {
 		
 	
 	@Test (dataProvider = "login_data", groups = "e2e_purchase")
-	public void LoginBeforeCheckout(HashMap<String, String> data) throws InterruptedException
-	{
+	public void LoginBeforeCheckout(HashMap<String, String> data) throws InterruptedException {
 		SignUpPage sp = homepage.goToSignUp();
 		sp.enterLoginDetails(data.get("email"), data.get("password"));
 		homepage = sp.submitLogin();
 		Assert.assertEquals(homepage.getLoggedInAsText(), "Logged in as " + data.get("username2"));
 		
 		homepage.scrollDownABit();
-		for (int i = 0; i < 3; i++)
-		{
+		for (int i = 0; i < 3; i++) {
 			homepage.addToCartByIndex(i);
 			homepage.continueShopping();
 		}
@@ -241,8 +228,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 	
 	@Test (dataProvider = "signup_data")
-	public void CheckoutAddressVerification(HashMap<String, String> data) throws InterruptedException
-	{
+	public void CheckoutAddressVerification(HashMap<String, String> data) throws InterruptedException {
 		SignUpPage sp = homepage.goToSignUp();
 		sp.enterNewUserInfo(data.get("username1"), data.get("email"));
 		sp.submitNewUser();
@@ -252,8 +238,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		homepage = acp.clickContinue();
 		Assert.assertEquals(homepage.getLoggedInAsText(), "Logged in as " + data.get("username2"));
 		
-		for (int i = 0 ; i < 3; i++)
-		{
+		for (int i = 0 ; i < 3; i++) {
 			homepage.addToCartByIndex(i);
 			homepage.continueShopping();
 		}
@@ -270,10 +255,8 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 	
 	@Test (dataProvider = "signup_data")
-	public void DownloadInvoiceAfterPurchase(HashMap<String, String> data) throws InterruptedException
-	{
-		for (int i = 0; i < 3; i++)
-		{
+	public void DownloadInvoiceAfterPurchase(HashMap<String, String> data) throws InterruptedException {
+		for (int i = 0; i < 3; i++) {
 			homepage.addToCartByIndex(i);
 			homepage.continueShopping();
 		}
@@ -309,13 +292,13 @@ public class OrderPurchaseValidation extends BaseTest {
 		
 		//verify file is downloaded
 		File f = new File(System.getProperty("user.dir") + "\\invoice.txt");
-		if (f.exists())
-		{
+		if (f.exists()) {
 			Assert.assertTrue(true);
 			f.delete();
 		}
-		else
+		else {
 			Assert.assertTrue(f.exists());
+		}
 
 		homepage = pdp.continueShopping();
 		
@@ -325,8 +308,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 	
 	@DataProvider (name="signup_data")
-	public Object[][] signupTestData() throws IOException
-	{
+	public Object[][] signupTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
 				
 		
@@ -336,8 +318,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}	
 	
 	@DataProvider (name="login_data")
-	public Object[][] loginTestData() throws IOException
-	{
+	public Object[][] loginTestData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
 				
 		
@@ -346,8 +327,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		return new Object[][] { {data.get(1)} };
 	}	
 
-	public void VerifyAddressAtCheckout(HashMap<String, String> data, CheckoutPage ck)
-	{
+	public void VerifyAddressAtCheckout(HashMap<String, String> data, CheckoutPage ck) {
 		//Verify delivery address info is correct
 		Assert.assertEquals(data.get("title"), ck.getDeliveryUserTitle());
 		Assert.assertEquals(data.get("firstname"), ck.getDeliveryFirstName());

@@ -8,8 +8,7 @@ import testcomponents.BaseTest;
 public class HomePageTests extends BaseTest {
 
 	@Test
-	public void ScrollUpArrowFromFooter()
-	{
+	public void ScrollUpArrowFromFooter() {
 		homepage.scrollToFooter();
 		Assert.assertEquals(homepage.getSubscriptionText(), "SUBSCRIPTION");
 		
@@ -18,8 +17,7 @@ public class HomePageTests extends BaseTest {
 	}
 	
 	@Test
-	public void ScrollUpFromFooter()
-	{
+	public void ScrollUpFromFooter() {
 		homepage.scrollToFooter();
 		Assert.assertEquals(homepage.getSubscriptionText(), "SUBSCRIPTION");
 		
