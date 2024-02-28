@@ -18,7 +18,7 @@ import org.testng.annotations.BeforeTest;
 import pageobjects.HomePage;
 
 public class BaseTest extends TestUtilities {
-//test comment1
+//test comment2
 	public WebDriver driver;
 	protected HomePage homepage;
 	
