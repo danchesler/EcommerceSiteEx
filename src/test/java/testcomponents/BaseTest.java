@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Properties;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -30,16 +31,24 @@ public class BaseTest extends TestUtilities {
 		
 		String browserName = System.getProperty("browser") != null ?  System.getProperty("browser") : prop.getProperty("browser");
 		
-		if (browserName.equalsIgnoreCase("chrome"))
+		if (browserName.contains("chrome"))
 		{
 			ChromeOptions op = new ChromeOptions();
 			op.addExtensions(new File(System.getProperty("user.dir") + "\\resources\\ublock.crx"));
-		
+			
+			if (browserName.contains("headless")) {
+				op.addArguments("headless");
+			}
+			
 			HashMap<String, Object> prefs = new HashMap<String, Object>();
 			prefs.put("download.default_directory", System.getProperty("user.dir"));
 		    op.setExperimentalOption("prefs", prefs);
 			
 			driver = new ChromeDriver(op);
+			
+			if (browserName.contains("headless")) {
+				driver.manage().window().setSize(new Dimension(1920,1080));
+			}
 			
 		}
 		else if (browserName.equalsIgnoreCase("firefox"))

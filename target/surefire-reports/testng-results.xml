@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-27T15:44:47 PST" name="Suite" finished-at="2024-02-27T15:45:18 PST" duration-ms="31159">
+  <suite started-at="2024-02-28T12:58:14 PST" name="Suite" finished-at="2024-02-28T12:58:53 PST" duration-ms="39262">
     <groups>
       <group name="system_purchase">
         <method signature="OrderPurchaseValidation.LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" name="LoginBeforeCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
@@ -10,13 +10,13 @@
         <method signature="OrderPurchaseValidation.PlaceOrderRegisterBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" name="PlaceOrderRegisterBeforeCheckout" class="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation"/>
       </group> <!-- system_purchase -->
     </groups>
-    <test started-at="2024-02-27T15:44:47 PST" name="Purchase Test" finished-at="2024-02-27T15:45:18 PST" duration-ms="31159">
+    <test started-at="2024-02-28T12:58:14 PST" name="Purchase Test" finished-at="2024-02-28T12:58:53 PST" duration-ms="39262">
       <class name="SeleniumProject.automation_exercise.tests.OrderPurchaseValidation">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-27T15:44:47 PST" name="launchWebSite" finished-at="2024-02-27T15:44:54 PST" duration-ms="6980" status="PASS">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-28T12:58:14 PST" name="launchWebSite" finished-at="2024-02-28T12:58:21 PST" duration-ms="7435" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-27T15:44:54 PST" name="LoginBeforeCheckout" data-provider="login_data" finished-at="2024-02-27T15:45:00 PST" duration-ms="6122" status="PASS">
+        <test-method signature="LoginBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-28T12:58:22 PST" name="LoginBeforeCheckout" data-provider="login_data" finished-at="2024-02-28T12:58:30 PST" duration-ms="8187" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginBeforeCheckout -->
-        <test-method signature="PlaceOrderRegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-27T15:45:00 PST" name="PlaceOrderRegisterAtCheckout" data-provider="signup_data" finished-at="2024-02-27T15:45:08 PST" duration-ms="8212" status="PASS">
+        <test-method signature="PlaceOrderRegisterAtCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-28T12:58:30 PST" name="PlaceOrderRegisterAtCheckout" data-provider="signup_data" finished-at="2024-02-28T12:58:41 PST" duration-ms="10899" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -38,7 +38,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PlaceOrderRegisterAtCheckout -->
-        <test-method signature="PlaceOrderRegisterBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-27T15:45:08 PST" name="PlaceOrderRegisterBeforeCheckout" data-provider="signup_data" finished-at="2024-02-27T15:45:15 PST" duration-ms="6407" status="PASS">
+        <test-method signature="PlaceOrderRegisterBeforeCheckout(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-28T12:58:41 PST" name="PlaceOrderRegisterBeforeCheckout" data-provider="signup_data" finished-at="2024-02-28T12:58:50 PST" duration-ms="9350" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -49,7 +49,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PlaceOrderRegisterBeforeCheckout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-27T15:45:15 PST" name="tearDown" finished-at="2024-02-27T15:45:18 PST" duration-ms="3243" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.OrderPurchaseValidation@31ea9581]" started-at="2024-02-28T12:58:50 PST" name="tearDown" finished-at="2024-02-28T12:58:53 PST" duration-ms="3198" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
