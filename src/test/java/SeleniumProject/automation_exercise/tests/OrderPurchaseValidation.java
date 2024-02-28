@@ -82,7 +82,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		Assert.assertEquals(cart.getItemTotalPerIndex(0), cart.getItemPriceByIndex(0)*quantity);
 	}
 	
-	@Test (dataProvider = "signup_data", groups = "e2e_purchase")
+	@Test (dataProvider = "signup_data", groups = "system_purchase")
 	public void PlaceOrderRegisterAtCheckout(HashMap<String, String> data) throws InterruptedException {
 		homepage.goToHomePageFromLogo();
 		
@@ -142,7 +142,7 @@ public class OrderPurchaseValidation extends BaseTest {
 		dap.clickContinue();
 	}	
 		
-	@Test (dataProvider = "signup_data", groups = "e2e_purchase")
+	@Test (dataProvider = "signup_data", groups = "system_purchase")
 	public void PlaceOrderRegisterBeforeCheckout(HashMap<String, String> data) throws InterruptedException {
 		//Register user
 		SignUpPage sp = homepage.goToSignUp();
@@ -194,7 +194,7 @@ public class OrderPurchaseValidation extends BaseTest {
 	}
 		
 	
-	@Test (dataProvider = "login_data", groups = "e2e_purchase")
+	@Test (dataProvider = "login_data", groups = "system_purchase")
 	public void LoginBeforeCheckout(HashMap<String, String> data) throws InterruptedException {
 		SignUpPage sp = homepage.goToSignUp();
 		sp.enterLoginDetails(data.get("email"), data.get("password"));

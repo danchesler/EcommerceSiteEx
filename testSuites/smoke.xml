@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="tests" thread-count="2">
 	<groups>
 		<run>
-			<include name="e2e_purchase"/>
+			<include name="system_purchase"/>
 		</run>
 	</groups>
 	
