@@ -1,7 +1,7 @@
 organize tests into multiple testng.xml
 	-smoke - e2e
 setup parallel testing
-api page
+
 video tutorials link
 	- open link in new tab
 	- change tabs

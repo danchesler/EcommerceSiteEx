@@ -16,7 +16,6 @@
           <include name="PlaceOrderRegisterAtCheckout" invocation-numbers="0"/>
           <include name="PlaceOrderRegisterBeforeCheckout" invocation-numbers="0"/>
           <include name="tearDown"/>
-          <include name="LoginBeforeCheckout" invocation-numbers="0"/>
           <include name="launchWebSite"/>
         </methods>
       </class> <!-- SeleniumProject.automation_exercise.tests.OrderPurchaseValidation -->

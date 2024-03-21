@@ -49,6 +49,10 @@ public class PageCommon extends PageUtilities {
 	@FindBy(css="a[href*='test_cases']")
 	private WebElement testCases;
 	
+	@FindBy(xpath="//a[contains(@href,'youtube')]") 
+	private WebElement videoTutorials;
+	
+	
 	@FindBy(linkText="Contact us")
 	private WebElement contactUs;
 	
@@ -118,6 +122,11 @@ public class PageCommon extends PageUtilities {
 	
 	public String getLoggedInAsText() {
 		return loggedInAs.getText();
+	}
+	
+	public YouTubePage goToYouTubePage() {
+		videoTutorials.click();
+		return new YouTubePage(driver);
 	}
 	
 	public ContactPage goToContactUs() {
