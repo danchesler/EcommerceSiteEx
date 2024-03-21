@@ -1,6 +1,10 @@
 package pageobjects;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -125,7 +129,9 @@ public class PageCommon extends PageUtilities {
 	}
 	
 	public YouTubePage goToYouTubePage() {
-		videoTutorials.click();
+		Actions a = new Actions(driver);
+		a.moveToElement(videoTutorials).keyDown(Keys.CONTROL).click().build().perform();
+		
 		return new YouTubePage(driver);
 	}
 	

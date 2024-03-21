@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class YouTubePage extends PageUtilities{
-	private WebDriver driver;
+	WebDriver driver;
 	
 	public YouTubePage(WebDriver driver) {
 		super(driver);
