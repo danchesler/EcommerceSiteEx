@@ -1,9 +1,15 @@
 package pageobjects;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class YouTubePage extends PageUtilities{
 	WebDriver driver;
@@ -19,6 +25,9 @@ public class YouTubePage extends PageUtilities{
 	
 	
 	public boolean isChannelNameDisplayed() {
-		return channelName.isDisplayed();
+		return new WebDriverWait(driver, Duration.ofSeconds(10))
+			.ignoring(NoSuchElementException.class)
+			.until(ExpectedConditions.visibilityOf(channelName))
+			.isDisplayed();	
 	}
 }

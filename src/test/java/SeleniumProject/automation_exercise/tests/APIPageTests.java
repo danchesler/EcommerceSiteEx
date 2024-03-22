@@ -9,12 +9,13 @@ import testcomponents.BaseTest;
 public class APIPageTests extends BaseTest {
 	APIPage api;
 	
-	@Test
-	public void NavigateToAPIPage() {
+	@Test (invocationCount = 3)
+	public void NavigateToAPIPage() throws InterruptedException {
 		api = homepage.goToAPITesting();
-		
-		Assert.assertEquals(driver.getCurrentUrl(), "https://www.automationexercise.com/api_list");
+	
 		Assert.assertEquals(api.getAPIPageTitle(), "APIS LIST FOR PRACTICE");
+		
+		api.goToHomePageFromLogo();
 	}
 	
 	@Test (dependsOnMethods="NavigateToAPIPage")

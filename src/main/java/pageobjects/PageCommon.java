@@ -1,8 +1,10 @@
 package pageobjects;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageCommon extends PageUtilities {
 
@@ -107,17 +111,27 @@ public class PageCommon extends PageUtilities {
 		return new SignUpPage(driver);
 	}
 	
-	public APIPage goToAPITesting() {
+	public APIPage goToAPITesting() throws InterruptedException {
 		apiLink.click();
-		apiLink.click();
+		
+		if (driver.getCurrentUrl().contains("google")) {
+			Thread.sleep(4000);
+			apiLink.click();
+		}
+		
 		return new APIPage(driver);
 	}
 	
-	public TestCasesPage goToTestCases() {
+	public TestCasesPage goToTestCases() throws InterruptedException {
 		a.moveToElement(testCases).doubleClick().build().perform();
+		
+		if (driver.getCurrentUrl().contains("google")) {
+			Thread.sleep(4000);
+			a.moveToElement(testCases).doubleClick().build().perform();
+		}
+		
 		return new TestCasesPage(driver);
 	}
-	
 	
 	public DeleteAccountPage deleteAccount() {
 		deleteAccount.click();

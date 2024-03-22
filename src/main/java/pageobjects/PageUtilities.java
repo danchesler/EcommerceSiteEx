@@ -57,4 +57,5 @@ public class PageUtilities {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
+	
 }

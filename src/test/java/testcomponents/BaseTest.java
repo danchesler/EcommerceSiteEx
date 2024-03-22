@@ -34,7 +34,7 @@ public class BaseTest extends TestUtilities {
 		if (browserName.contains("chrome"))
 		{
 			ChromeOptions op = new ChromeOptions();
-			op.addExtensions(new File(System.getProperty("user.dir") + "\\resources\\ublock.crx"));
+			op.addExtensions(new File(System.getProperty("user.dir") + "\\resources\\uBlock_1.56.0.0.crx"));
 			
 			if (browserName.contains("headless")) {
 				op.addArguments("headless");

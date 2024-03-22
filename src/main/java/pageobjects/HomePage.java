@@ -195,7 +195,7 @@ public class HomePage extends PageCommon {
 	public void goToHomepage() throws InterruptedException {
 		driver.get("https://www.automationexercise.com/");
 		//wait for ads to go away
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 	}
 	
 	

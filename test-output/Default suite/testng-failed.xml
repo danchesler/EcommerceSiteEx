@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="SeleniumProject.automation_exercise.tests.VideoTutorialsTests">
+      <class name="SeleniumProject.automation_exercise.tests.APIPageTests">
         <methods>
+          <include name="NavigateToAPIPage"/>
           <include name="tearDown"/>
-          <include name="VerifyYouTubePage"/>
           <include name="launchWebSite"/>
         </methods>
-      </class> <!-- SeleniumProject.automation_exercise.tests.VideoTutorialsTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.APIPageTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
