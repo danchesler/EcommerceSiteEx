@@ -4,15 +4,28 @@
   <listeners>
     <listener class-name="testcomponents.Listeners"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="Video Tutorials Tests(failed)">
+  <test thread-count="5" parallel="tests" name="API Page Tests(failed)">
     <classes>
-      <class name="SeleniumProject.automation_exercise.tests.VideoTutorialsTests">
+      <class name="SeleniumProject.automation_exercise.tests.APIPageTests">
         <methods>
+          <include name="NavigateToAPIPage"/>
           <include name="tearDown"/>
-          <include name="VerifyYouTubePage"/>
+          <include name="BrowseAPITestCases"/>
           <include name="launchWebSite"/>
         </methods>
-      </class> <!-- SeleniumProject.automation_exercise.tests.VideoTutorialsTests -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.APIPageTests -->
     </classes>
-  </test> <!-- Video Tutorials Tests(failed) -->
+  </test> <!-- API Page Tests(failed) -->
+  <test thread-count="5" parallel="tests" name="Home Page Tests(failed)">
+    <classes>
+      <class name="SeleniumProject.automation_exercise.tests.HomePageTests">
+        <methods>
+          <include name="ScrollUpArrowFromFooter"/>
+          <include name="tearDown"/>
+          <include name="launchWebSite"/>
+          <include name="ScrollUpFromFooter"/>
+        </methods>
+      </class> <!-- SeleniumProject.automation_exercise.tests.HomePageTests -->
+    </classes>
+  </test> <!-- Home Page Tests(failed) -->
 </suite> <!-- Failed suite [Suite] -->

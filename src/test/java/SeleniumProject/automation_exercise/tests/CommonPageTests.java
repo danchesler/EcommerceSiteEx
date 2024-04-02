@@ -37,7 +37,6 @@ public class CommonPageTests extends BaseTest {
 	public Object[][] testData() throws IOException {
 		String filePath = System.getProperty("user.dir") + "\\src\\test\\java\\testData\\user_data.json";
 				
-		
 		List<HashMap<String,String>> data = getJsonDataToMap(filePath);
 		
 		return new Object[][] { {data.get(0)} };

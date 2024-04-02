@@ -115,7 +115,8 @@ public class PageCommon extends PageUtilities {
 		apiLink.click();
 		
 		if (driver.getCurrentUrl().contains("google")) {
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
+			waitForElementToBeClickable(apiLink);
 			apiLink.click();
 		}
 		
@@ -126,7 +127,8 @@ public class PageCommon extends PageUtilities {
 		a.moveToElement(testCases).doubleClick().build().perform();
 		
 		if (driver.getCurrentUrl().contains("google")) {
-			Thread.sleep(4000);
+			//Thread.sleep(4000);
+			waitForElementToBeClickable(testCases);
 			a.moveToElement(testCases).doubleClick().build().perform();
 		}
 		
@@ -185,6 +187,7 @@ public class PageCommon extends PageUtilities {
 	}
 	
 	public void selectScrollUpArrow() {
+		waitForElementToBeClickable(scrollUpArrow);
 		scrollUpArrow.click();
 	}
 	

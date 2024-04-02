@@ -33,7 +33,7 @@ public class TestCasesPage extends PageCommon {
 		return testCasesHeader.getText();
 	}
 	
-	public int getNumerOfTestCases() {
+	public int getNumberOfTestCases() {
 		return testCasesList.size();
 	}
 	
@@ -44,6 +44,7 @@ public class TestCasesPage extends PageCommon {
 		
 		//waitForWebElementToAppear(collapseClosed.get(index));
 		Thread.sleep(1000);
+		
 		testCasesList.get(index).click();
 	}
 	

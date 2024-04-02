@@ -33,6 +33,7 @@ public class APIPage extends PageCommon {
 	}
 	
 	public void openThenCloseAPICase(int i) throws InterruptedException {
+		waitForElementToBeClickable(apiCasesList.get(i));
 		apiCasesList.get(i).click();
 		Thread.sleep(2000);
 		apiCasesList.get(i).click();

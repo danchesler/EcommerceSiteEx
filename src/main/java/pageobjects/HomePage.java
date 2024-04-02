@@ -20,6 +20,9 @@ public class HomePage extends PageCommon {
 	}
 	
 	//Slider
+	@FindBy (id="slider-carousel")
+	private WebElement sliderCarousel;
+	
 	@FindBy (css="#slider h2")
 	private List<WebElement> sliderHeaderText;
 	
@@ -80,10 +83,11 @@ public class HomePage extends PageCommon {
 	@FindBy(css="button[data-dismiss='modal']")
 	protected WebElement continueShopping;
 	
+	
 
-	public boolean isSliderHeaderDisplayed() {
-		waitForElementToBeVisible(sliderHeaderText.get(0));
-		return sliderHeaderText.get(0).isDisplayed();
+	public boolean isSliderDisplayed() {
+		waitForElementToBeVisible(sliderCarousel);
+		return sliderCarousel.isDisplayed();
 	}
 	
 	public boolean areCategoriesDisplayed() {

@@ -19,7 +19,7 @@ import org.testng.annotations.BeforeTest;
 import pageobjects.HomePage;
 
 public class BaseTest extends TestUtilities {
-//test comment2
+
 	public WebDriver driver;
 	protected HomePage homepage;
 	
@@ -49,7 +49,6 @@ public class BaseTest extends TestUtilities {
 			if (browserName.contains("headless")) {
 				driver.manage().window().setSize(new Dimension(1920,1080));
 			}
-			
 		}
 		else if (browserName.equalsIgnoreCase("firefox"))
 		{

@@ -1,5 +1,7 @@
 package SeleniumProject.automation_exercise.tests;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -7,17 +9,18 @@ import pageobjects.TestCasesPage;
 import testcomponents.BaseTest;
 
 public class testing {
-
-	TestCasesPage tcp;
 	
-	@Test
+	@Test (expectedExceptions = { IndexOutOfBoundsException.class }, expectedExceptionsMessageRegExp = ".* allowed .*")
 	public void test1() {
-		System.out.println("test1");
+		int a = 0;
+		int b = 5;
+		System.out.println("end of test");
+		throw new IndexOutOfBoundsException("not allowed test");
 	}
 	
-	@Test
-	public void test2() {
-		System.out.println("test2");
+	@Test (expectedExceptions = { IOException.class })
+	public void test2() throws Exception {
+		throw new Exception();
 	}
 	
 }

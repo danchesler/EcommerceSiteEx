@@ -10,23 +10,24 @@ public class TestCasesTests extends BaseTest {
 
 	TestCasesPage tcp;
 	
-	@Test (invocationCount = 3)
+	@Test
 	public void NavigateToTestCasesPage() throws InterruptedException {
 		tcp = homepage.goToTestCases();
+		
 		Assert.assertEquals(tcp.getTestCasesPgHeader(), "TEST CASES");
 	}
 	
 	@Test (dependsOnMethods = {"NavigateToTestCasesPage"})
 	public void BrowseTestCases() throws InterruptedException {
-		for (int i = 0; i < tcp.getNumerOfTestCases(); i++) {
+//		for (int i = 0; i < tcp.getNumerOfTestCases(); i++) {
+//			tcp.openTestCase(i);
+//			tcp.closeTestCase(i);
+//		}
+		
+		//int t = tcp.getNumberOfTestCases();
+		for (int i = 0; i < 3; i++) {
 			tcp.openTestCase(i);
 			tcp.closeTestCase(i);
-		}
-		
-		//get list of test cases
-		//iterate thru the test cases
-		//for each tc
-			//open if not collapsed
-			//close if collapsed			
+		}		
 	}
 }

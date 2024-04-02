@@ -1,37 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-21T17:58:34 PDT" name="Suite" finished-at="2024-03-21T17:59:49 PDT" duration-ms="74758">
+  <suite started-at="2024-04-02T12:29:08 PDT" name="Suite" finished-at="2024-04-02T12:29:40 PDT" duration-ms="31701">
     <groups>
     </groups>
-    <test started-at="2024-03-21T17:58:34 PDT" name="Home Page Tests" finished-at="2024-03-21T17:58:49 PDT" duration-ms="15315">
-      <class name="SeleniumProject.automation_exercise.tests.HomePageTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-03-21T17:58:34 PDT" name="launchWebSite" finished-at="2024-03-21T17:58:44 PDT" duration-ms="10323" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchWebSite -->
-        <test-method signature="ScrollUpArrowFromFooter()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-03-21T17:58:44 PDT" name="ScrollUpArrowFromFooter" finished-at="2024-03-21T17:58:45 PDT" duration-ms="1028" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ScrollUpArrowFromFooter -->
-        <test-method signature="ScrollUpFromFooter()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-03-21T17:58:45 PDT" name="ScrollUpFromFooter" finished-at="2024-03-21T17:58:45 PDT" duration-ms="256" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ScrollUpFromFooter -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-03-21T17:58:45 PDT" name="tearDown" finished-at="2024-03-21T17:58:49 PDT" duration-ms="3636" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.HomePageTests -->
-    </test> <!-- Home Page Tests -->
-    <test started-at="2024-03-21T17:58:34 PDT" name="Common Page Tests" finished-at="2024-03-21T17:58:52 PDT" duration-ms="17903">
+    <test started-at="2024-04-02T12:29:08 PDT" name="Common Page Tests" finished-at="2024-04-02T12:29:25 PDT" duration-ms="17259">
       <class name="SeleniumProject.automation_exercise.tests.CommonPageTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-03-21T17:58:34 PDT" name="launchWebSite" finished-at="2024-03-21T17:58:46 PDT" duration-ms="11973" status="PASS">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-04-02T12:29:08 PDT" name="launchWebSite" finished-at="2024-04-02T12:29:19 PDT" duration-ms="10367" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="SubscribeOnCartPage(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-03-21T17:58:46 PDT" name="SubscribeOnCartPage" data-provider="user_data" finished-at="2024-03-21T17:58:47 PDT" duration-ms="862" status="PASS">
+        <test-method signature="SubscribeOnCartPage(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-04-02T12:29:19 PDT" name="SubscribeOnCartPage" data-provider="user_data" finished-at="2024-04-02T12:29:21 PDT" duration-ms="1976" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -42,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubscribeOnCartPage -->
-        <test-method signature="SubscribeOnHomePage(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-03-21T17:58:47 PDT" name="SubscribeOnHomePage" data-provider="user_data" finished-at="2024-03-21T17:58:47 PDT" duration-ms="272" status="PASS">
+        <test-method signature="SubscribeOnHomePage(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-04-02T12:29:21 PDT" name="SubscribeOnHomePage" data-provider="user_data" finished-at="2024-04-02T12:29:21 PDT" duration-ms="259" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,19 +33,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SubscribeOnHomePage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-03-21T17:58:47 PDT" name="tearDown" finished-at="2024-03-21T17:58:52 PDT" duration-ms="4200" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.CommonPageTests@3c7c886c]" started-at="2024-04-02T12:29:21 PDT" name="tearDown" finished-at="2024-04-02T12:29:25 PDT" duration-ms="4126" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- SeleniumProject.automation_exercise.tests.CommonPageTests -->
     </test> <!-- Common Page Tests -->
-    <test started-at="2024-03-21T17:58:34 PDT" name="Contact Us Tests" finished-at="2024-03-21T17:58:55 PDT" duration-ms="21661">
-      <class name="SeleniumProject.automation_exercise.tests.ContactUsTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@6138e79a]" started-at="2024-03-21T17:58:34 PDT" name="launchWebSite" finished-at="2024-03-21T17:58:48 PDT" duration-ms="14230" status="PASS">
+    <test started-at="2024-04-02T12:29:08 PDT" name="Home Page Tests" finished-at="2024-04-02T12:29:26 PDT" duration-ms="18215">
+      <class name="SeleniumProject.automation_exercise.tests.HomePageTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-04-02T12:29:08 PDT" name="launchWebSite" finished-at="2024-04-02T12:29:22 PDT" duration-ms="13321" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="FillContactUsForm(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@6138e79a]" started-at="2024-03-21T17:58:48 PDT" name="FillContactUsForm" data-provider="contactus_data" finished-at="2024-03-21T17:58:52 PDT" duration-ms="4034" status="PASS">
+        <test-method signature="ScrollUpFromFooter()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-04-02T12:29:22 PDT" name="ScrollUpFromFooter" finished-at="2024-04-02T12:29:22 PDT" duration-ms="295" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ScrollUpFromFooter -->
+        <test-method signature="ScrollUpArrowFromFooter()[pri:1, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-04-02T12:29:22 PDT" name="ScrollUpArrowFromFooter" finished-at="2024-04-02T12:29:23 PDT" duration-ms="1302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ScrollUpArrowFromFooter -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.HomePageTests@42bc14c1]" started-at="2024-04-02T12:29:23 PDT" name="tearDown" finished-at="2024-04-02T12:29:26 PDT" duration-ms="3276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.HomePageTests -->
+    </test> <!-- Home Page Tests -->
+    <test started-at="2024-04-02T12:29:08 PDT" name="Contact Us Tests" finished-at="2024-04-02T12:29:29 PDT" duration-ms="20933">
+      <class name="SeleniumProject.automation_exercise.tests.ContactUsTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@6138e79a]" started-at="2024-04-02T12:29:08 PDT" name="launchWebSite" finished-at="2024-04-02T12:29:21 PDT" duration-ms="12823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchWebSite -->
+        <test-method signature="FillContactUsForm(java.util.HashMap)[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@6138e79a]" started-at="2024-04-02T12:29:21 PDT" name="FillContactUsForm" data-provider="contactus_data" finished-at="2024-04-02T12:29:26 PDT" duration-ms="4818" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,83 +76,67 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FillContactUsForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@6138e79a]" started-at="2024-03-21T17:58:52 PDT" name="tearDown" finished-at="2024-03-21T17:58:55 PDT" duration-ms="3376" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.ContactUsTests@6138e79a]" started-at="2024-04-02T12:29:26 PDT" name="tearDown" finished-at="2024-04-02T12:29:29 PDT" duration-ms="3276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- SeleniumProject.automation_exercise.tests.ContactUsTests -->
     </test> <!-- Contact Us Tests -->
-    <test started-at="2024-03-21T17:58:50 PDT" name="Video Tutorials Tests" finished-at="2024-03-21T17:59:05 PDT" duration-ms="15204">
-      <class name="SeleniumProject.automation_exercise.tests.VideoTutorialsTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.VideoTutorialsTests@294a6b8e]" started-at="2024-03-21T17:58:50 PDT" name="launchWebSite" finished-at="2024-03-21T17:58:59 PDT" duration-ms="9765" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchWebSite -->
-        <test-method signature="VerifyYouTubePage()[pri:0, instance:SeleniumProject.automation_exercise.tests.VideoTutorialsTests@294a6b8e]" started-at="2024-03-21T17:58:59 PDT" name="VerifyYouTubePage" finished-at="2024-03-21T17:59:01 PDT" duration-ms="2150" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyYouTubePage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.VideoTutorialsTests@294a6b8e]" started-at="2024-03-21T17:59:01 PDT" name="tearDown" finished-at="2024-03-21T17:59:05 PDT" duration-ms="3285" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumProject.automation_exercise.tests.VideoTutorialsTests -->
-    </test> <!-- Video Tutorials Tests -->
-    <test started-at="2024-03-21T17:58:34 PDT" name="API Page Tests" finished-at="2024-03-21T17:59:06 PDT" duration-ms="32128">
+    <test started-at="2024-04-02T12:29:08 PDT" name="API Page Tests" finished-at="2024-04-02T12:29:30 PDT" duration-ms="22081">
       <class name="SeleniumProject.automation_exercise.tests.APIPageTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@5143c662]" started-at="2024-03-21T17:58:34 PDT" name="launchWebSite" finished-at="2024-03-21T17:58:46 PDT" duration-ms="11943" status="PASS">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@77825085]" started-at="2024-04-02T12:29:08 PDT" name="launchWebSite" finished-at="2024-04-02T12:29:20 PDT" duration-ms="11296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="NavigateToAPIPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@5143c662]" started-at="2024-03-21T17:58:46 PDT" name="NavigateToAPIPage" finished-at="2024-03-21T17:58:51 PDT" duration-ms="5332" status="PASS">
+        <test-method signature="NavigateToAPIPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@77825085]" started-at="2024-04-02T12:29:20 PDT" name="NavigateToAPIPage" finished-at="2024-04-02T12:29:20 PDT" duration-ms="482" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NavigateToAPIPage -->
-        <test-method signature="NavigateToAPIPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@5143c662]" started-at="2024-03-21T17:58:51 PDT" name="NavigateToAPIPage" finished-at="2024-03-21T17:58:52 PDT" duration-ms="705" status="PASS">
+        <test-method signature="BrowseAPITestCases()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@77825085]" started-at="2024-04-02T12:29:20 PDT" name="BrowseAPITestCases" finished-at="2024-04-02T12:29:27 PDT" depends-on-methods="SeleniumProject.automation_exercise.tests.APIPageTests.NavigateToAPIPage" duration-ms="6877" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigateToAPIPage -->
-        <test-method signature="NavigateToAPIPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@5143c662]" started-at="2024-03-21T17:58:52 PDT" name="NavigateToAPIPage" finished-at="2024-03-21T17:58:53 PDT" duration-ms="823" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigateToAPIPage -->
-        <test-method signature="BrowseTestCases()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@5143c662]" started-at="2024-03-21T17:58:53 PDT" name="BrowseTestCases" finished-at="2024-03-21T17:59:03 PDT" depends-on-methods="SeleniumProject.automation_exercise.tests.APIPageTests.NavigateToAPIPage" duration-ms="10035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BrowseTestCases -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@5143c662]" started-at="2024-03-21T17:59:03 PDT" name="tearDown" finished-at="2024-03-21T17:59:06 PDT" duration-ms="3262" status="PASS">
+        </test-method> <!-- BrowseAPITestCases -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.APIPageTests@77825085]" started-at="2024-04-02T12:29:27 PDT" name="tearDown" finished-at="2024-04-02T12:29:30 PDT" duration-ms="3386" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- SeleniumProject.automation_exercise.tests.APIPageTests -->
     </test> <!-- API Page Tests -->
-    <test started-at="2024-03-21T17:58:34 PDT" name="Test Cases Page Tests" finished-at="2024-03-21T17:59:49 PDT" duration-ms="74758">
+    <test started-at="2024-04-02T12:29:08 PDT" name="Test Cases Page Tests" finished-at="2024-04-02T12:29:34 PDT" duration-ms="25680">
       <class name="SeleniumProject.automation_exercise.tests.TestCasesTests">
-        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-03-21T17:58:34 PDT" name="launchWebSite" finished-at="2024-03-21T17:58:49 PDT" duration-ms="15310" status="PASS">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-04-02T12:29:08 PDT" name="launchWebSite" finished-at="2024-04-02T12:29:23 PDT" duration-ms="14916" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchWebSite -->
-        <test-method signature="NavigateToTestCasesPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-03-21T17:58:49 PDT" name="NavigateToTestCasesPage" finished-at="2024-03-21T17:58:50 PDT" duration-ms="664" status="PASS">
+        <test-method signature="NavigateToTestCasesPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-04-02T12:29:23 PDT" name="NavigateToTestCasesPage" finished-at="2024-04-02T12:29:24 PDT" duration-ms="1184" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NavigateToTestCasesPage -->
-        <test-method signature="NavigateToTestCasesPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-03-21T17:58:50 PDT" name="NavigateToTestCasesPage" finished-at="2024-03-21T17:58:50 PDT" duration-ms="350" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigateToTestCasesPage -->
-        <test-method signature="NavigateToTestCasesPage()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-03-21T17:58:50 PDT" name="NavigateToTestCasesPage" finished-at="2024-03-21T17:58:51 PDT" duration-ms="462" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- NavigateToTestCasesPage -->
-        <test-method signature="BrowseTestCases()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-03-21T17:58:51 PDT" name="BrowseTestCases" finished-at="2024-03-21T17:59:45 PDT" depends-on-methods="SeleniumProject.automation_exercise.tests.TestCasesTests.NavigateToTestCasesPage" duration-ms="54648" status="PASS">
+        <test-method signature="BrowseTestCases()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-04-02T12:29:24 PDT" name="BrowseTestCases" finished-at="2024-04-02T12:29:31 PDT" depends-on-methods="SeleniumProject.automation_exercise.tests.TestCasesTests.NavigateToTestCasesPage" duration-ms="6315" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowseTestCases -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-03-21T17:59:45 PDT" name="tearDown" finished-at="2024-03-21T17:59:49 PDT" duration-ms="3289" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.TestCasesTests@1afdd473]" started-at="2024-04-02T12:29:31 PDT" name="tearDown" finished-at="2024-04-02T12:29:34 PDT" duration-ms="3242" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- SeleniumProject.automation_exercise.tests.TestCasesTests -->
     </test> <!-- Test Cases Page Tests -->
+    <test started-at="2024-04-02T12:29:26 PDT" name="Video Tutorials Tests" finished-at="2024-04-02T12:29:40 PDT" duration-ms="14042">
+      <class name="SeleniumProject.automation_exercise.tests.VideoTutorialsTests">
+        <test-method is-config="true" signature="launchWebSite()[pri:0, instance:SeleniumProject.automation_exercise.tests.VideoTutorialsTests@4b1d6571]" started-at="2024-04-02T12:29:26 PDT" name="launchWebSite" finished-at="2024-04-02T12:29:35 PDT" duration-ms="8674" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchWebSite -->
+        <test-method signature="VerifyYouTubePage()[pri:0, instance:SeleniumProject.automation_exercise.tests.VideoTutorialsTests@4b1d6571]" started-at="2024-04-02T12:29:35 PDT" name="VerifyYouTubePage" finished-at="2024-04-02T12:29:37 PDT" duration-ms="2090" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyYouTubePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumProject.automation_exercise.tests.VideoTutorialsTests@4b1d6571]" started-at="2024-04-02T12:29:37 PDT" name="tearDown" finished-at="2024-04-02T12:29:40 PDT" duration-ms="3275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumProject.automation_exercise.tests.VideoTutorialsTests -->
+    </test> <!-- Video Tutorials Tests -->
   </suite> <!-- Suite -->
 </testng-results>
