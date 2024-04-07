@@ -84,7 +84,7 @@ public class ContactPage extends PageCommon {
 		Actions a = new Actions(driver);
 		a.moveToElement(chooseFile).click().build().perform();
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		String windowScript = "C:\\Users\\super\\eclipse-SeleniumProject\\automation-exercise\\resources\\fileupload.exe";
 		Runtime.getRuntime().exec(windowScript);
 		

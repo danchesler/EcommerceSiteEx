@@ -24,6 +24,9 @@ public class ContactUsTests extends BaseTest {
 		con.enterSubject(data.get("subject"));
 		con.enterMessage(data.get("message"));
 		con.uploadFile();
+		
+		con.submitForm();
+		con.cancelAlert();
 		con.submitForm();
 		con.acceptAlert();
 		

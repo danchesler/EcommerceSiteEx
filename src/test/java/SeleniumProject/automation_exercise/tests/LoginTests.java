@@ -16,7 +16,6 @@ import testcomponents.BaseTest;
 
 public class LoginTests extends BaseTest {
 	
-	
 	@Test (dataProvider = "signup_data")
 	public void RegisterThenDeleteUser(HashMap<String,String> data) throws InterruptedException {	
 		SignUpPage sp = homepage.goToSignUp();
@@ -37,20 +36,6 @@ public class LoginTests extends BaseTest {
 		Assert.assertTrue(dap.getAccountDeletedEle().isDisplayed());
 		dap.clickContinue();
 	}
-
-	@Test (dataProvider = "signup_data", dependsOnMethods = {"RegisterUserThenLogout"})
-	public void LoginThenDeleteUser(HashMap<String,String> data) {
-		SignUpPage sp = homepage.goToSignUp();
-		Assert.assertEquals(sp.getLoginHeaderEle().getText(),"Login to your account");
-		
-		sp.enterLoginDetails(data.get("email"), data.get("password"));
-		sp.submitLogin();
-		
-		DeleteAccountPage dap = sp.deleteAccount();
-		Assert.assertTrue(dap.getAccountDeletedEle().isDisplayed());
-		dap.clickContinue();
-		
-	}
 	
 	@Test (dataProvider = "signup_data")
 	public void LoginInvalidUser(HashMap<String,String> data) {
@@ -62,7 +47,7 @@ public class LoginTests extends BaseTest {
 	}
 	
 	@Test (dataProvider = "login_data")
-	public void Logout (HashMap<String,String> data) {
+	public void Logout(HashMap<String,String> data) {
 		SignUpPage sp = homepage.goToSignUp();
 		Assert.assertEquals(sp.getLoginHeaderEle().getText(),"Login to your account");
 		
@@ -103,6 +88,19 @@ public class LoginTests extends BaseTest {
 		
 		homepage = acp.clickContinue();
 		homepage.Logout();		
+	}
+	
+	@Test (dataProvider = "signup_data", dependsOnMethods = {"RegisterUserThenLogout"})
+	public void LoginThenDeleteUser(HashMap<String,String> data) {
+		SignUpPage sp = homepage.goToSignUp();
+		Assert.assertEquals(sp.getLoginHeaderEle().getText(),"Login to your account");
+		
+		sp.enterLoginDetails(data.get("email"), data.get("password"));
+		sp.submitLogin();
+		
+		DeleteAccountPage dap = sp.deleteAccount();
+		Assert.assertTrue(dap.getAccountDeletedEle().isDisplayed());
+		dap.clickContinue();
 	}
 	
 	@Test (dataProvider = "signup_data")

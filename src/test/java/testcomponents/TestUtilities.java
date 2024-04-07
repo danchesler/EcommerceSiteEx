@@ -22,7 +22,7 @@ public class TestUtilities {
 
 	
 	public List<HashMap<String, String>> getJsonDataToMap(String filePath) throws IOException {
-		String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8);
+		String jsonContent = FileUtils.readFileToString(new File(filePath), StandardCharsets.UTF_8); //encoding standard
 		ObjectMapper mapper = new ObjectMapper();
 		List<HashMap<String, String>> data = mapper.readValue(jsonContent, 
 				new TypeReference<List<HashMap<String,String>>>(){});
